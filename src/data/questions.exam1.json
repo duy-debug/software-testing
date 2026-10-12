@@ -1,0 +1,1402 @@
+[
+  {
+    "id": "exam1-001",
+    "deck": "exam1",
+    "number": 1,
+    "type": "single",
+    "stem": "Trong buổi họp dự án, một thành viên mới phát biểu: *\"Kiểm thử phần mềm là chạy ứng dụng lên để xem nó có chạy được hay không.\"* Theo định nghĩa tổng quát trong slide (Chương 1), cách hiểu nào sau đây là **đúng nhất**?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử là chạy ứng dụng để xác nhận nó chạy được như mong đợi của developer",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử là quá trình kiểm tra xem phần mềm có đúng 100% yêu cầu của khách hàng hay không",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử chỉ nhằm ngăn ngừa lỗi ngay từ giai đoạn phân tích yêu cầu",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử là tiến trình thực thi một chương trình với mục đích tìm lỗi và đánh giá các đặc tính của sản phẩm",
+        "isCorrect": true,
+        "note": "(Chính xác – đúng định nghĩa tổng quát: tìm lỗi + đánh giá đặc tính, không chỉ \"xem có chạy được không\".)"
+      }
+    ],
+    "explanation": "Định nghĩa tổng quát trong slide: kiểm thử phần mềm là tiến trình **thực thi** một chương trình với mục đích **tìm lỗi và đánh giá các đặc tính** của sản phẩm. Đáp án a quá hẹp (chỉ kiểm tra \"chạy được\"), đáp án b đòi hỏi sự hoàn hảo 100% là không thể, đáp án c chỉ nêu khía cạnh ngăn ngừa lỗi mà bỏ qua mục đích tìm lỗi.",
+    "answerKey": "The correct answer is: Kiểm thử là tiến trình thực thi một chương trình với mục đích tìm lỗi và đánh giá các đặc tính của sản phẩm"
+  },
+  {
+    "id": "exam1-002",
+    "deck": "exam1",
+    "number": 2,
+    "type": "single",
+    "stem": "Ứng dụng đặt vé xe khách chạy đúng mọi đặc tả kỹ thuật: tính đúng giá vé, lưu đúng dữ liệu, không crash. Tuy nhiên người dùng lớn tuổi phàn nàn không tìm được nút \"Đặt vé\" vì giao diện quá rối và thiếu bước xác nhận qua điện thoại mà họ cần. Xét theo tư duy V&V, vấn đề này thuộc về:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Verification – vì phần mềm đã xây dựng đúng thiết kế nên không có vấn đề gì",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Validation – vì phần mềm chưa đáp ứng đúng nhu cầu thực tế của người dùng",
+        "isCorrect": true,
+        "note": "(Chính xác. Verification = \"Are we building the product right?\" (đúng thiết kế); Validation = \"Are we building the right product?\" (đúng nhu cầu).)"
+      },
+      {
+        "key": "c",
+        "text": "Cả Verification và Validation đều đã thất bại như nhau",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Không thuộc V&V vì đây là vấn đề thiết kế giao diện, không phải kiểm thử",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Verification trả lời \"chúng ta có đang xây dựng sản phẩm **đúng** không\" (đúng thiết kế/đặc tả) – ở đây đã đạt. Validation trả lời \"chúng ta có đang xây dựng **đúng sản phẩm** không\" (đúng nhu cầu người dùng) – ở đây thất bại vì người dùng lớn tuổi không dùng được. Đáp án a sai vì đúng thiết kế chưa đủ; đáp án d sai vì tính dễ dùng và đáp ứng nhu cầu chính là đối tượng của Validation.",
+    "answerKey": "The correct answer is: Validation – vì phần mềm chưa đáp ứng đúng nhu cầu thực tế của người dùng"
+  },
+  {
+    "id": "exam1-003",
+    "deck": "exam1",
+    "number": 3,
+    "type": "single",
+    "stem": "Xét đoạn test tự động (Cypress) trong slide Chương 1: developer **hiểu sai yêu cầu**, đổi ID nút \"Áp dụng\" nhưng **quên cập nhật code** → nút trên giao diện bị sai ID → test case bị **timeout** vì không tìm thấy nút. Theo chuỗi Error → Defect → Failure, \"việc developer hiểu sai yêu cầu\" được gọi là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Failure, vì nó là sự kiện test case bị timeout có thể quan sát được",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Defect, vì nó nằm trong mã nguồn của test",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Error, vì đây là hành động sai của con người và là nguyên nhân gốc gây ra Defect",
+        "isCorrect": true,
+        "note": "(Chính xác. Error (Human Action) → gây ra Defect (trong code/tài liệu) → khi thực thi gây ra Failure (sự kiện).)"
+      },
+      {
+        "key": "d",
+        "text": "Không thuộc chuỗi nào vì đây là lỗi của test script, không phải của sản phẩm",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Theo slide: **Error** là hành động sai của con người (hiểu sai yêu cầu, gõ nhầm); **Defect** là kết quả của Error tồn tại trong code/tài liệu (ở đây là ID nút bị sai trên giao diện); **Failure** là sự kiện khi Defect bộc lộ lúc thực thi (test case timeout). Việc \"hiểu sai yêu cầu\" là hành động của con người → Error.",
+    "answerKey": "The correct answer is: Error, vì đây là hành động sai của con người và là nguyên nhân gốc gây ra Defect"
+  },
+  {
+    "id": "exam1-004",
+    "deck": "exam1",
+    "number": 4,
+    "type": "single",
+    "stem": "Developer viết hàm tính học bổng và **gõ nhầm** toán tử `>` thay vì `>=`, khiến sinh viên đúng 8.0 điểm bị loại khỏi danh sách. Đoạn code sai nằm trong chương trình này được gọi là gì theo thuật ngữ ISTQB?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Error, vì developer đã gõ nhầm toán tử",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Defect, vì đây là khiếm khuyết tồn tại trong mã nguồn do Error gây ra",
+        "isCorrect": true,
+        "note": "(Chính xác. Hành động gõ nhầm của con người là Error; đoạn code sai tồn tại trong chương trình là Defect.)"
+      },
+      {
+        "key": "c",
+        "text": "Failure, vì sinh viên bị loại khỏi danh sách học bổng",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Mistake, vì đây chỉ là lỗi đánh máy nhỏ không đáng kể",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Cần phân biệt rõ: **Error** = hành động sai của con người (gõ nhầm `>`); **Defect** = khiếm khuyết tồn tại trong code/tài liệu do Error gây ra (điều kiện sai trong chương trình); **Failure** = sự kiện sai lệch quan sát được khi chạy (chỉ xảy ra khi có sinh viên đúng 8.0 điểm chạy qua nhánh này). Đáp án a nhầm lẫn giữa hành động và kết quả; đáp án d không phải thuật ngữ ISTQB trong chuỗi này.",
+    "answerKey": "The correct answer is: Defect, vì đây là khiếm khuyết tồn tại trong mã nguồn do Error gây ra"
+  },
+  {
+    "id": "exam1-005",
+    "deck": "exam1",
+    "number": 5,
+    "type": "single",
+    "stem": "Sau một đợt kiểm thử, toàn bộ 500 test case đều **Pass**. Trưởng dự án tuyên bố: *\"Phần mềm đã sạch lỗi, có thể release mà không cần lo lắng.\"* Theo **Nguyên lý 1** (Testing shows the presence of defects), đánh giá nào sau đây là đúng?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tuyên bố đúng, vì 500 test case pass chứng minh không còn lỗi",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Tuyên bố đúng nếu 500 test case đã bao phủ 100% yêu cầu",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Tuyên bố sai, vì cần chạy thêm test case nữa thì mới kết luận được",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Tuyên bố sai, vì kiểm thử chỉ chứng minh sự hiện diện của lỗi chứ không thể chứng minh phần mềm không còn lỗi",
+        "isCorrect": true,
+        "note": "(Chính xác. Đây là nội dung nguyên văn của Nguyên lý 1.)"
+      }
+    ],
+    "explanation": "Nguyên lý 1 khẳng định: kiểm thử **chứng minh phần mềm có lỗi**, nhưng **không bao giờ chứng minh được phần mềm không có lỗi** – dù pass bao nhiêu test case. Đáp án b sai vì ngay cả bao phủ 100% yêu cầu vẫn có thể sót lỗi; đáp án c sai vì vấn đề không nằm ở số lượng test case mà ở bản chất logic của nguyên lý.",
+    "answerKey": "The correct answer is: Tuyên bố sai, vì kiểm thử chỉ chứng minh sự hiện diện của lỗi chứ không thể chứng minh phần mềm không còn lỗi"
+  },
+  {
+    "id": "exam1-006",
+    "deck": "exam1",
+    "number": 6,
+    "type": "single",
+    "stem": "Một form đăng ký có 10 trường, mỗi trường có khoảng 20 giá trị biên cần xét. Tester đề xuất \"test hết mọi tổ hợp để chắc chắn không sót lỗi\". Theo **Nguyên lý 2** (Exhaustive testing is impossible), hướng xử lý đúng là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Đồng ý, vì chỉ có kiểm thử cạn kiệt mới đảm bảo chất lượng tuyệt đối",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Không thể test hết mọi tổ hợp đầu vào, nên dùng phân tích rủi ro (Risk) để ưu tiên những vùng quan trọng nhất",
+        "isCorrect": true,
+        "note": "(Chính xác. Nguyên lý 2: không thể test cạn kiệt → dùng rủi ro để ưu tiên.)"
+      },
+      {
+        "key": "c",
+        "text": "Giảm số trường của form xuống để có thể test hết",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Chỉ test các trường hợp đúng (happy path) để tiết kiệm thời gian",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Số tổ hợp đầu vào tăng theo cấp số nhân nên kiểm thử cạn kiệt là **không thể** về mặt thực tế. Slide chỉ rõ giải pháp: dùng **rủi ro (Risk)** để ưu tiên nỗ lực kiểm thử vào những vùng quan trọng, dễ lỗi nhất. Đáp án a đi ngược nguyên lý; đáp án d quá cực đoan vì bỏ qua các trường hợp lỗi.",
+    "answerKey": "The correct answer is: Không thể test hết mọi tổ hợp đầu vào, nên dùng phân tích rủi ro (Risk) để ưu tiên những vùng quan trọng nhất"
+  },
+  {
+    "id": "exam1-007",
+    "deck": "exam1",
+    "number": 7,
+    "type": "single",
+    "stem": "Trong buổi review tài liệu yêu cầu của hệ thống tính học phí, tester phát hiện hai yêu cầu mâu thuẫn nhau: một chỗ ghi \"làm tròn xuống\", chỗ khác ghi \"làm tròn lên\". Lỗi được sửa ngay trên tài liệu trước khi viết một dòng code nào. Đây là minh họa trực tiếp cho nguyên lý nào và lợi ích gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Nguyên lý 4 (quy tắc 80/20) – tập trung vào module tính học phí vì đây là module cốt lõi",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Nguyên lý 6 (phụ thuộc ngữ cảnh) – cách test hệ thống học phí khác với hệ thống khác",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Nguyên lý 3 – Kiểm thử sớm (Shift-left): bắt đầu test ngay từ khâu phân tích yêu cầu để tiết kiệm chi phí",
+        "isCorrect": true,
+        "note": "(Chính xác. Phát hiện lỗi ở giai đoạn yêu cầu, trước khi code, chính là shift-left; sửa lỗi càng sớm càng rẻ.)"
+      },
+      {
+        "key": "d",
+        "text": "Nguyên lý 5 (nghịch lý thuốc trừ sâu) – cần cập nhật lại tài liệu yêu cầu thường xuyên",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "**Shift-left** nghĩa là đưa hoạt động kiểm thử **sang trái** (sớm hơn) trong vòng đời: review tài liệu yêu cầu chính là kiểm thử ở khâu sớm nhất. Lợi ích: sửa một dòng chữ trong tài liệu rẻ hơn hàng trăm lần so với sửa code, build lại và test lại sau này. Các đáp án còn lại gán nhầm sang các nguyên lý khác.",
+    "answerKey": "The correct answer is: Nguyên lý 3 – Kiểm thử sớm (Shift-left): bắt đầu test ngay từ khâu phân tích yêu cầu để tiết kiệm chi phí"
+  },
+  {
+    "id": "exam1-008",
+    "deck": "exam1",
+    "number": 8,
+    "type": "single",
+    "stem": "Thống kê sau 3 tháng của dự án: trong 120 bug được tìm thấy, có tới 96 bug tập trung ở 2 module \"Thanh toán\" và \"Đăng nhập\" trên tổng số 10 module. Là test lead với thời gian có hạn, bạn nên quyết định thế nào theo **Nguyên lý 4**?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Dồn nỗ lực kiểm thử vào 2 module có mật độ lỗi cao, vì 80% bug thường nằm trong 20% module cốt lõi",
+        "isCorrect": true,
+        "note": "(Chính xác. Đây là nội dung quy tắc 80/20: sự tập trung của lỗi.)"
+      },
+      {
+        "key": "b",
+        "text": "Chia đều thời gian cho cả 10 module để đảm bảo công bằng",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Bỏ qua 2 module nhiều lỗi vì chúng đã được test kỹ rồi",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Chỉ test 2 module đó và bỏ hẳn 8 module còn lại",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Nguyên lý 4 (quy tắc 80/20): **80% số bug thường nằm trong 20% module cốt lõi** của hệ thống. Khi nguồn lực có hạn, ưu tiên kiểm thử sâu vào cụm module có mật độ lỗi cao là quyết định đúng dựa trên rủi ro. Đáp án b dàn trải nguồn lực; đáp án c và d là hai thái cực sai lầm (bỏ qua hẳn một phía).",
+    "answerKey": "The correct answer is: Dồn nỗ lực kiểm thử vào 2 module có mật độ lỗi cao, vì 80% bug thường nằm trong 20% module cốt lõi"
+  },
+  {
+    "id": "exam1-009",
+    "deck": "exam1",
+    "number": 9,
+    "type": "multiple",
+    "stem": "Chọn **HAI** phát biểu **đúng** về **Nguyên lý 5 – Nghịch lý thuốc trừ sâu** (Pesticide paradox).",
+    "options": [
+      {
+        "key": "a",
+        "text": "Nếu cứ lặp đi lặp lại một tập Test Case cũ, nó sẽ dần không tìm ra bug mới",
+        "isCorrect": true,
+        "note": "(Đúng – đây chính là nội dung nghịch lý thuốc trừ sâu.)"
+      },
+      {
+        "key": "b",
+        "text": "Cần liên tục review và cập nhật, bổ sung Test Case mới để bắt được bug mới",
+        "isCorrect": true,
+        "note": "(Đúng – đây là cách hóa giải nghịch lý.)"
+      },
+      {
+        "key": "c",
+        "text": "Nên xóa bỏ toàn bộ Test Case cũ sau mỗi lần release để tránh nghịch lý",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Chỉ cần chạy tự động hóa là đủ, không cần viết thêm Test Case mới",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Nghịch lý thuốc trừ sâu: chạy mãi một bộ test cũ giống như phun mãi một loại thuốc trừ sâu – sâu (bug mới) sẽ \"kháng thuốc\". Cách xử lý là **review và cập nhật** bộ test thường xuyên. Đáp án c sai vì test cũ vẫn có giá trị hồi quy; đáp án d sai vì tự động hóa không thay thế việc thiết kế test case mới.",
+    "answerKey": "The correct answers are: Nếu cứ lặp đi lặp lại một tập Test Case cũ, nó sẽ dần không tìm ra bug mới, Cần liên tục review và cập nhật, bổ sung Test Case mới để bắt được bug mới"
+  },
+  {
+    "id": "exam1-010",
+    "deck": "exam1",
+    "number": 10,
+    "type": "single",
+    "stem": "Team A kiểm thử ứng dụng ngân hàng số: tập trung vào bảo mật, tính đúng đắn của giao dịch, khả năng chịu tải giờ cao điểm. Team B kiểm thử game mobile: tập trung vào trải nghiệm mượt mà, đồ họa, thời lượng pin. Sự khác biệt này minh họa cho nguyên lý nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Nguyên lý 1 – kiểm thử cho thấy sự hiện diện của lỗi",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Nguyên lý 5 – nghịch lý thuốc trừ sâu",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Nguyên lý 6 – kiểm thử phụ thuộc vào ngữ cảnh",
+        "isCorrect": true,
+        "note": "(Chính xác. Test một app ngân hàng khác hoàn toàn với test một game mobile.)"
+      },
+      {
+        "key": "d",
+        "text": "Nguyên lý 7 – sự sai lầm về việc không có lỗi",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Nguyên lý 6 khẳng định **kiểm thử phụ thuộc ngữ cảnh**: mục tiêu, rủi ro và đặc thù của từng loại hệ thống quyết định chiến lược kiểm thử khác nhau. App ngân hàng ưu tiên bảo mật và tính đúng đắn giao dịch; game mobile ưu tiên trải nghiệm và hiệu năng. Không có một \"công thức test chung\" cho mọi phần mềm.",
+    "answerKey": "The correct answer is: Nguyên lý 6 – kiểm thử phụ thuộc vào ngữ cảnh"
+  },
+  {
+    "id": "exam1-011",
+    "deck": "exam1",
+    "number": 11,
+    "type": "single",
+    "stem": "Ứng dụng quản lý chi tiêu chạy ổn định suốt 6 tháng, không phát hiện bug nào qua nhiều đợt kiểm thử. Tuy nhiên người dùng vẫn bỏ app hàng loạt vì thiếu tính năng \"quét hóa đơn tự động\" mà đối thủ đã có từ lâu. Theo **Nguyên lý 7**, kết luận nào sau đây là đúng?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Đây là thành công vì phần mềm không có lỗi",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Đây vẫn là thất bại, vì phần mềm không có bug nhưng không đáp ứng đúng nhu cầu người dùng thì vẫn là phần mềm thất bại",
+        "isCorrect": true,
+        "note": "(Chính xác. Đây là nội dung nguyên văn của Nguyên lý 7 – \"sự sai lầm về việc không có lỗi\".)"
+      },
+      {
+        "key": "c",
+        "text": "Đây là lỗi của team kiểm thử vì đã không tìm ra bug",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Nguyên lý 7 không áp dụng vì app không hề có lỗi kỹ thuật",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Nguyên lý 7 – *Absence-of-errors fallacy*: **phần mềm không có bug nhưng không đáp ứng đúng nhu cầu người dùng thì vẫn là phần mềm thất bại**. Chất lượng không chỉ là \"không có lỗi\" mà còn là \"đúng cái người dùng cần\" (liên hệ với Validation ở Nguyên lý V&V). Đáp án a và d đều mắc đúng sai lầm mà nguyên lý này cảnh báo.",
+    "answerKey": "The correct answer is: Đây vẫn là thất bại, vì phần mềm không có bug nhưng không đáp ứng đúng nhu cầu người dùng thì vẫn là phần mềm thất bại"
+  },
+  {
+    "id": "exam1-012",
+    "deck": "exam1",
+    "number": 12,
+    "type": "single",
+    "stem": "Bạn An là developer vừa viết xong module tính lương. An tự kiểm thử module của mình và kết luận \"không có lỗi\". Theo phần **Tâm lý học trong kiểm thử** (Chương 1), rủi ro lớn nhất ở đây là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Developer không đủ kỹ năng để kiểm thử vì chỉ tester mới biết test",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Không có rủi ro, vì developer là người hiểu code rõ nhất nên tự test là tốt nhất",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Tester sẽ cảm thấy bị xúc phạm vì công việc của mình bị lấn át",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "An dễ mắc thiên kiến xác nhận (confirmation bias) vì tâm lý \"xây dựng\" muốn chứng minh code chạy đúng, khác với tâm lý \"phá vỡ\" của tester",
+        "isCorrect": true,
+        "note": "(Chính xác. Developer: mong phần mềm hoạt động đúng (xây dựng); Tester: tìm mọi cách chứng minh phần mềm sai (phá vỡ). Cần duy trì sự độc lập trong kiểm thử.)"
+      }
+    ],
+    "explanation": "Slide nêu rõ sự khác biệt tư duy: **Developer** có tâm lý xây dựng (muốn code chạy đúng), **Tester** có tâm lý phá vỡ (tìm mọi cách chứng minh sai). Người tự test code của mình dễ rơi vào **thiên kiến xác nhận** – vô thức chỉ test những case mình nghĩ là đúng. Vì vậy cần duy trì **sự độc lập trong kiểm thử**, và việc tìm ra lỗi là để cải thiện chất lượng chung, không phải chỉ trích cá nhân.",
+    "answerKey": "The correct answer is: An dễ mắc thiên kiến xác nhận (confirmation bias) vì tâm lý \"xây dựng\" muốn chứng minh code chạy đúng, khác với tâm lý \"phá vỡ\" của tester"
+  },
+  {
+    "id": "exam1-013",
+    "deck": "exam1",
+    "number": 13,
+    "type": "single",
+    "stem": "Dự án phần mềm quản lý thư viện được phát triển theo mô hình mà mỗi giai đoạn phát triển (yêu cầu, thiết kế, lập trình) đều có một cấp độ kiểm thử tương ứng để xác nhận và phê chuẩn, và kế hoạch kiểm thử được lập từ rất sớm. Đây là đặc trưng của mô hình nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Mô hình thác nước (Waterfall) thuần túy, vì kiểm thử nằm sau lập trình",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Mô hình V-Model – sự mở rộng của Waterfall, mỗi giai đoạn phát triển có cấp độ kiểm thử tương ứng, kiểm thử được lên kế hoạch từ sớm (Shift-left)",
+        "isCorrect": true,
+        "note": "(Chính xác. Đúng định nghĩa và ưu điểm của V-Model trong slide.)"
+      },
+      {
+        "key": "c",
+        "text": "Mô hình Agile/Scrum, vì có sự tương ứng giữa các giai đoạn",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Mô hình Big Bang, vì tất cả các giai đoạn được thực hiện đồng thời",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "**V-Model** là sự mở rộng của Waterfall với đặc trưng: **mỗi giai đoạn phát triển có một cấp độ kiểm thử tương ứng** để Verification và Validation. Ưu điểm lớn nhất là kiểm thử được **lên kế hoạch từ rất sớm (Shift-left)**; nhược điểm là thiếu linh hoạt trước thay đổi yêu cầu. Đáp án a sai vì Waterfall thuần túy xem kiểm thử là giai đoạn nằm sau lập trình, không có sự tương ứng từng cặp.",
+    "answerKey": "The correct answer is: Mô hình V-Model – sự mở rộng của Waterfall, mỗi giai đoạn phát triển có cấp độ kiểm thử tương ứng, kiểm thử được lên kế hoạch từ sớm (Shift-left)"
+  },
+  {
+    "id": "exam1-014",
+    "deck": "exam1",
+    "number": 14,
+    "type": "single",
+    "stem": "Dự án áp dụng V-Model. Theo tinh thần Shift-left của mô hình này, **kế hoạch và test case cho kiểm thử chấp nhận (Acceptance Testing)** nên được chuẩn bị vào thời điểm nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Sau khi lập trình xong toàn bộ hệ thống",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Song song với giai đoạn kiểm thử hệ thống",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Ngay từ giai đoạn phân tích yêu cầu, vì mỗi giai đoạn phát triển có cấp độ kiểm thử tương ứng được lên kế hoạch sớm",
+        "isCorrect": true,
+        "note": "(Chính xác. Ưu điểm của V-Model là kiểm thử được lên kế hoạch từ rất sớm – acceptance test tương ứng với giai đoạn yêu cầu.)"
+      },
+      {
+        "key": "d",
+        "text": "Chỉ khi khách hàng yêu cầu nghiệm thu",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Trong V-Model, nhánh bên trái (phát triển) và nhánh bên phải (kiểm thử) tương ứng từng cặp: **yêu cầu ↔ acceptance testing**, thiết kế hệ thống ↔ system testing, thiết kế chi tiết ↔ integration testing, code ↔ unit testing. Nhờ đó, test case cho acceptance testing có thể được thiết kế **ngay từ khi có tài liệu yêu cầu**, thay vì đợi đến cuối dự án – đó chính là Shift-left.",
+    "answerKey": "The correct answer is: Ngay từ giai đoạn phân tích yêu cầu, vì mỗi giai đoạn phát triển có cấp độ kiểm thử tương ứng được lên kế hoạch sớm"
+  },
+  {
+    "id": "exam1-015",
+    "deck": "exam1",
+    "number": 15,
+    "type": "single",
+    "stem": "Một công ty làm phần mềm theo mô hình tuần tự. Giữa chừng, khách hàng liên tục thay đổi yêu cầu về cách tính chiết khấu, khiến team phải quay lại sửa thiết kế và code nhiều lần, tiến độ trễ nghiêm trọng. Theo slide Chương 2, đây là nhược điểm của mô hình nào và bài học rút ra là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Nhược điểm của Agile, vì Agile không có tài liệu yêu cầu",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Nhược điểm của V-Model – mở rộng của Waterfall: thiếu linh hoạt, khó phản ứng với sự thay đổi yêu cầu giữa chừng",
+        "isCorrect": true,
+        "note": "(Chính xác. Slide nêu rõ nhược điểm của V-Model là thiếu linh hoạt trước thay đổi yêu cầu.)"
+      },
+      {
+        "key": "c",
+        "text": "Nhược điểm của kiểm thử hộp đen, vì không nhìn thấy code",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Không phải nhược điểm mô hình mà do tester làm việc kém",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Slide Chương 2 nêu rõ nhược điểm của **V-Model**: **thiếu linh hoạt, khó phản ứng với sự thay đổi yêu cầu giữa chừng**. Với dự án có yêu cầu biến động mạnh, mô hình lặp và tăng dần (Agile/Scrum) với các sprint ngắn 2–4 tuần sẽ phù hợp hơn. Đáp án a sai vì Agile sinh ra chính để thích ứng với thay đổi.",
+    "answerKey": "The correct answer is: Nhược điểm của V-Model – mở rộng của Waterfall: thiếu linh hoạt, khó phản ứng với sự thay đổi yêu cầu giữa chừng"
+  },
+  {
+    "id": "exam1-016",
+    "deck": "exam1",
+    "number": 16,
+    "type": "single",
+    "stem": "Trong team Scrum phát triển app giao đồ ăn (sprint 2 tuần), tester Bình có thói quen đợi developer code xong hết tính năng rồi mới bắt đầu viết test case và kiểm thử. Theo slide về **vai trò của Tester trong Agile**, thói quen này có vấn đề gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Không có vấn đề, vì kiểm thử theo định nghĩa là giai đoạn sau lập trình",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Sai, vì tester Agile không được đợi code xong mới test mà phải làm việc cùng Product Owner và Developer hàng ngày",
+        "isCorrect": true,
+        "note": "(Chính xác. Slide: \"Không đợi code xong mới test. Phải làm việc cùng Product Owner và Developer hàng ngày.\")"
+      },
+      {
+        "key": "c",
+        "text": "Sai, vì trong Agile không cần tester, developer tự test là đủ",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Đúng, vì sprint chỉ kéo dài 2 tuần nên phải test dồn vào cuối",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Trong Agile/Scrum, tính năng được đóng gói và giao liên tục qua các sprint ngắn (2–4 tuần). Tester **không đợi code xong mới test** mà tham gia từ sớm: cùng PO làm rõ yêu cầu, cùng dev thống nhất tiêu chí hoàn thành, test ngay khi có bản dựng. Thói quen \"đợi code xong\" là tư duy Waterfall, sẽ khiến kiểm thử không bao giờ theo kịp tốc độ sprint.",
+    "answerKey": "The correct answer is: Sai, vì tester Agile không được đợi code xong mới test mà phải làm việc cùng Product Owner và Developer hàng ngày"
+  },
+  {
+    "id": "exam1-017",
+    "deck": "exam1",
+    "number": 17,
+    "type": "multiple",
+    "stem": "Chọn **HAI** phát biểu **đúng** về thách thức và \"giải pháp sinh tồn\" của kiểm thử trong Agile/Scrum theo slide Chương 2.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tài liệu yêu cầu (Requirement) thường không đầy đủ và thay đổi liên tục",
+        "isCorrect": true,
+        "note": "(Đúng – đây là thách thức được nêu trong slide.)"
+      },
+      {
+        "key": "b",
+        "text": "Bắt buộc phải áp dụng kiểm thử tự động (Automation Testing) để theo kịp tốc độ kiểm thử hồi quy của CI/CD Pipelines",
+        "isCorrect": true,
+        "note": "(Đúng – đây là \"giải pháp sinh tồn\" trong slide.)"
+      },
+      {
+        "key": "c",
+        "text": "Tester nên đợi đến cuối sprint mới kiểm thử một lần cho hiệu quả",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Trong Agile không cần kiểm thử hồi quy vì mỗi sprint đều là tính năng mới",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Slide nêu rõ thách thức của Agile: **tài liệu thường không đầy đủ và thay đổi liên tục**; và giải pháp sinh tồn: **bắt buộc áp dụng kiểm thử tự động** để theo kịp tốc độ hồi quy của CI/CD. Đáp án c đi ngược vai trò tester Agile (phải test liên tục, không đợi cuối sprint); đáp án d sai vì thay đổi liên tục càng khiến hồi quy trở nên quan trọng.",
+    "answerKey": "The correct answers are: Tài liệu yêu cầu (Requirement) thường không đầy đủ và thay đổi liên tục, Bắt buộc phải áp dụng kiểm thử tự động (Automation Testing) để theo kịp tốc độ kiểm thử hồi quy của CI/CD Pipelines"
+  },
+  {
+    "id": "exam1-018",
+    "deck": "exam1",
+    "number": 18,
+    "type": "multiple",
+    "stem": "Chọn **HAI** phát biểu **đúng** về Stub và Mock khi kiểm thử đơn vị (theo slide Chương 2).",
+    "options": [
+      {
+        "key": "a",
+        "text": "Stub trả về dữ liệu cứng (hardcode) để thay thế thành phần phụ thuộc chưa hoàn thiện",
+        "isCorrect": true,
+        "note": "(Đúng – đúng định nghĩa Stub trong slide.)"
+      },
+      {
+        "key": "b",
+        "text": "Mock kiểm tra hành vi, ví dụ hàm có được gọi đúng tham số không",
+        "isCorrect": true,
+        "note": "(Đúng – đúng định nghĩa Mock trong slide.)"
+      },
+      {
+        "key": "c",
+        "text": "Stub dùng để kiểm tra xem hàm có được gọi đúng số lần không",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Mock và Stub là một, không có sự khác biệt nào",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Khi unit test, các thành phần phụ thuộc chưa hoàn thiện được thay bằng đối tượng giả lập: **Stub** trả về dữ liệu cứng (hardcode) – ví dụ minh họa trong slide dùng `jest.fn().mockReturnValue({status: 1})` để giả lập API; **Mock** còn kiểm tra **hành vi** – hàm có được gọi không, gọi với tham số nào. Đáp án c mô tả Mock nhưng gán cho Stub nên sai.",
+    "answerKey": "The correct answers are: Stub trả về dữ liệu cứng (hardcode) để thay thế thành phần phụ thuộc chưa hoàn thiện, Mock kiểm tra hành vi, ví dụ hàm có được gọi đúng tham số không"
+  },
+  {
+    "id": "exam1-019",
+    "deck": "exam1",
+    "number": 19,
+    "type": "single",
+    "stem": "Hàm `tinhHocPhi(tinChi, donGia)` là một hàm độc lập trong module tài chính. Để kiểm thử đơn vị (Unit Testing) cho hàm này theo đúng slide Chương 2, ai là người phù hợp nhất để thực hiện và với cách tiếp cận nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tester thực hiện kiểm thử hộp đen dựa trên tài liệu yêu cầu",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Khách hàng thực hiện kiểm thử chấp nhận trên môi trường thật",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Developer thực hiện, có thể áp dụng TDD (Test Driven Development), cô lập hàm để kiểm tra riêng",
+        "isCorrect": true,
+        "note": "(Chính xác. Slide: Unit test thường do Developer thực hiện, áp dụng TDD, mục tiêu cô lập từng thành phần nhỏ nhất.)"
+      },
+      {
+        "key": "d",
+        "text": "Tester thực hiện kiểm thử hệ thống trên môi trường staging",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "**Kiểm thử đơn vị** có mục tiêu **cô lập và kiểm tra từng thành phần mã nguồn nhỏ nhất** (hàm, phương thức, lớp) và **thường do Developer thực hiện** (áp dụng TDD). Đáp án a nhầm với kiểm thử chức năng ở cấp hệ thống; đáp án d là system testing – kiểm tra toàn bộ hệ thống đã lắp ráp hoàn chỉnh.",
+    "answerKey": "The correct answer is: Developer thực hiện, có thể áp dụng TDD (Test Driven Development), cô lập hàm để kiểm tra riêng"
+  },
+  {
+    "id": "exam1-020",
+    "deck": "exam1",
+    "number": 20,
+    "type": "single",
+    "stem": "Ứng dụng bán hàng của công ty gọi sang **API thanh toán của MoMo** để xử lý giao dịch. Team kiểm thử muốn kiểm tra luồng dữ liệu và sự giao tiếp giữa app và cổng thanh toán này. Theo slide Chương 2, đây thuộc mức độ tích hợp nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử đơn vị, vì chỉ kiểm tra một API",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Component Integration, vì MoMo là một component của hệ thống",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử hệ thống, vì đã có sự tham gia của người dùng cuối",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "System Integration – tích hợp giữa các hệ thống khác nhau (app mua hàng gọi sang API thanh toán của MoMo/VNPAY)",
+        "isCorrect": true,
+        "note": "(Chính xác. Đây là ví dụ nguyên văn trong slide cho System Integration.)"
+      }
+    ],
+    "explanation": "Slide phân biệt hai mức độ: **Component Integration** – tích hợp các module trong cùng một hệ thống (VD: Controller gọi tới Database); **System Integration** – tích hợp giữa các hệ thống khác nhau, và ví dụ nguyên văn là *\"App mua hàng gọi sang API thanh toán của MoMo/VNPAY\"*. Đáp án b sai vì MoMo là hệ thống độc lập bên ngoài, không phải module nội bộ.",
+    "answerKey": "The correct answer is: System Integration – tích hợp giữa các hệ thống khác nhau (app mua hàng gọi sang API thanh toán của MoMo/VNPAY)"
+  },
+  {
+    "id": "exam1-021",
+    "deck": "exam1",
+    "number": 21,
+    "type": "single",
+    "stem": "Team có 5 module đã code xong. Test lead quyết định **gộp tất cả 5 module lại một lần rồi mới kiểm thử** sự giao tiếp giữa chúng. Đây là chiến lược tích hợp nào trong các chiến lược được liệt kê ở slide Chương 2?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Top-down, vì tích hợp từ module trên cùng xuống",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Bottom-up, vì tích hợp từ module dưới cùng lên",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Big Bang – tích hợp toàn bộ các module cùng một lúc rồi kiểm thử",
+        "isCorrect": true,
+        "note": "(Chính xác. Big Bang là chiến lược gộp tất cả module lại rồi test một lần.)"
+      },
+      {
+        "key": "d",
+        "text": "V-Model, vì đây là mô hình phát triển tương ứng",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Slide Chương 2 liệt kê các chiến lược tích hợp phổ biến: **Top-down** (tích hợp dần từ trên xuống), **Bottom-up** (tích hợp dần từ dưới lên), **Big Bang** (tích hợp tất cả cùng lúc rồi mới test). Việc gộp 5 module một lần rồi mới kiểm thử chính là Big Bang – nhanh nhưng khi có lỗi sẽ khó xác định lỗi nằm ở điểm giao tiếp nào.",
+    "answerKey": "The correct answer is: Big Bang – tích hợp toàn bộ các module cùng một lúc rồi kiểm thử"
+  },
+  {
+    "id": "exam1-022",
+    "deck": "exam1",
+    "number": 22,
+    "type": "single",
+    "stem": "Sau khi tất cả module đã được tích hợp, team triển khai toàn bộ hệ thống thương mại điện tử lên **môi trường Staging được cấu hình giống hệt Production**, rồi cho tester đi trọn luồng end-to-end: đăng ký → tìm hàng → đặt hàng → thanh toán, dưới góc nhìn của người mua hàng thực tế. Đây là cấp độ kiểm thử nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử tích hợp, vì các module đã được gộp lại",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử hệ thống (System Testing) – kiểm tra toàn bộ hệ thống đã lắp ráp hoàn chỉnh, dưới góc nhìn end-user, trên môi trường giống Production nhất có thể",
+        "isCorrect": true,
+        "note": "(Chính xác. Đúng cả 3 dấu hiệu của System Testing trong slide.)"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử đơn vị, vì mỗi bước trong luồng được test riêng",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử chấp nhận, vì đã có góc nhìn của người dùng cuối",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "**System Testing**: mục tiêu kiểm tra **toàn bộ hệ thống sau khi lắp ráp hoàn chỉnh**, đứng từ **góc độ người dùng cuối (end-to-end)**, và cần môi trường test (Staging) **giống hệt Production** nhất có thể. Đáp án d sai vì acceptance testing là do khách hàng/người dùng cuối trực tiếp nghiệm thu, còn ở đây người thực hiện vẫn là tester.",
+    "answerKey": "The correct answer is: Kiểm thử hệ thống (System Testing) – kiểm tra toàn bộ hệ thống đã lắp ráp hoàn chỉnh, dưới góc nhìn end-user, trên môi trường giống Production nhất có thể"
+  },
+  {
+    "id": "exam1-023",
+    "deck": "exam1",
+    "number": 23,
+    "type": "single",
+    "stem": "Công ty phát hành bản beta của app học tiếng Anh cho **200 người dùng thực tế bên ngoài** đăng ký dùng thử trước, để thu thập phản hồi trước khi phát hành chính thức. Theo phân loại Acceptance Testing trong slide, đây là loại kiểm thử nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "UAT (User Acceptance Testing), vì có người dùng tham gia",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Alpha Testing, vì đây là vòng kiểm thử trước khi release",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử hệ thống, vì test toàn bộ hệ thống",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Beta Testing – mở cho một nhóm nhỏ người dùng thực tế bên ngoài sử dụng trước để thu thập phản hồi (Early access)",
+        "isCorrect": true,
+        "note": "(Chính xác. Đúng định nghĩa Beta Testing trong slide.)"
+      }
+    ],
+    "explanation": "Slide phân biệt: **UAT** – khách hàng/người dùng cuối trực tiếp dùng thử để nghiệm thu; **Alpha Testing** – người dùng **nội bộ** (nhân viên công ty) test ở môi trường dev/test; **Beta Testing** – mở cho nhóm nhỏ **người dùng thực tế bên ngoài** dùng trước để thu thập phản hồi. Tình huống có 200 người dùng thật bên ngoài → Beta.",
+    "answerKey": "The correct answer is: Beta Testing – mở cho một nhóm nhỏ người dùng thực tế bên ngoài sử dụng trước để thu thập phản hồi (Early access)"
+  },
+  {
+    "id": "exam1-024",
+    "deck": "exam1",
+    "number": 24,
+    "type": "multiple",
+    "stem": "Chọn **các** loại kiểm thử thuộc nhóm **Non-functional** (phi chức năng) theo phân loại Test Types trong slide Chương 2. Biết rằng Functional trả lời \"hệ thống **làm cái gì**\", còn Non-functional trả lời \"hệ thống **làm tốt thế nào**\".",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử chịu tải với 10.000 người dùng truy cập đồng thời",
+        "isCorrect": true,
+        "note": "(Đúng – Performance/Load là non-functional.)"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử bảo mật: ngăn chặn tấn công SQL Injection vào form đăng nhập",
+        "isCorrect": true,
+        "note": "(Đúng – Security là non-functional.)"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử tính đúng đắn của công thức tính tiền học phí",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Đánh giá mức độ dễ sử dụng (Usability) của giao diện đăng ký",
+        "isCorrect": true,
+        "note": "(Đúng – Usability là non-functional.)"
+      }
+    ],
+    "explanation": "**Functional** kiểm tra hệ thống *làm cái gì* (tính toán, luồng nghiệp vụ – như đáp án c). **Non-functional** kiểm tra hệ thống *làm tốt thế nào*: Performance, Load, Security, Usability. Vì vậy a (tải), b (bảo mật), d (dễ sử dụng) đều là non-functional; c là functional.",
+    "answerKey": "The correct answers are: Kiểm thử chịu tải với 10.000 người dùng truy cập đồng thời, Kiểm thử bảo mật: ngăn chặn tấn công SQL Injection vào form đăng nhập, Đánh giá mức độ dễ sử dụng (Usability) của giao diện đăng ký"
+  },
+  {
+    "id": "exam1-025",
+    "deck": "exam1",
+    "number": 25,
+    "type": "single",
+    "stem": "Tester đọc mã nguồn của hàm `xepLoai(diem)`, vẽ sơ đồ các nhánh `if-else` rồi thiết kế test case sao cho mọi dòng lệnh trong hàm đều được thực thi ít nhất một lần (Statement coverage). Đây là loại kiểm thử nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử hộp đen, vì dựa trên yêu cầu xếp loại",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử tĩnh, vì có đọc mã nguồn mà không chạy",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "White-box (hộp trắng) – test dựa trên cấu trúc code bên trong, ví dụ phủ lệnh (Statement coverage)",
+        "isCorrect": true,
+        "note": "(Chính xác. Đúng định nghĩa White-box trong slide.)"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử chấp nhận, vì kiểm tra yêu cầu người dùng",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "**White-box**: test **dựa trên cấu trúc code**, trả lời \"hệ thống được xây dựng thế nào\", với kỹ thuật điển hình là **phủ lệnh (Statement coverage)**. Vì tester phải đọc và phân tích mã nguồn nên đây là hộp trắng. Đáp án b sai vì ở đây tester vẫn **thực thi** test case (đo độ phủ), không chỉ đọc code.",
+    "answerKey": "The correct answer is: White-box (hộp trắng) – test dựa trên cấu trúc code bên trong, ví dụ phủ lệnh (Statement coverage)"
+  },
+  {
+    "id": "exam1-026",
+    "deck": "exam1",
+    "number": 26,
+    "type": "single",
+    "stem": "Tester nhận tài liệu đặc tả của chức năng \"Quên mật khẩu\" và thiết kế toàn bộ test case chỉ dựa trên đặc tả này, **không hề mở mã nguồn** để xem cài đặt bên trong. Cách tiếp cận này được gọi là gì và nó trả lời câu hỏi nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "White-box – trả lời \"hệ thống được xây dựng thế nào\"",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Black-box (hộp đen) – dựa trên tài liệu yêu cầu, trả lời \"hệ thống làm gì\"",
+        "isCorrect": true,
+        "note": "(Chính xác. Đúng định nghĩa Black-box trong slide.)"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử tĩnh – vì không thực thi mã nguồn",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử hồi quy – vì kiểm tra lại chức năng cũ",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "**Black-box**: thiết kế test **dựa trên tài liệu yêu cầu** (Requirements/Specifications) mà không quan tâm cấu trúc bên trong, trả lời câu hỏi **\"Hệ thống làm gì?\"**. Đáp án c sai vì tester vẫn thực thi test case trên phần mềm đang chạy (kiểm thử động), chỉ là không nhìn vào code.",
+    "answerKey": "The correct answer is: Black-box (hộp đen) – dựa trên tài liệu yêu cầu, trả lời \"hệ thống làm gì\""
+  },
+  {
+    "id": "exam1-027",
+    "deck": "exam1",
+    "number": 27,
+    "type": "single",
+    "stem": "Sau khi developer sửa lỗi \"không đăng nhập được khi mật khẩu có ký tự đặc biệt\", tester chạy lại **đúng test case đã phát hiện ra lỗi đó** để xác nhận lỗi đã được sửa, sau đó chạy tiếp bộ test case của toàn module \"Tài khoản\" để đảm bảo việc sửa lỗi không làm hỏng chức năng khác. Hai hoạt động này lần lượt là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Cả hai đều là Regression Test",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Cả hai đều là Confirmation Test",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Lần 1 là Regression Test, lần 2 là Confirmation Test",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Lần 1 là Confirmation Test (Re-test) – kiểm tra lại lỗi đã sửa; lần 2 là Regression Test – đảm bảo thay đổi không phá vỡ chức năng cũ",
+        "isCorrect": true,
+        "note": "(Chính xác. Đúng phân biệt Change-related testing trong slide.)"
+      }
+    ],
+    "explanation": "Nhóm **Change-related** gồm: **Confirmation Test (Re-test)** – chạy lại test case của chính bug vừa fix để xác nhận đã sửa đúng; **Regression Test (Hồi quy)** – chạy lại các test liên quan để đảm bảo thay đổi code không gây lỗi mới ở chức năng cũ. Thứ tự đúng trong tình huống: re-test trước, hồi quy sau.",
+    "answerKey": "The correct answer is: Lần 1 là Confirmation Test (Re-test) – kiểm tra lại lỗi đã sửa; lần 2 là Regression Test – đảm bảo thay đổi không phá vỡ chức năng cũ"
+  },
+  {
+    "id": "exam1-028",
+    "deck": "exam1",
+    "number": 28,
+    "type": "single",
+    "stem": "Hệ thống bán vé đã chạy ổn định trên Production được 1 năm. Nay công ty **nâng cấp server cơ sở dữ liệu** lên phiên bản mới (không thay đổi tính năng). Theo slide Chương 2, team kiểm thử cần làm gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Không cần kiểm thử vì không thay đổi tính năng nào",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Chỉ kiểm thử đơn vị cho các hàm truy vấn dữ liệu",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Thực hiện kiểm thử bảo trì (Maintenance Testing) – trường hợp thay đổi môi trường (Environmental), và bắt buộc phân tích tác động (Impact Analysis) để quyết định phạm vi kiểm thử hồi quy",
+        "isCorrect": true,
+        "note": "(Chính xác. Nâng cấp môi trường là một trong 3 trigger của maintenance testing; impact analysis là yêu cầu bắt buộc.)"
+      },
+      {
+        "key": "d",
+        "text": "Thực hiện kiểm thử chấp nhận Alpha với nhân viên công ty",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "**Kiểm thử bảo trì** được kích hoạt khi hệ thống đã live, với 3 trường hợp: **Bổ sung** tính năng mới (Enhancement), **Sửa lỗi** khẩn cấp (Corrective), **Thay đổi môi trường** (Environmental – như nâng cấp OS, đổi server, chuyển CSDL). Nâng cấp server CSDL thuộc trường hợp thứ ba, và slide yêu cầu **bắt buộc phân tích tác động (Impact Analysis)** để quyết định phạm vi hồi quy hiệu quả, tránh test mù quáng.",
+    "answerKey": "The correct answer is: Thực hiện kiểm thử bảo trì (Maintenance Testing) – trường hợp thay đổi môi trường (Environmental), và bắt buộc phân tích tác động (Impact Analysis) để quyết định phạm vi kiểm thử hồi quy"
+  },
+  {
+    "id": "exam1-029",
+    "deck": "exam1",
+    "number": 29,
+    "type": "single",
+    "stem": "Team tổ chức một buổi họp để **đọc và rà soát tài liệu đặc tả yêu cầu** của module đăng ký học phần, phát hiện 3 điểm mâu thuẫn trước khi developer viết code. Hoạt động này thuộc loại kiểm thử nào và đặc điểm của nó là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử động, vì đã phát hiện ra lỗi trong tài liệu",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử tĩnh (Static Testing) – KHÔNG thực thi mã nguồn, áp dụng cho tài liệu yêu cầu, thiết kế và code review",
+        "isCorrect": true,
+        "note": "(Chính xác. Đúng định nghĩa kiểm thử tĩnh trong slide.)"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử hộp trắng, vì đã đọc kỹ tài liệu kỹ thuật",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử chấp nhận, vì rà soát yêu cầu của khách hàng",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "**Kiểm thử tĩnh KHÔNG thực thi mã nguồn** và áp dụng được cho **tài liệu yêu cầu, bản thiết kế, mã nguồn (code review)** – tức là kiểm thử được cả khi chưa có code để chạy. Buổi rà soát tài liệu đặc tả chính là kiểm thử tĩnh. Đáp án a sai vì \"động\" đòi hỏi phải thực thi phần mềm.",
+    "answerKey": "The correct answer is: Kiểm thử tĩnh (Static Testing) – KHÔNG thực thi mã nguồn, áp dụng cho tài liệu yêu cầu, thiết kế và code review"
+  },
+  {
+    "id": "exam1-030",
+    "deck": "exam1",
+    "number": 30,
+    "type": "single",
+    "stem": "Trong buổi review tài liệu thiết kế, reviewer phát hiện: màn hình \"Thanh toán\" yêu cầu nhập \"Số thẻ 16 chữ số\" nhưng tài liệu luồng nghiệp vụ lại ghi \"hỗ trợ cả thẻ 15 chữ số\". Theo bảng so sánh Static vs Dynamic trong slide, việc phát hiện này có ý nghĩa gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Đây là kiểm thử động vì đã tìm ra Failure của hệ thống thanh toán",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Đây là kiểm thử hiệu năng vì liên quan đến định dạng dữ liệu thẻ",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Đây là kiểm thử tĩnh, phát hiện trực tiếp Defect (nguyên nhân gốc rễ) thay vì đợi nó bộc lộ thành Failure khi chạy",
+        "isCorrect": true,
+        "note": "(Chính xác. Static phát hiện Defect trực tiếp; Dynamic phát hiện Failure – hậu quả bộc lộ ra ngoài.)"
+      },
+      {
+        "key": "d",
+        "text": "Phát hiện này không có giá trị vì tài liệu chưa phải là sản phẩm",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Bảng so sánh trong slide: **kiểm thử tĩnh phát hiện Defect trực tiếp (nguyên nhân gốc rễ)**, còn **kiểm thử động phát hiện Failure (hậu quả của Defect khi bộc lộ ra ngoài)**. Mâu thuẫn trong tài liệu thiết kế chính là một Defect ở dạng \"thai nghén\" – nếu không bắt ở đây, nó sẽ biến thành Failure khi người dùng nhập thẻ 15 số mà hệ thống từ chối.",
+    "answerKey": "The correct answer is: Đây là kiểm thử tĩnh, phát hiện trực tiếp Defect (nguyên nhân gốc rễ) thay vì đợi nó bộc lộ thành Failure khi chạy"
+  },
+  {
+    "id": "exam1-031",
+    "deck": "exam1",
+    "number": 31,
+    "type": "single",
+    "stem": "Hai cách phát hiện cùng một lỗi sai công thức tính điểm: **Cách A** – reviewer phát hiện khi đọc tài liệu thiết kế, sửa mất 5 phút; **Cách B** – phát hiện khi hệ thống đã release, phải sửa code, build lại, test lại và phát hành bản vá, tốn 3 ngày công. Ví dụ này minh họa giá trị nào của kiểm thử tĩnh?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử tĩnh giúp loại bỏ hoàn toàn nhu cầu kiểm thử động",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử tĩnh chỉ có giá trị với tài liệu, không áp dụng cho code",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử tĩnh giúp tự động hóa toàn bộ quy trình kiểm thử",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Giá trị Shift-Left: phát hiện lỗi cực sớm và tiết kiệm chi phí khổng lồ – sửa một dòng trong tài liệu rẻ hơn hàng trăm lần so với sửa code, build lại và test lại",
+        "isCorrect": true,
+        "note": "(Chính xác. Đúng 2 giá trị đầu tiên của kiểm thử tĩnh trong slide.)"
+      }
+    ],
+    "explanation": "Slide nêu các giá trị của kiểm thử tĩnh (Shift-Left): **phát hiện lỗi cực sớm** (trước cả khi code được viết, qua review tài liệu thiết kế) và **tiết kiệm chi phí khổng lồ** – sửa một dòng chữ trong tài liệu rẻ hơn hàng trăm lần so với sửa code, build lại hệ thống và test lại từ đầu. Đây cũng chính là lý do \"lỗi phát hiện càng muộn, chi phí khắc phục càng tăng theo cấp số nhân\".",
+    "answerKey": "The correct answer is: Giá trị Shift-Left: phát hiện lỗi cực sớm và tiết kiệm chi phí khổng lồ – sửa một dòng trong tài liệu rẻ hơn hàng trăm lần so với sửa code, build lại và test lại"
+  },
+  {
+    "id": "exam1-032",
+    "deck": "exam1",
+    "number": 32,
+    "type": "single",
+    "stem": "Đoạn code sau được đưa vào kiểm thử nhưng **chưa bao giờ được chạy**:\n\n```javascript\nfunction processData(userInput) {\n  const apiKey = \"12345-ABCDE\";   // khóa API ghi cứng trong code\n  let dataList = [];\n  return userInput.toUpperCase();\n  console.log(\"Done!\");           // dòng này không bao giờ chạy tới\n}\n```\n\nTheo slide Chương 3, đây là ví dụ cho nhóm lỗi mà **kiểm thử tĩnh tìm ra nhưng kiểm thử động khó thấy**. Các lỗi trong đoạn code gồm:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Chỉ có lỗi cú pháp, vì code chưa được biên dịch",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Biến `apiKey` ghi cứng gây rủi ro bảo mật, biến `dataList` không dùng đến (code rác), và dòng `console.log` sau `return` là unreachable code",
+        "isCorrect": true,
+        "note": "(Chính xác. Đúng 3 cảnh báo trong kết quả quét ESLint/SonarQube của slide.)"
+      },
+      {
+        "key": "c",
+        "text": "Lỗi logic tính toán sai kết quả của `toUpperCase`",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Không có lỗi nào vì code vẫn chạy đúng chức năng chính",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Slide liệt kê những lỗi mà kiểm thử tĩnh phát hiện còn kiểm thử động khó thấy: **lỗ hổng bảo mật** (hardcoded credential), **code khó bảo trì**, **biến chưa sử dụng**, **vòng lặp vô hạn**... Kết quả quét mẫu trong slide chỉ rõ: `no-unused-vars` (apiKey, dataList), `no-hardcoded-credentials` (rủi ro bảo mật), `no-unreachable` (code sau return không bao giờ chạy tới). Đáp án d sai vì \"chạy đúng chức năng chính\" không có nghĩa là không có defect.",
+    "answerKey": "The correct answer is: Biến `apiKey` ghi cứng gây rủi ro bảo mật, biến `dataList` không dùng đến (code rác), và dòng `console.log` sau `return` là unreachable code"
+  },
+  {
+    "id": "exam1-033",
+    "deck": "exam1",
+    "number": 33,
+    "type": "multiple",
+    "stem": "Chọn **HAI** phát biểu **đúng** về các vai trò trong một buổi Review chính thức theo slide Chương 3.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Scribe (Thư ký): ghi chép lại các lỗi được tìm thấy và các quyết định đưa ra",
+        "isCorrect": true,
+        "note": "(Đúng – đúng định nghĩa vai trò Scribe trong slide.)"
+      },
+      {
+        "key": "b",
+        "text": "Moderator/Facilitator (Người điều phối): dẫn dắt buổi review, đảm bảo đúng tiến độ và hiệu quả",
+        "isCorrect": true,
+        "note": "(Đúng – đúng định nghĩa vai trò Moderator trong slide.)"
+      },
+      {
+        "key": "c",
+        "text": "Author (Tác giả): là người quyết định việc thực hiện review và phân bổ thời gian",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Reviewer (Người đánh giá): là người viết ra tài liệu/code được review",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Các vai trò trong review chính thức: **Author** – người viết tài liệu/code, giải thích và sửa lỗi sau review; **Moderator** – dẫn dắt buổi review, đảm bảo tiến độ và hiệu quả; **Reviewer** – kiểm tra tài liệu, tìm lỗi (có thể là Dev, Tester, BA); **Scribe** – ghi chép lỗi và quyết định; **Manager** – quyết định việc thực hiện review, phân bổ thời gian. Đáp án c mô tả Manager nhưng gán cho Author; đáp án d mô tả Author nhưng gán cho Reviewer.",
+    "answerKey": "The correct answers are: Scribe (Thư ký): ghi chép lại các lỗi được tìm thấy và các quyết định đưa ra, Moderator/Facilitator (Người điều phối): dẫn dắt buổi review, đảm bảo đúng tiến độ và hiệu quả"
+  },
+  {
+    "id": "exam1-034",
+    "deck": "exam1",
+    "number": 34,
+    "type": "single",
+    "stem": "Developer Mai viết xong một hàm xử lý chuỗi, cô quay sang **nhờ đồng nghiệp ngồi cạnh xem hộ** đoạn code trong 10 phút để bắt lỗi sơ suất. Theo phân loại 4 loại hình Review trong slide, đây là loại nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Inspection, vì có người khác kiểm tra code",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Walkthrough, vì đồng nghiệp đi qua từng dòng code",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Informal Review – review không chính thức, ví dụ Pair programming / Buddy check",
+        "isCorrect": true,
+        "note": "(Chính xác. Đúng định nghĩa Informal Review trong slide.)"
+      },
+      {
+        "key": "d",
+        "text": "Technical Review, vì đây là đánh giá kỹ thuật",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Bốn loại hình review từ không chính thức đến chính thức: **Informal Review** (nhờ đồng nghiệp ngồi cạnh xem hộ – Pair programming/Buddy check), **Walkthrough** (tác giả dẫn dắt team đi qua tài liệu), **Technical Review** (chuyên gia đánh giá tính khả thi của thiết kế), **Inspection** (khắt khe nhất, có Moderator, theo checklist). Việc \"nhờ người ngồi cạnh xem hộ\" chính là ví dụ nguyên văn của Informal Review.",
+    "answerKey": "The correct answer is: Informal Review – review không chính thức, ví dụ Pair programming / Buddy check"
+  },
+  {
+    "id": "exam1-035",
+    "deck": "exam1",
+    "number": 35,
+    "type": "single",
+    "stem": "Trong buổi họp review bản thiết kế module \"Điểm danh bằng QR\", chính **tác giả của bản thiết kế** là người **dẫn dắt cả team đi qua từng phần** của tài liệu, vừa giải thích ý tưởng vừa thu thập ý kiến đóng góp. Đây là loại hình review nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Informal Review, vì không khí buổi họp khá thoải mái",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Walkthrough – tác giả dẫn dắt team đi qua từng phần của tài liệu/code để giải thích và thu thập ý kiến",
+        "isCorrect": true,
+        "note": "(Chính xác. Đúng định nghĩa Walkthrough trong slide.)"
+      },
+      {
+        "key": "c",
+        "text": "Inspection, vì có cả team tham gia",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Technical Review, vì tài liệu này mang tính kỹ thuật",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Điểm nhận dạng của **Walkthrough**: **chính tác giả** là người dẫn dắt, mục đích là **giải thích và thu thập ý kiến** (mang tính giáo dục, tìm hiểu). Khác với Inspection – nơi reviewer đã đọc trước tài liệu và buổi họp tập trung vào việc **tìm lỗi theo checklist** dưới sự điều phối của Moderator.",
+    "answerKey": "The correct answer is: Walkthrough – tác giả dẫn dắt team đi qua từng phần của tài liệu/code để giải thích và thu thập ý kiến"
+  },
+  {
+    "id": "exam1-036",
+    "deck": "exam1",
+    "number": 36,
+    "type": "single",
+    "stem": "Trước khi triển khai kiến trúc microservices cho hệ thống ngân hàng, công ty mời một nhóm **chuyên gia kỹ thuật** độc lập đánh giá xem **giải pháp thiết kế có khả thi không**, có đáp ứng được yêu cầu về hiệu năng và bảo mật hay không. Đây là loại hình review nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Informal Review, vì chỉ là đánh giá sơ bộ",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Walkthrough, vì các chuyên gia đi qua từng phần thiết kế",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử đơn vị, vì đánh giá từng thành phần kiến trúc",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Technical Review – các chuyên gia kỹ thuật đánh giá xem giải pháp thiết kế có khả thi không",
+        "isCorrect": true,
+        "note": "(Chính xác. Đúng định nghĩa Technical Review trong slide.)"
+      }
+    ],
+    "explanation": "**Technical Review**: các **chuyên gia kỹ thuật** đánh giá xem **giải pháp thiết kế có khả thi không** (về mặt kỹ thuật, hiệu năng, bảo mật...). Khác với Walkthrough (tác giả dẫn dắt để giải thích) và Inspection (quy trình khắt khe nhất, có Moderator điều phối, dựa trên checklist tiêu chuẩn).",
+    "answerKey": "The correct answer is: Technical Review – các chuyên gia kỹ thuật đánh giá xem giải pháp thiết kế có khả thi không"
+  },
+  {
+    "id": "exam1-037",
+    "deck": "exam1",
+    "number": 37,
+    "type": "single",
+    "stem": "Đối với module tính lãi suất tiền gửi – phần cốt lõi và rủi ro cao nhất của hệ thống ngân hàng – công ty tổ chức một buổi review **khắt khe nhất**: có **Moderator điều phối**, reviewer đọc trước tài liệu và rà soát theo **checklist tiêu chuẩn** từng mục. Đây là loại hình review nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Informal Review",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Walkthrough",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Inspection – quy trình khắt khe nhất, có Moderator điều phối, dựa trên các checklist tiêu chuẩn",
+        "isCorrect": true,
+        "note": "(Chính xác. Đúng định nghĩa Inspection trong slide.)"
+      },
+      {
+        "key": "d",
+        "text": "Technical Review",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "**Inspection (Thanh tra)** là loại hình review **khắt khe và chính thức nhất** trong 4 loại: có **Moderator điều phối**, reviewer chuẩn bị trước, và việc tìm lỗi dựa trên **checklist tiêu chuẩn**. Nó thường được dành cho các tài liệu/code có rủi ro cao như module tính lãi suất trong tình huống này.",
+    "answerKey": "The correct answer is: Inspection – quy trình khắt khe nhất, có Moderator điều phối, dựa trên các checklist tiêu chuẩn"
+  },
+  {
+    "id": "exam1-038",
+    "deck": "exam1",
+    "number": 38,
+    "type": "single",
+    "stem": "Team cài đặt **SonarQube** vào pipeline để **tự động quét mã nguồn** mỗi khi developer push code, nhằm kiểm tra việc tuân thủ coding standards và phát hiện biến rác, rủi ro bảo mật – mà **không cần chạy chương trình**. Hoạt động này được gọi là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Static Analysis – dùng phần mềm tự động quét (scan) mã nguồn mà không cần chạy nó",
+        "isCorrect": true,
+        "note": "(Chính xác. Đúng định nghĩa Static Analysis trong slide; SonarQube là công cụ đa ngôn ngữ được liệt kê.)"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử động, vì được chạy tự động trong pipeline",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử hộp đen, vì không quan tâm code bên trong",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử hồi quy, vì chạy lại sau mỗi lần push code",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "**Static Analysis** là việc **sử dụng phần mềm tự động để quét mã nguồn mà không cần chạy nó**, nhằm đảm bảo code tuân thủ chuẩn mực lập trình, tìm lỗi cú pháp, biến rác, rủi ro bảo mật. Các công cụ phổ biến trong slide: **SonarQube** (đa ngôn ngữ), **ESLint** (JavaScript/TypeScript), **Pylint/Flake8** (Python). Đáp án b sai vì \"tự động\" không đồng nghĩa \"động\" – phân biệt static/dynamic dựa trên việc có thực thi code hay không.",
+    "answerKey": "The correct answer is: Static Analysis – dùng phần mềm tự động quét (scan) mã nguồn mà không cần chạy nó"
+  },
+  {
+    "id": "exam1-039",
+    "deck": "exam1",
+    "number": 39,
+    "type": "multiple",
+    "stem": "Chọn **các** hoạt động thuộc về **kiểm thử tĩnh (Static Testing)**.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tổ chức buổi review tài liệu yêu cầu để tìm điểm mâu thuẫn",
+        "isCorrect": true,
+        "note": "(Đúng – review tài liệu là kiểm thử tĩnh.)"
+      },
+      {
+        "key": "b",
+        "text": "Chạy ESLint để quét mã nguồn tìm biến không dùng và unreachable code",
+        "isCorrect": true,
+        "note": "(Đúng – static analysis không thực thi code.)"
+      },
+      {
+        "key": "c",
+        "text": "Chạy test case đăng nhập trên môi trường Staging để kiểm tra luồng end-to-end",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Thực hiện Inspection code theo checklist tiêu chuẩn với Moderator điều phối",
+        "isCorrect": true,
+        "note": "(Đúng – inspection là loại hình review chính thức của kiểm thử tĩnh.)"
+      }
+    ],
+    "explanation": "Kiểm thử tĩnh = **không thực thi mã nguồn**, bao gồm **review** (tài liệu yêu cầu, thiết kế, code) và **static analysis** (quét tự động bằng công cụ). Đáp án c là kiểm thử động (thực thi test case trên phần mềm đang chạy – system testing). Vì vậy chỉ a, b, d là kiểm thử tĩnh.",
+    "answerKey": "The correct answers are: Tổ chức buổi review tài liệu yêu cầu để tìm điểm mâu thuẫn, Chạy ESLint để quét mã nguồn tìm biến không dùng và unreachable code, Thực hiện Inspection code theo checklist tiêu chuẩn với Moderator điều phối"
+  },
+  {
+    "id": "exam1-040",
+    "deck": "exam1",
+    "number": 40,
+    "type": "single",
+    "stem": "Sau khi áp dụng đầy đủ kiểm thử tĩnh (review tài liệu, inspection code, SonarQube quét sạch không còn cảnh báo), trưởng dự án đề xuất **bỏ hẳn kiểm thử động** để tiết kiệm thời gian vì \"lỗi đã được tìm hết từ sớm\". Đề xuất này có hợp lý không?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Hợp lý, vì kiểm thử tĩnh đã phát hiện trực tiếp mọi Defect là nguyên nhân gốc rễ",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Hợp lý, vì kiểm thử tĩnh rẻ hơn kiểm thử động hàng trăm lần",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Hợp lý với điều kiện SonarQube báo 100% sạch",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Không hợp lý – kiểm thử tĩnh và kiểm thử động bổ sung cho nhau: tĩnh tìm Defect trực tiếp (nguyên nhân gốc), động phát hiện Failure khi thực thi (hậu quả bộc lộ), và có những lỗi chỉ lộ ra khi chạy như race condition, lỗi tích hợp môi trường thật",
+        "isCorrect": true,
+        "note": "(Chính xác. Hai loại hình bổ sung chứ không thay thế nhau.)"
+      }
+    ],
+    "explanation": "Theo bảng so sánh trong slide: kiểm thử **tĩnh** phát hiện **Defect trực tiếp** (nguyên nhân gốc rễ) mà không cần chạy code; kiểm thử **động** phát hiện **Failure** – hậu quả của Defect **bộc lộ ra ngoài khi thực thi**. Nhiều lỗi chỉ xuất hiện lúc chạy (ví dụ race condition trong sự cố Therac-25, lỗi tương tác môi trường production như CrowdStrike) mà review hay quét tĩnh không thể bắt được. Vì vậy hai loại hình **bổ sung cho nhau**, không thể thay thế.",
+    "answerKey": "The correct answer is: Không hợp lý – kiểm thử tĩnh và kiểm thử động bổ sung cho nhau: tĩnh tìm Defect trực tiếp (nguyên nhân gốc), động phát hiện Failure khi thực thi (hậu quả bộc lộ), và có những lỗi chỉ lộ ra khi chạy như race condition, lỗi tích hợp môi trường thật"
+  }
+]

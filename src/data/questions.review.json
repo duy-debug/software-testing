@@ -1,0 +1,1420 @@
+[
+  {
+    "id": "review-001",
+    "deck": "review",
+    "number": 1,
+    "type": "multiple",
+    "stem": "Chọn **HAI** tình huống là **rủi ro sản phẩm** (Product Risk).",
+    "options": [
+      {
+        "key": "a",
+        "text": "Hệ thống tính sai tiền học phí của sinh viên",
+        "isCorrect": true,
+        "note": "(Đúng – ảnh hưởng đến chất lượng của chính phần mềm.)"
+      },
+      {
+        "key": "b",
+        "text": "Dữ liệu thẻ thanh toán của khách hàng có thể bị rò rỉ",
+        "isCorrect": true,
+        "note": "(Đúng – ảnh hưởng đến chất lượng của chính phần mềm.)"
+      },
+      {
+        "key": "c",
+        "text": "Khách hàng liên tục thay đổi yêu cầu",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Môi trường kiểm thử bàn giao trễ 2 tuần",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "e",
+        "text": "Tester chủ chốt nghỉ việc giữa dự án",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Rủi ro dự án ảnh hưởng khả năng hoàn thành dự án đúng hạn; rủi ro sản phẩm ảnh hưởng chất lượng phần mềm. Rủi ro = Xác suất × Mức độ ảnh hưởng.",
+    "answerKey": "The correct answers are: Hệ thống tính sai tiền học phí của sinh viên, Dữ liệu thẻ thanh toán của khách hàng có thể bị rò rỉ"
+  },
+  {
+    "id": "review-002",
+    "deck": "review",
+    "number": 2,
+    "type": "single",
+    "stem": "Cho trích đoạn ma trận truy vết yêu cầu (RTM):\n\n| Mã YC | Mô tả | Test Case |\n|-------|-------|-----------|\n| REQ-01 | Đăng nhập bằng email | TC-01, TC-02 |\n| REQ-02 | Khóa tài khoản sau 3 lần sai | TC-03 |\n| REQ-03 | Đổi mật khẩu | (trống) |\n\nThông tin quan trọng nhất mà RTM này cho thấy là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "TC-03 không truy vết được về yêu cầu nào",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Hệ thống đã sẵn sàng phát hành",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "REQ-03 chưa được kiểm thử – có lỗ hổng bao phủ yêu cầu",
+        "isCorrect": true,
+        "note": "(Chính xác. RTM giúp phát hiện yêu cầu chưa có Test Case.)"
+      },
+      {
+        "key": "d",
+        "text": "REQ-01 bị kiểm thử thừa vì có 2 Test Case",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "RTM trả lời: mọi yêu cầu đã có Test Case chưa (độ bao phủ) và Test Case kiểm tra yêu cầu nào (truy vết ngược).",
+    "answerKey": "The correct answer is: REQ-03 chưa được kiểm thử – có lỗ hổng bao phủ yêu cầu"
+  },
+  {
+    "id": "review-003",
+    "deck": "review",
+    "number": 3,
+    "type": "single",
+    "stem": "Với yêu cầu 18 ≤ Tuổi ≤ 60 (Tuổi là số nguyên), áp dụng Phân tích giá trị biên theo phương pháp **2 giá trị** (ISTQB), tập giá trị kiểm thử nào là **ĐÚNG**?",
+    "options": [
+      {
+        "key": "a",
+        "text": "15, 30, 65",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "18, 60",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "17, 18, 60, 61",
+        "isCorrect": true,
+        "note": "(Chính xác: mỗi biên lấy giá trị trên biên và giá trị liền kề phía ngoài vùng.)"
+      },
+      {
+        "key": "d",
+        "text": "17, 18, 19, 59, 60, 61",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "BVA 2 giá trị: tại mỗi biên chọn giá trị ngay trên biên và giá trị liền kề thuộc phân vùng bên cạnh → 17, 18, 60, 61.",
+    "answerKey": "The correct answer is: 17, 18, 60, 61"
+  },
+  {
+    "id": "review-004",
+    "deck": "review",
+    "number": 4,
+    "type": "single",
+    "stem": "Yêu cầu: *Nhập sai mã PIN 3 lần thì khóa tài khoản; nhập đúng PIN thì đăng nhập thành công.* Hệ thống bắt đầu ở trạng thái S1 (Chờ nhập PIN). Người dùng thực hiện chuỗi sự kiện: **Sai → Sai → Đúng**. Trạng thái cuối cùng mong đợi là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "S3: Đăng nhập thành công",
+        "isCorrect": true,
+        "note": "(Chính xác. Sau 2 lần sai hệ thống vẫn ở S1; lần nhập đúng chuyển sang S3.)"
+      },
+      {
+        "key": "b",
+        "text": "S1: Chờ nhập PIN",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Trạng thái không hợp lệ",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "S2: Bị khóa",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "S1 --Sai lần 1, 2--> S1; S1 --Sai lần 3--> S2 (Khóa); S1 --Đúng PIN--> S3 (Thành công).",
+    "answerKey": "The correct answer is: S3: Đăng nhập thành công"
+  },
+  {
+    "id": "review-005",
+    "deck": "review",
+    "number": 5,
+    "type": "multiple",
+    "stem": "Chọn **HAI** trường hợp **KHÔNG NÊN** tự động hóa kiểm thử.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử tải (Load test) với 5.000 người dùng ảo",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Đánh giá tính dễ sử dụng (Usability) của giao diện mới",
+        "isCorrect": true,
+        "note": "(Đúng – Usability cần đánh giá của con người.)"
+      },
+      {
+        "key": "c",
+        "text": "Test Case chỉ chạy đúng một lần",
+        "isCorrect": true,
+        "note": "(Đúng – chi phí viết script không được bù đắp.)"
+      },
+      {
+        "key": "d",
+        "text": "Bộ Test Case hồi quy chạy lại sau mỗi lần commit",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "e",
+        "text": "Tạo dữ liệu kiểm thử hàng loạt",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Nên tự động: hồi quy, happy path cốt lõi, hiệu năng/tải, setup dữ liệu. Không nên: TC chạy 1 lần, UI thay đổi liên tục, Usability, Exploratory.",
+    "answerKey": "The correct answers are: Đánh giá tính dễ sử dụng (Usability) của giao diện mới, Test Case chỉ chạy đúng một lần"
+  },
+  {
+    "id": "review-006",
+    "deck": "review",
+    "number": 6,
+    "type": "single",
+    "stem": "Yêu cầu: *Chỉ người từ 18 đến 60 tuổi (tính cả 18 và 60) mới được cấp bằng lái.* Áp dụng kỹ thuật Phân vùng tương đương (EP) cho đầu vào Tuổi, cần **tối thiểu** bao nhiêu Test Case để bao phủ tất cả các phân vùng?",
+    "options": [
+      {
+        "key": "a",
+        "text": "3",
+        "isCorrect": true,
+        "note": "(Chính xác: 1 vùng hợp lệ (18–60) và 2 vùng không hợp lệ (<18 và >60).)"
+      },
+      {
+        "key": "b",
+        "text": "43",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "4",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "2",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Ba phân vùng: Tuổi < 18 (Invalid), 18 ≤ Tuổi ≤ 60 (Valid), Tuổi > 60 (Invalid). Mỗi vùng chọn 1 giá trị đại diện.",
+    "answerKey": "The correct answer is: 3"
+  },
+  {
+    "id": "review-007",
+    "deck": "review",
+    "number": 7,
+    "type": "single",
+    "stem": "Thống kê cho thấy phần lớn lỗi của một hệ thống bán hàng nằm trong module Thanh toán và module Khuyến mãi. Trưởng nhóm kiểm thử quyết định tăng cường Test Case cho hai module này ở đợt kiểm thử tiếp theo. Quyết định trên dựa chủ yếu vào nguyên lý nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Sự tập trung của lỗi (Quy tắc 80/20)",
+        "isCorrect": true,
+        "note": "(Chính xác. Phần lớn lỗi thường nằm trong một số ít module, nên cần tập trung nỗ lực kiểm thử vào đó.)"
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử phụ thuộc ngữ cảnh",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Sự sai lầm về việc không có lỗi",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử cho thấy sự hiện diện của lỗi",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Nguyên lý 4 – Sự tập trung của lỗi: khoảng 80% bug thường nằm trong 20% module.",
+    "answerKey": "The correct answer is: Sự tập trung của lỗi (Quy tắc 80/20)"
+  },
+  {
+    "id": "review-008",
+    "deck": "review",
+    "number": 8,
+    "type": "single",
+    "stem": "Một lập trình viên hiểu sai yêu cầu nên viết điều kiện giảm giá sai trong mã nguồn. Khi khách hàng thanh toán, hệ thống hiển thị sai số tiền. Trình tự nào mô tả **ĐÚNG** mối quan hệ giữa các khái niệm?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Failure (hiểu sai yêu cầu) → Defect (điều kiện sai trong code) → Error (hiển thị sai số tiền)",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Error (hiểu sai yêu cầu) → Failure (điều kiện sai trong code) → Defect (hiển thị sai số tiền)",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Defect (hiểu sai yêu cầu) → Error (điều kiện sai trong code) → Failure (hiển thị sai số tiền)",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Error (hiểu sai yêu cầu) → Defect (điều kiện sai trong code) → Failure (hiển thị sai số tiền)",
+        "isCorrect": true,
+        "note": "(Chính xác. Hành động sai của con người tạo ra khiếm khuyết, khiếm khuyết khi thực thi gây ra thất bại.)"
+      }
+    ],
+    "explanation": "Error (hành động của con người) → Defect/Bug (nằm trong code/tài liệu) → Failure (sự kiện khi thực thi).",
+    "answerKey": "The correct answer is: Error (hiểu sai yêu cầu) → Defect (điều kiện sai trong code) → Failure (hiển thị sai số tiền)"
+  },
+  {
+    "id": "review-009",
+    "deck": "review",
+    "number": 9,
+    "type": "single",
+    "stem": "Yêu cầu: *Khách hàng được miễn phí vận chuyển nếu là khách VIP **HOẶC** đơn hàng **trên 500.000 VNĐ**.* Một khách hàng **không phải** VIP đặt đơn hàng trị giá **đúng 500.000 VNĐ**. Kết quả mong đợi là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Miễn phí vận chuyển",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Tính phí vận chuyển",
+        "isCorrect": true,
+        "note": "(Chính xác. \"Trên 500.000\" nghĩa là > 500.000; 500.000 không thỏa, và khách không phải VIP (quy tắc R4: F, F).)"
+      },
+      {
+        "key": "c",
+        "text": "Không xác định được vì bảng quyết định không có quy tắc này",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Miễn phí một nửa phí vận chuyển",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "C1 (VIP) = F, C2 (> 500.000) = F → hành động A2: Tính phí ship. Đây cũng là một điểm biên cần chú ý.",
+    "answerKey": "The correct answer is: Tính phí vận chuyển"
+  },
+  {
+    "id": "review-010",
+    "deck": "review",
+    "number": 10,
+    "type": "single",
+    "stem": "Câu hỏi *\"Are we building the right product?\"* (Chúng ta có đang xây dựng đúng sản phẩm mà người dùng cần không?) thể hiện khái niệm nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Validation (Xác nhận/Phê chuẩn)",
+        "isCorrect": true,
+        "note": "(Chính xác. Validation kiểm tra sản phẩm có đáp ứng đúng nhu cầu người dùng.)"
+      },
+      {
+        "key": "b",
+        "text": "Static Analysis (Phân tích tĩnh)",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Verification (Kiểm chứng)",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Regression Testing (Kiểm thử hồi quy)",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Verification: đúng thiết kế (building the product right). Validation: đúng nhu cầu (building the right product).",
+    "answerKey": "The correct answer is: Validation (Xác nhận/Phê chuẩn)"
+  },
+  {
+    "id": "review-011",
+    "deck": "review",
+    "number": 11,
+    "type": "single",
+    "stem": "Với phần mềm điều khiển thiết bị y tế, mức độ độc lập kiểm thử nào được xem là khách quan nhất?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Developer tự kiểm thử mã của mình",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Các developer trong cùng nhóm kiểm thử chéo cho nhau",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Tổ chức kiểm thử độc lập thuê từ bên ngoài",
+        "isCorrect": true,
+        "note": "(Chính xác. Đây là mức độc lập cao nhất, thường bắt buộc với hệ thống y tế, hàng không, tài chính cốt lõi.)"
+      },
+      {
+        "key": "d",
+        "text": "Nhóm kiểm thử độc lập trong nội bộ công ty",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "4 mức độc lập: Dev tự test → Dev test chéo → Team test nội bộ → Tổ chức độc lập bên ngoài.",
+    "answerKey": "The correct answer is: Tổ chức kiểm thử độc lập thuê từ bên ngoài"
+  },
+  {
+    "id": "review-012",
+    "deck": "review",
+    "number": 12,
+    "type": "single",
+    "stem": "Khi viết Unit Test cho hàm `getUserStatus(apiClient, userId)`, lập trình viên cần xác nhận rằng hàm `apiClient.fetch` **đã được gọi đúng một lần** với tham số `userId = 123`. Đối tượng giả lập nào phù hợp nhất?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Mock",
+        "isCorrect": true,
+        "note": "(Chính xác. Mock dùng để kiểm tra hành vi: hàm có được gọi, gọi bao nhiêu lần, với tham số nào.)"
+      },
+      {
+        "key": "b",
+        "text": "Driver",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Stub",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Test Oracle",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Stub: trả về dữ liệu cứng. Mock: kiểm tra hành vi (hàm có được gọi đúng tham số không).",
+    "answerKey": "The correct answer is: Mock"
+  },
+  {
+    "id": "review-013",
+    "deck": "review",
+    "number": 13,
+    "type": "single",
+    "stem": "Khi kiểm thử tự động một chatbot tư vấn tuyển sinh dùng LLM/RAG, vì sao **không nên** so sánh câu trả lời bằng khớp chuỗi chính xác (Exact Match)?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Vì hệ thống phi tất định: cùng một câu hỏi có thể sinh câu trả lời với văn phong khác nhau, nên cần đánh giá theo ngữ nghĩa hoặc dùng LLM làm giám khảo",
+        "isCorrect": true,
+        "note": "(Chính xác. Đây là \"bài toán Oracle\" của hệ thống AI.)"
+      },
+      {
+        "key": "b",
+        "text": "Vì hệ thống AI không thể kiểm thử tự động",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Vì Exact Match chạy quá chậm so với LLM Judge",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Vì chatbot luôn trả lời giống hệt nhau nên không cần kiểm thử",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Hệ thống truyền thống: tất định, Pass/Fail theo Exact Match. Hệ thống LLM: phi tất định, khó xác định Expected Result tuyệt đối (bài toán Oracle).",
+    "answerKey": "The correct answer is: Vì hệ thống phi tất định: cùng một câu hỏi có thể sinh câu trả lời với văn phong khác nhau, nên cần đánh giá theo ngữ nghĩa hoặc dùng LLM làm giám khảo"
+  },
+  {
+    "id": "review-014",
+    "deck": "review",
+    "number": 14,
+    "type": "single",
+    "stem": "Theo tháp kiểm thử tự động của Mike Cohn, phát biểu nào là **ĐÚNG**?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Nên có nhiều Unit Test nhất vì chạy nhanh, chi phí bảo trì thấp và dễ cách ly lỗi",
+        "isCorrect": true,
+        "note": "(Chính xác.)"
+      },
+      {
+        "key": "b",
+        "text": "API Test chạy chậm hơn UI Test vì phải xử lý JSON/XML",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Nên có nhiều UI Test nhất vì chúng mô phỏng chính xác người dùng thật",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Tự động hóa kiểm thử đồng nghĩa với tự động click trên giao diện Web",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Tháp: Unit (~70%) → API/Service (~20%) → UI (~10%). Càng lên đỉnh càng chậm, đắt và dễ gãy.",
+    "answerKey": "The correct answer is: Nên có nhiều Unit Test nhất vì chạy nhanh, chi phí bảo trì thấp và dễ cách ly lỗi"
+  },
+  {
+    "id": "review-015",
+    "deck": "review",
+    "number": 15,
+    "type": "single",
+    "stem": "Công cụ phân tích tĩnh (như ESLint, SonarQube) **KHÔNG** thể phát hiện vấn đề nào sau đây?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Câu lệnh nằm sau lệnh return nên không bao giờ được thực thi",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Biến được khai báo và gán giá trị nhưng không bao giờ được sử dụng",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Trang web phản hồi chậm khi có 1.000 người dùng truy cập cùng lúc",
+        "isCorrect": true,
+        "note": "(Chính xác. Vấn đề hiệu năng chỉ bộc lộ khi thực thi – cần kiểm thử động (Load test).)"
+      },
+      {
+        "key": "d",
+        "text": "Mật khẩu/API key được viết cứng (hardcode) trong mã nguồn",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Static Analysis quét code mà không chạy: vi phạm coding standard, biến rác, code không chạy tới, rủi ro bảo mật. Vấn đề hiệu năng cần kiểm thử động.",
+    "answerKey": "The correct answer is: Trang web phản hồi chậm khi có 1.000 người dùng truy cập cùng lúc"
+  },
+  {
+    "id": "review-016",
+    "deck": "review",
+    "number": 16,
+    "type": "single",
+    "stem": "Hai ngày trước lễ ra mắt, tester phát hiện **tên trường đại học trên trang chủ bị viết sai chính tả**. Lỗi không ảnh hưởng đến bất kỳ chức năng nào. Cách phân loại hợp lý nhất là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Severity thấp, Priority cao",
+        "isCorrect": true,
+        "note": "(Chính xác. Về kỹ thuật lỗi không làm hỏng hệ thống, nhưng về kinh doanh cần sửa ngay.)"
+      },
+      {
+        "key": "b",
+        "text": "Severity cao, Priority thấp",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Severity cao, Priority cao",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Severity thấp, Priority thấp",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Severity: góc nhìn kỹ thuật (mức độ hỏng hệ thống). Priority: góc nhìn kinh doanh (cần sửa ngay hay không).",
+    "answerKey": "The correct answer is: Severity thấp, Priority cao"
+  },
+  {
+    "id": "review-017",
+    "deck": "review",
+    "number": 17,
+    "type": "single",
+    "stem": "Developer vừa sửa lỗi \"không áp dụng được mã giảm giá\". Tester chạy lại **chính Test Case đã phát hiện lỗi đó** để kiểm tra lỗi đã được sửa. Sau đó, tester chạy thêm các Test Case của module Giỏ hàng và Thanh toán để chắc chắn bản sửa không làm hỏng chức năng khác. Hai hoạt động trên lần lượt là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Smoke Test, sau đó Acceptance Test",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Confirmation Test (Re-test), sau đó Regression Test",
+        "isCorrect": true,
+        "note": "(Chính xác.)"
+      },
+      {
+        "key": "c",
+        "text": "Regression Test, sau đó Confirmation Test",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Cả hai đều là Regression Test",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Change-related testing gồm Confirmation Test (xác nhận lỗi đã sửa) và Regression Test (đảm bảo thay đổi không gây lỗi mới ở chỗ khác).",
+    "answerKey": "The correct answer is: Confirmation Test (Re-test), sau đó Regression Test"
+  },
+  {
+    "id": "review-018",
+    "deck": "review",
+    "number": 18,
+    "type": "single",
+    "stem": "Một chức năng xét duyệt học bổng phụ thuộc vào **3 điều kiện**, mỗi điều kiện chỉ nhận giá trị Đúng/Sai (T/F). Bảng quyết định đầy đủ (chưa rút gọn) sẽ có bao nhiêu quy tắc (Rules)?",
+    "options": [
+      {
+        "key": "a",
+        "text": "8",
+        "isCorrect": true,
+        "note": "(Chính xác: 2³ = 8 tổ hợp.)"
+      },
+      {
+        "key": "b",
+        "text": "9",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "3",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "6",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Với n điều kiện nhị phân, bảng quyết định đầy đủ có 2ⁿ quy tắc.",
+    "answerKey": "The correct answer is: 8"
+  },
+  {
+    "id": "review-019",
+    "deck": "review",
+    "number": 19,
+    "type": "single",
+    "stem": "Hoạt động nào sau đây thể hiện tư duy **Shift-Right**?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Chạy phân tích tĩnh bằng ESLint ngay khi viết code",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Thực hiện A/B Testing và theo dõi log lỗi của người dùng thật sau khi phát hành",
+        "isCorrect": true,
+        "note": "(Chính xác. Shift-Right đẩy kiểm thử về sau khi release.)"
+      },
+      {
+        "key": "c",
+        "text": "Viết Unit Test theo phương pháp TDD",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Review tài liệu đặc tả yêu cầu trước khi lập trình",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Shift-Left: kiểm thử sớm (review, unit test, static analysis). Shift-Right: sau release (A/B testing, monitoring in production).",
+    "answerKey": "The correct answer is: Thực hiện A/B Testing và theo dõi log lỗi của người dùng thật sau khi phát hành"
+  },
+  {
+    "id": "review-020",
+    "deck": "review",
+    "number": 20,
+    "type": "single",
+    "stem": "Cho đoạn mã:\n\n```js\nfunction calculateDiscount(amount) {\n  let discount = 0;\n  if (amount > 1000) {\n    discount = 10;\n  }\n  return discount;\n}\n```\n\nChỉ chạy **một** Test Case với `amount = 2000`. Độ bao phủ lệnh (Statement Coverage) và độ bao phủ quyết định (Decision Coverage) lần lượt là bao nhiêu?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Statement Coverage 100%, Decision Coverage 50%",
+        "isCorrect": true,
+        "note": "(Chính xác. Mọi lệnh đều chạy qua, nhưng chỉ đi nhánh True, bỏ sót nhánh False.)"
+      },
+      {
+        "key": "b",
+        "text": "Statement Coverage 75%, Decision Coverage 50%",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Statement Coverage 100%, Decision Coverage 100%",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Statement Coverage 50%, Decision Coverage 100%",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "TC amount = 2000 chạy qua cả 4 lệnh (100% Statement) nhưng chỉ đi 1/2 kết quả của quyết định (50% Decision).",
+    "answerKey": "The correct answer is: Statement Coverage 100%, Decision Coverage 50%"
+  },
+  {
+    "id": "review-021",
+    "deck": "review",
+    "number": 21,
+    "type": "single",
+    "stem": "## Question 21 *(sai – được chọn: b)*\n\nTrường Mật khẩu yêu cầu độ dài từ 8 đến 16 ký tự. Tập độ dài nào dưới đây bao phủ **tất cả** các phân vùng tương đương với **số lượng giá trị ít nhất**?",
+    "options": [
+      {
+        "key": "a",
+        "text": "7, 8, 16, 17",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "0, 12 ❌ *(đã chọn – sai: Bỏ sót vùng không hợp lệ phía trên (>16 ký tự).)*",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "8, 12, 16",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "5, 12, 20",
+        "isCorrect": true,
+        "note": "(đáp án đúng)"
+      }
+    ],
+    "explanation": "Chưa chính xác.\n\nBa phân vùng: độ dài < 8 (Invalid), 8–16 (Valid), > 16 (Invalid) → tối thiểu 3 giá trị.",
+    "answerKey": "The correct answer is: 5, 12, 20"
+  },
+  {
+    "id": "review-022",
+    "deck": "review",
+    "number": 22,
+    "type": "single",
+    "stem": "Nhóm có 200 file kịch bản kiểm thử dùng chung trang Đăng nhập. Nhà phát triển đổi `id` của ô tên đăng nhập. Nếu dự án áp dụng đúng Page Object Model (POM), cần sửa mã ở đâu?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Sửa các câu lệnh Assertion trong Test Class",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Chỉ sửa locator trong lớp trang (VD: LoginPage.js)",
+        "isCorrect": true,
+        "note": "(Chính xác. Đây là lợi ích chính của POM.)"
+      },
+      {
+        "key": "c",
+        "text": "Sửa file cấu hình CI/CD",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Sửa toàn bộ 200 file kịch bản kiểm thử",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "POM: Page Class chứa locator và thao tác; Test Class chứa logic kiểm thử. Giao diện đổi chỉ cần sửa một nơi.",
+    "answerKey": "The correct answer is: Chỉ sửa locator trong lớp trang (VD: LoginPage.js)"
+  },
+  {
+    "id": "review-023",
+    "deck": "review",
+    "number": 23,
+    "type": "single",
+    "stem": "Một trang thanh toán có 3 tham số: Trình duyệt (4 giá trị), Hệ điều hành (3 giá trị), Phương thức thanh toán (2 giá trị). Số tổ hợp đầy đủ là bao nhiêu và bộ test Pairwise cần **ít nhất** bao nhiêu Test Case?",
+    "options": [
+      {
+        "key": "a",
+        "text": "24 tổ hợp đầy đủ; Pairwise cần ít nhất 9 Test Case",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "24 tổ hợp đầy đủ; Pairwise cần ít nhất 12 Test Case",
+        "isCorrect": true,
+        "note": "(Chính xác: 4×3×2 = 24. Mọi cặp (Trình duyệt, Hệ điều hành) phải xuất hiện ít nhất một lần nên cần ít nhất 4×3 = 12.)"
+      },
+      {
+        "key": "c",
+        "text": "9 tổ hợp đầy đủ; Pairwise cần ít nhất 4 Test Case",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "24 tổ hợp đầy đủ; Pairwise cần đủ 24 Test Case",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Pairwise đảm bảo mọi cặp giá trị của 2 tham số bất kỳ xuất hiện ít nhất một lần; số Test Case tối thiểu ≥ tích số giá trị của hai tham số lớn nhất.",
+    "answerKey": "The correct answer is: 24 tổ hợp đầy đủ; Pairwise cần ít nhất 12 Test Case"
+  },
+  {
+    "id": "review-024",
+    "deck": "review",
+    "number": 24,
+    "type": "single",
+    "stem": "Hệ thống quản lý sinh viên đang chạy thật (Production) được chuyển từ máy chủ Windows Server sang Linux và nâng cấp phiên bản cơ sở dữ liệu. Trước khi thực hiện kiểm thử hồi quy, nhóm kiểm thử **BẮT BUỘC** phải làm gì để xác định phạm vi test hợp lý?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Phân tích tác động (Impact Analysis)",
+        "isCorrect": true,
+        "note": "(Chính xác. Phân tích tác động giúp quyết định phạm vi kiểm thử hồi quy hiệu quả.)"
+      },
+      {
+        "key": "b",
+        "text": "Chỉ chạy Unit Test vì đây là thay đổi môi trường",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Viết lại toàn bộ Test Case từ đầu",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử chấp nhận Alpha",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Kiểm thử bảo trì (Enhancement, Corrective, Environmental) yêu cầu Impact Analysis để quyết định phạm vi test hồi quy.",
+    "answerKey": "The correct answer is: Phân tích tác động (Impact Analysis)"
+  },
+  {
+    "id": "review-025",
+    "deck": "review",
+    "number": 25,
+    "type": "single",
+    "stem": "Trong quy trình kiểm thử cơ bản, hoạt động trả lời câu hỏi \"Đã đủ điều kiện phát hành (release) chưa?\" là hoạt động nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Phân tích và thiết kế",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Đánh giá tiêu chí kết thúc",
+        "isCorrect": true,
+        "note": "(Chính xác. Hoạt động này so sánh kết quả với tiêu chí kết thúc để quyết định có dừng test/release hay không.)"
+      },
+      {
+        "key": "c",
+        "text": "Đóng quy trình",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Lập kế hoạch và kiểm soát",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "5 hoạt động: Lập kế hoạch & kiểm soát → Phân tích & thiết kế → Thực thi → Đánh giá tiêu chí kết thúc → Đóng quy trình.",
+    "answerKey": "The correct answer is: Đánh giá tiêu chí kết thúc"
+  },
+  {
+    "id": "review-026",
+    "deck": "review",
+    "number": 26,
+    "type": "single",
+    "stem": "Điều nào sau đây là một tiêu chí kết thúc (Exit Criteria) điển hình trong Test Plan?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Môi trường kiểm thử đã được thiết lập xong",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Số lỗi mức Critical chưa được sửa bằng 0",
+        "isCorrect": true,
+        "note": "(Chính xác.)"
+      },
+      {
+        "key": "c",
+        "text": "Tài liệu yêu cầu đã được chốt",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Developer đã chạy xong Unit Test",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Entry: khi nào được bắt đầu test. Exit: khi nào được dừng test (100% TC đã chạy, 0 bug Critical, đạt coverage yêu cầu).",
+    "answerKey": "The correct answer is: Số lỗi mức Critical chưa được sửa bằng 0"
+  },
+  {
+    "id": "review-027",
+    "deck": "review",
+    "number": 27,
+    "type": "single",
+    "stem": "Một nhóm kiểm thử chạy lại cùng một bộ Test Case suốt 10 sprint liên tiếp. Ba sprint gần nhất bộ test không phát hiện thêm lỗi nào, nhưng người dùng vẫn báo lỗi mới sau mỗi lần phát hành. Nguyên lý kiểm thử nào giải thích tốt nhất hiện tượng này?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Sự tập trung của lỗi (Defect clustering)",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử phụ thuộc ngữ cảnh",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Nghịch lý thuốc trừ sâu (Pesticide paradox)",
+        "isCorrect": true,
+        "note": "(Chính xác. Bộ test lặp lại mãi sẽ mất khả năng tìm lỗi mới; cần review và cập nhật liên tục.)"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử cạn kiệt là không thể",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Nguyên lý 5 – Nghịch lý thuốc trừ sâu: lặp lại một tập Test Case cũ sẽ không tìm ra bug mới; cần liên tục review và cập nhật.",
+    "answerKey": "The correct answer is: Nghịch lý thuốc trừ sâu (Pesticide paradox)"
+  },
+  {
+    "id": "review-028",
+    "deck": "review",
+    "number": 28,
+    "type": "single",
+    "stem": "Một dự án Agile có tài liệu yêu cầu chưa hoàn thiện. Tester vừa tìm hiểu hệ thống, vừa thiết kế và thực thi các phép thử cùng một lúc, dựa trên kinh nghiệm của bản thân. Đây là kỹ thuật nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử thăm dò (Exploratory Testing)",
+        "isCorrect": true,
+        "note": "(Chính xác. Learn – Design – Execute diễn ra đồng thời.)"
+      },
+      {
+        "key": "b",
+        "text": "Bao phủ quyết định (Decision Coverage)",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Đoán lỗi (Error Guessing)",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Bảng quyết định (Decision Table)",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Exploratory Testing thuộc nhóm kỹ thuật dựa trên kinh nghiệm; rất phù hợp khi tài liệu chưa hoàn thiện.",
+    "answerKey": "The correct answer is: Kiểm thử thăm dò (Exploratory Testing)"
+  },
+  {
+    "id": "review-029",
+    "deck": "review",
+    "number": 29,
+    "type": "single",
+    "stem": "Nhóm kiểm thử đang kiểm tra luồng dữ liệu khi ứng dụng mua hàng của công ty gửi yêu cầu sang API thanh toán của VNPAY và nhận kết quả trả về. Đây là cấp độ kiểm thử nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử chấp nhận người dùng (UAT)",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử tích hợp hệ thống (System Integration Testing)",
+        "isCorrect": true,
+        "note": "(Chính xác. Đây là tích hợp giữa hai hệ thống khác nhau.)"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử tích hợp thành phần (Component Integration Testing)",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử đơn vị (Unit Testing)",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Component Integration: trong cùng hệ thống. System Integration: giữa các hệ thống khác nhau (VD: app gọi API MoMo/VNPAY).",
+    "answerKey": "The correct answer is: Kiểm thử tích hợp hệ thống (System Integration Testing)"
+  },
+  {
+    "id": "review-030",
+    "deck": "review",
+    "number": 30,
+    "type": "single",
+    "stem": "Một kịch bản Playwright lúc Pass lúc Fail dù mã nguồn và môi trường không đổi, do script bấm vào nút \"Xác nhận\" trước khi API trả dữ liệu về. Cách khắc phục nào phù hợp nhất?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Đánh dấu bỏ qua (skip) Test Case này vĩnh viễn",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Chuyển locator từ getByRole sang XPath",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Dùng cơ chế Auto-wait của Playwright và chờ theo điều kiện, ví dụ `await page.waitForResponse(...)`",
+        "isCorrect": true,
+        "note": "(Chính xác. Chờ theo trạng thái/sự kiện thực tế thay vì chờ cứng.)"
+      },
+      {
+        "key": "d",
+        "text": "Thêm `await page.waitForTimeout(5000)` trước mỗi thao tác",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Tuyệt đối không dùng hard sleep. Auto-wait khắc phục phần lớn flaky test; Explicit wait dùng để chờ một sự kiện cụ thể.",
+    "answerKey": "The correct answer is: Dùng cơ chế Auto-wait của Playwright và chờ theo điều kiện, ví dụ `await page.waitForResponse(...)`"
+  },
+  {
+    "id": "review-031",
+    "deck": "review",
+    "number": 31,
+    "type": "single",
+    "stem": "Phát biểu nào về độ bao phủ hộp trắng là **ĐÚNG**?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Đạt 100% Statement Coverage sẽ đảm bảo 100% Decision Coverage",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Đạt 100% Decision Coverage sẽ đảm bảo 100% Statement Coverage, nhưng điều ngược lại không đúng",
+        "isCorrect": true,
+        "note": "(Chính xác.)"
+      },
+      {
+        "key": "c",
+        "text": "Decision Coverage và Statement Coverage luôn có giá trị bằng nhau",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Statement Coverage là tiêu chí mạnh nhất trong kiểm thử hộp trắng",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Quy tắc vàng: 100% Decision Coverage ⇒ 100% Statement Coverage (không có chiều ngược lại).",
+    "answerKey": "The correct answer is: Đạt 100% Decision Coverage sẽ đảm bảo 100% Statement Coverage, nhưng điều ngược lại không đúng"
+  },
+  {
+    "id": "review-032",
+    "deck": "review",
+    "number": 32,
+    "type": "single",
+    "stem": "Một sinh viên trưởng nhóm đồ án tổ chức buổi họp, tự mình trình bày lần lượt từng phần của tài liệu đặc tả yêu cầu cho các thành viên và giảng viên hướng dẫn, đồng thời ghi nhận góp ý. Đây là loại hình review nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Inspection",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Walkthrough",
+        "isCorrect": true,
+        "note": "(Chính xác. Tác giả dẫn dắt nhóm đi qua tài liệu để giải thích và thu thập ý kiến.)"
+      },
+      {
+        "key": "c",
+        "text": "Informal Review",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Static Analysis",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Walkthrough: tác giả dẫn dắt team đi qua từng phần của tài liệu/code để giải thích và thu thập ý kiến.",
+    "answerKey": "The correct answer is: Walkthrough"
+  },
+  {
+    "id": "review-033",
+    "deck": "review",
+    "number": 33,
+    "type": "single",
+    "stem": "Xét đoạn mã sau, được viết cho yêu cầu 18 ≤ Tuổi ≤ 60:\n\n```js\nfunction checkDrivingLicense(age) {\n  if (age > 18 && age <= 60) {\n    return \"Allowed\";\n  }\n  return \"Denied\";\n}\n```\n\nGiá trị đầu vào nào sẽ phát hiện được lỗi trong đoạn mã trên?",
+    "options": [
+      {
+        "key": "a",
+        "text": "61",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "60",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "30",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "18",
+        "isCorrect": true,
+        "note": "(Chính xác. Với age = 18, mong đợi \"Allowed\" nhưng code trả về \"Denied\" do dùng > thay vì >=.)"
+      }
+    ],
+    "explanation": "Developer thường sai ở dấu so sánh tại biên (> thay vì >=). Đây là lý do BVA hiệu quả hơn việc chọn giá trị giữa vùng.",
+    "answerKey": "The correct answer is: 18"
+  },
+  {
+    "id": "review-034",
+    "deck": "review",
+    "number": 34,
+    "type": "single",
+    "stem": "Loại hình review nào có quy trình khắt khe nhất, có Moderator điều phối và dựa trên các Checklist tiêu chuẩn?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Inspection (Thanh tra)",
+        "isCorrect": true,
+        "note": "(Chính xác.)"
+      },
+      {
+        "key": "b",
+        "text": "Walkthrough",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Technical Review",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Informal Review",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Từ không chính thức đến chính thức: Informal Review → Walkthrough → Technical Review → Inspection.",
+    "answerKey": "The correct answer is: Inspection (Thanh tra)"
+  },
+  {
+    "id": "review-035",
+    "deck": "review",
+    "number": 35,
+    "type": "multiple",
+    "stem": "Chọn **HAI** phát biểu **ĐÚNG** về kiểm thử tĩnh (Static Testing).",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử tĩnh chỉ áp dụng được cho mã nguồn đã biên dịch",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử tĩnh phát hiện Failure khi phần mềm đang chạy",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử tĩnh chỉ nên thực hiện sau khi kiểm thử hệ thống kết thúc",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử tĩnh phát hiện trực tiếp Defect, kể cả trong tài liệu yêu cầu và bản thiết kế",
+        "isCorrect": true,
+        "note": "(Đúng.)"
+      },
+      {
+        "key": "e",
+        "text": "Kiểm thử tĩnh không thực thi mã nguồn",
+        "isCorrect": true,
+        "note": "(Đúng.)"
+      }
+    ],
+    "explanation": "Kiểm thử tĩnh: không thực thi code, áp dụng cho tài liệu và mã nguồn, phát hiện Defect trực tiếp. Kiểm thử động: thực thi code, phát hiện Failure.",
+    "answerKey": "The correct answers are: Kiểm thử tĩnh không thực thi mã nguồn, Kiểm thử tĩnh phát hiện trực tiếp Defect, kể cả trong tài liệu yêu cầu và bản thiết kế"
+  },
+  {
+    "id": "review-036",
+    "deck": "review",
+    "number": 36,
+    "type": "single",
+    "stem": "Khi kiểm thử API, tester gửi yêu cầu lấy thông tin hồ sơ cá nhân nhưng **không kèm token xác thực**. Mã trạng thái nào là kết quả mong đợi hợp lý nhất?",
+    "options": [
+      {
+        "key": "a",
+        "text": "201 Created",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "500 Internal Server Error",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "200 OK",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "401 Unauthorized",
+        "isCorrect": true,
+        "note": "(Chính xác. Lỗi phía client do chưa xác thực.)"
+      }
+    ],
+    "explanation": "2xx: thành công; 4xx: lỗi phía client (400, 401, 403, 404); 5xx: lỗi phía server.",
+    "answerKey": "The correct answer is: 401 Unauthorized"
+  },
+  {
+    "id": "review-037",
+    "deck": "review",
+    "number": 37,
+    "type": "single",
+    "stem": "Trong một buổi review chính thức, ai chịu trách nhiệm **ghi chép các lỗi được tìm thấy** và các quyết định đưa ra?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Scribe (Thư ký)",
+        "isCorrect": true,
+        "note": "(Chính xác.)"
+      },
+      {
+        "key": "b",
+        "text": "Moderator/Facilitator (Người điều phối)",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Manager (Quản lý)",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Author (Tác giả)",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Các vai trò: Author, Moderator/Facilitator, Reviewer, Scribe, Manager.",
+    "answerKey": "The correct answer is: Scribe (Thư ký)"
+  },
+  {
+    "id": "review-038",
+    "deck": "review",
+    "number": 38,
+    "type": "single",
+    "stem": "Một hệ thống quản lý thư viện vượt qua 100% Test Case và không còn lỗi nào được ghi nhận. Tuy nhiên sau khi triển khai, thủ thư từ chối sử dụng vì quy trình mượn–trả sách trên phần mềm không khớp với quy trình làm việc thực tế. Tình huống này minh họa nguyên lý nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Nghịch lý thuốc trừ sâu",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử sớm (Shift-left)",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Sự sai lầm về việc không có lỗi (Absence-of-errors fallacy)",
+        "isCorrect": true,
+        "note": "(Chính xác. Không có bug nhưng không đáp ứng nhu cầu người dùng thì phần mềm vẫn thất bại.)"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử cho thấy sự hiện diện của lỗi",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Nguyên lý 7: Phần mềm không có bug nhưng không đáp ứng đúng nhu cầu người dùng thì vẫn là phần mềm thất bại.",
+    "answerKey": "The correct answer is: Sự sai lầm về việc không có lỗi (Absence-of-errors fallacy)"
+  },
+  {
+    "id": "review-039",
+    "deck": "review",
+    "number": 39,
+    "type": "single",
+    "stem": "Phát biểu nào mô tả **ĐÚNG** đặc trưng của mô hình chữ V (V-Model)?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tính năng được giao liên tục qua các vòng lặp ngắn 2–4 tuần",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Mô hình rất linh hoạt, dễ dàng phản ứng khi yêu cầu thay đổi giữa chừng",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử chỉ bắt đầu sau khi toàn bộ mã nguồn đã hoàn thành",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Mỗi giai đoạn phát triển có một cấp độ kiểm thử tương ứng, nhờ đó kiểm thử được lên kế hoạch từ rất sớm",
+        "isCorrect": true,
+        "note": "(Chính xác.)"
+      }
+    ],
+    "explanation": "V-Model mở rộng Waterfall: mỗi giai đoạn phát triển ứng với một cấp độ kiểm thử; ưu điểm shift-left, nhược điểm thiếu linh hoạt.",
+    "answerKey": "The correct answer is: Mỗi giai đoạn phát triển có một cấp độ kiểm thử tương ứng, nhờ đó kiểm thử được lên kế hoạch từ rất sớm"
+  },
+  {
+    "id": "review-040",
+    "deck": "review",
+    "number": 40,
+    "type": "single",
+    "stem": "Yêu cầu nào sau đây sẽ được kiểm tra bằng kiểm thử phi chức năng (Non-functional testing)?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Hệ thống khóa tài khoản sau 3 lần nhập sai mã PIN",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Trang chủ phải tải xong trong vòng 2 giây khi có 1.000 người truy cập đồng thời",
+        "isCorrect": true,
+        "note": "(Chính xác. Đây là yêu cầu hiệu năng/tải – hệ thống \"làm tốt thế nào\".)"
+      },
+      {
+        "key": "c",
+        "text": "Hệ thống phải tính đúng tổng tiền đơn hàng bao gồm thuế VAT",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Người dùng có thể đổi mật khẩu sau khi đăng nhập",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Functional: hệ thống làm gì. Non-functional: hệ thống làm tốt thế nào (Performance, Load, Security, Usability).",
+    "answerKey": "The correct answer is: Trang chủ phải tải xong trong vòng 2 giây khi có 1.000 người truy cập đồng thời"
+  }
+]
