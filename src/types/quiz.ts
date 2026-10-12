@@ -8,14 +8,15 @@ export interface Option {
 }
 
 export interface Question {
-  id: string; // e.g., "review-001", "exam1-040"
-  deck: 'review' | 'exam1' | 'exam2';
+  id: string; // e.g., "review-001", "exam1-040", "slides-001"
+  deck: 'review' | 'exam1' | 'exam2' | 'slides';
   number: number;
   type: QuestionType;
   stem: string;
   options: Option[];
   explanation: string;
   answerKey: string;
+  topic?: string;
 }
 
 export type QuizMode = 'practice' | 'exam';
@@ -23,7 +24,7 @@ export type QuizMode = 'practice' | 'exam';
 export type SessionStatus = 'idle' | 'in_progress' | 'submitted' | 'reviewing';
 
 export interface QuizSessionState {
-  deckId: 'review' | 'exam1' | 'exam2';
+  deckId: 'review' | 'exam1' | 'exam2' | 'slides';
   mode: QuizMode;
   status: SessionStatus;
   questionIds: string[];

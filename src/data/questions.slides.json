@@ -1,0 +1,866 @@
+[
+  {
+    "id": "slides-001",
+    "deck": "slides",
+    "number": 1,
+    "type": "single",
+    "stem": "Trường Số lượng nhận số nguyên từ 1 đến 99. Bộ giá trị nào đúng với BVA 2 giá trị?",
+    "options": [
+      {
+        "key": "a",
+        "text": "{1, 99}",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "{0, 1, 99, 100}",
+        "isCorrect": true,
+        "note": "(Chính xác. BVA 2 giá trị: mỗi biên lấy giá trị trên biên và giá trị liền kề phía ngoài vùng.)"
+      },
+      {
+        "key": "c",
+        "text": "{0, 1, 2, 98, 99, 100}",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "{1, 50, 99}",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "BVA 2 giá trị: tại mỗi biên chọn giá trị ngay trên biên và giá trị liền kề thuộc phân vùng bên cạnh → {0, 1, 99, 100}.",
+    "answerKey": "The correct answer is: B. {0, 1, 99, 100}",
+    "topic": "Buổi 1: BVA & Phân vùng tương đương"
+  },
+  {
+    "id": "slides-002",
+    "deck": "slides",
+    "number": 2,
+    "type": "single",
+    "stem": "Với cùng trường trên, BVA 3 giá trị cần bao nhiêu giá trị?",
+    "options": [
+      {
+        "key": "a",
+        "text": "4",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "5",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "6",
+        "isCorrect": true,
+        "note": "(Chính xác. BVA 3 giá trị: mỗi biên lấy 3 giá trị — trên biên, trong vùng và ngoài vùng → 2 biên × 3 = 6.)"
+      },
+      {
+        "key": "d",
+        "text": "8",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "BVA 3 giá trị tại mỗi biên chọn: giá trị ngay trên biên, giá trị liền kề phía trong vùng và giá trị liền kề phía ngoài vùng → {0, 1, 2, 98, 99, 100}, tổng 6 giá trị.",
+    "answerKey": "The correct answer is: C. 6",
+    "topic": "Buổi 1: BVA & Phân vùng tương đương"
+  },
+  {
+    "id": "slides-003",
+    "deck": "slides",
+    "number": 3,
+    "type": "single",
+    "stem": "Trường Tuổi có ba vùng: dưới 18, từ 18 đến 60, trên 60. Số ca tối thiểu đạt 100% bao phủ phân vùng là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "1",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "2",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "3",
+        "isCorrect": true,
+        "note": "(Chính xác. EP: mỗi phân vùng chọn 1 giá trị đại diện → 3 vùng = 3 ca.)"
+      },
+      {
+        "key": "d",
+        "text": "6",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Phân vùng tương đương: mỗi vùng chỉ cần 1 giá trị đại diện. Ba vùng (dưới 18, 18–60, trên 60) → tối thiểu 3 ca.",
+    "answerKey": "The correct answer is: C. 3",
+    "topic": "Buổi 1: BVA & Phân vùng tương đương"
+  },
+  {
+    "id": "slides-004",
+    "deck": "slides",
+    "number": 4,
+    "type": "single",
+    "stem": "Vì sao không nên đặt hai giá trị không hợp lệ trong cùng một ca kiểm thử?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Vì ca kiểm thử sẽ chạy chậm hơn",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Vì lỗi của giá trị này có thể che lỗi của giá trị kia",
+        "isCorrect": true,
+        "note": "(Chính xác. Giá trị không hợp lệ đầu tiên sẽ khiến ca kiểm thử dừng/báo lỗi chung, che mất lỗi của giá trị thứ hai.)"
+      },
+      {
+        "key": "c",
+        "text": "Vì ISTQB cấm dùng giá trị không hợp lệ",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Vì giá trị không hợp lệ không có kết quả mong đợi",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Nguyên tắc: mỗi ca kiểm thử chỉ chứa một giá trị không hợp lệ, vì lỗi của giá trị này có thể \"che\" lỗi của giá trị kia (error masking), khiến ta không biết được giá trị nào mới là nguyên nhân thật sự.",
+    "answerKey": "The correct answer is: B. Vì lỗi của giá trị này có thể che lỗi của giá trị kia",
+    "topic": "Buổi 1: BVA & Phân vùng tương đương"
+  },
+  {
+    "id": "slides-005",
+    "deck": "slides",
+    "number": 5,
+    "type": "single",
+    "stem": "BVA **không** phù hợp với trường nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tuổi",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Ngày sinh",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Phương thức thanh toán (Thẻ / Ví / Tiền mặt)",
+        "isCorrect": true,
+        "note": "(Chính xác. BVA chỉ áp dụng cho miền giá trị có thứ tự; các giá trị rời rạc không có thứ tự thì không có \"biên\".)"
+      },
+      {
+        "key": "d",
+        "text": "Số tiền",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "BVA áp dụng cho các miền có thứ tự (số, ngày tháng, độ dài chuỗi). Phương thức thanh toán là tập giá trị rời rạc, không có thứ tự nên không tồn tại giá trị biên.",
+    "answerKey": "The correct answer is: C. Phương thức thanh toán (Thẻ / Ví / Tiền mặt)",
+    "topic": "Buổi 1: BVA & Phân vùng tương đương"
+  },
+  {
+    "id": "slides-006",
+    "deck": "slides",
+    "number": 6,
+    "type": "single",
+    "stem": "\"Giảm giá cho đơn hàng **trên 1.000.000đ**\". Giá đơn hàng tính theo bội số 1.000đ. Giá trị nhỏ nhất được giảm giá là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "999.000",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "1.000.000",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "1.001.000",
+        "isCorrect": true,
+        "note": "(Chính xác. \"Trên 1.000.000\" nghĩa là > 1.000.000; giá đơn hàng là bội số của 1.000đ nên giá trị nhỏ nhất thỏa mãn là 1.001.000.)"
+      },
+      {
+        "key": "d",
+        "text": "1.000.001",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "\"Trên 1.000.000\" nghĩa là > 1.000.000 (nghiêm ngặt), không bao gồm 1.000.000. Vì giá đơn hàng chỉ là bội số của 1.000đ nên giá trị hợp lệ nhỏ nhất được giảm giá là 1.001.000.",
+    "answerKey": "The correct answer is: C. 1.001.000",
+    "topic": "Buổi 1: BVA & Phân vùng tương đương"
+  },
+  {
+    "id": "slides-007",
+    "deck": "slides",
+    "number": 7,
+    "type": "single",
+    "stem": "Có 4 giá trị biên cần kiểm thử, bộ ca hiện tại đã thực thi 3 giá trị. Độ bao phủ giá trị biên là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "25%",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "50%",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "75%",
+        "isCorrect": true,
+        "note": "(Chính xác. Độ bao phủ giá trị biên = 3/4 = 75%.)"
+      },
+      {
+        "key": "d",
+        "text": "100%",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Độ bao phủ giá trị biên = số giá trị biên đã thực thi / tổng số giá trị biên = 3 / 4 = 75%.",
+    "answerKey": "The correct answer is: C. 75%",
+    "topic": "Buổi 1: BVA & Phân vùng tương đương"
+  },
+  {
+    "id": "slides-008",
+    "deck": "slides",
+    "number": 8,
+    "type": "single",
+    "stem": "Đã có ca Tuổi = 30 cho vùng 18–60. Thêm ca Tuổi = 45 làm độ bao phủ phân vùng tăng thêm:",
+    "options": [
+      {
+        "key": "a",
+        "text": "0%",
+        "isCorrect": true,
+        "note": "(Chính xác. EP: mỗi phân vùng chỉ cần 1 giá trị đại diện; thêm giá trị thứ hai trong cùng vùng không tăng độ bao phủ phân vùng.)"
+      },
+      {
+        "key": "b",
+        "text": "25%",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "33%",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "50%",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Phân vùng tương đương: một khi một vùng đã có giá trị đại diện (Tuổi = 30 cho vùng 18–60), thêm bất kỳ giá trị nào khác trong cùng vùng (Tuổi = 45) đều không làm tăng độ bao phủ phân vùng.",
+    "answerKey": "The correct answer is: A. 0%",
+    "topic": "Buổi 1: BVA & Phân vùng tương đương"
+  },
+  {
+    "id": "slides-009",
+    "deck": "slides",
+    "number": 9,
+    "type": "single",
+    "stem": "Bảng quyết định có 4 điều kiện Boolean. Bảng đầy đủ có bao nhiêu cột?",
+    "options": [
+      {
+        "key": "a",
+        "text": "4",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "8",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "16",
+        "isCorrect": true,
+        "note": "(Chính xác: 2⁴ = 16 tổ hợp.)"
+      },
+      {
+        "key": "d",
+        "text": "32",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Với n điều kiện nhị phân, bảng quyết định đầy đủ có 2ⁿ cột (quy tắc). n = 4 → 16 cột.",
+    "answerKey": "The correct answer is: C. 16",
+    "topic": "Buổi 2: Bảng quyết định & Chuyển đổi trạng thái"
+  },
+  {
+    "id": "slides-010",
+    "deck": "slides",
+    "number": 10,
+    "type": "single",
+    "stem": "Trong bảng rút gọn của 3 điều kiện, một cột có hai ô \"–\". Cột này đại diện cho bao nhiêu cột của bảng đầy đủ?",
+    "options": [
+      {
+        "key": "a",
+        "text": "1",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "2",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "3",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "4",
+        "isCorrect": true,
+        "note": "(Chính xác. Mỗi ô \"–\" (don't care) nhân đôi số cột mà cột rút gọn đại diện: 2² = 4.)"
+      }
+    ],
+    "explanation": "Mỗi ô \"–\" có thể nhận cả hai giá trị T/F, nên một cột rút gọn có k ô \"–\" đại diện cho 2ᵏ cột của bảng đầy đủ. Với 2 ô \"–\" → 2² = 4 cột.",
+    "answerKey": "The correct answer is: D. 4",
+    "topic": "Buổi 2: Bảng quyết định & Chuyển đổi trạng thái"
+  },
+  {
+    "id": "slides-011",
+    "deck": "slides",
+    "number": 11,
+    "type": "single",
+    "stem": "Độ bao phủ bảng quyết định được tính bằng:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Số điều kiện đã kiểm thử / tổng số điều kiện",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Số cột khả thi đã thực thi / tổng số cột khả thi",
+        "isCorrect": true,
+        "note": "(Chính xác. Độ bao phủ bảng quyết định đo theo các quy tắc (cột) khả thi đã được kiểm thử.)"
+      },
+      {
+        "key": "c",
+        "text": "Số hành động đã xảy ra / tổng số hành động",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Số ca Pass / tổng số ca",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Độ bao phủ bảng quyết định = số quy tắc (cột) khả thi đã được thực thi / tổng số quy tắc khả thi. Các cột không khả thi (tổ hợp không thể xảy ra) bị loại khỏi mẫu số.",
+    "answerKey": "The correct answer is: B. Số cột khả thi đã thực thi / tổng số cột khả thi",
+    "topic": "Buổi 2: Bảng quyết định & Chuyển đổi trạng thái"
+  },
+  {
+    "id": "slides-012",
+    "deck": "slides",
+    "number": 12,
+    "type": "single",
+    "stem": "Khi lập bảng đầy đủ, một cột không được đặc tả quy định hành động. Tester nên:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Chọn hành động hợp lý nhất theo kinh nghiệm",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Bỏ cột đó",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Ghi nhận và gửi câu hỏi làm rõ cho người phụ trách yêu cầu",
+        "isCorrect": true,
+        "note": "(Chính xác. Đặc tả thiếu hành động là khiếm khuyết của yêu cầu — tester ghi nhận và làm rõ với BA/PO, không tự suy đoán hành động.)"
+      },
+      {
+        "key": "d",
+        "text": "Báo lỗi ngay cho lập trình viên",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Đây là phát hiện của kiểm thử tĩnh trên yêu cầu: đặc tả chưa đầy đủ. Tester không tự suy đoán hành động đúng (phương án A), cũng không báo cho dev ngay (phương án D) vì đó chưa phải lỗi code — việc đúng là ghi nhận và hỏi làm rõ với người phụ trách yêu cầu.",
+    "answerKey": "The correct answer is: C. Ghi nhận và gửi câu hỏi làm rõ cho người phụ trách yêu cầu",
+    "topic": "Buổi 2: Bảng quyết định & Chuyển đổi trạng thái"
+  },
+  {
+    "id": "slides-013",
+    "deck": "slides",
+    "number": 13,
+    "type": "single",
+    "stem": "Hệ thống có 5 trạng thái, 4 sự kiện và 7 chuyển hợp lệ (mỗi cặp trạng thái–sự kiện có tối đa một chuyển). Bảng trạng thái có bao nhiêu ô chuyển không hợp lệ?",
+    "options": [
+      {
+        "key": "a",
+        "text": "7",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "13",
+        "isCorrect": true,
+        "note": "(Chính xác. Tổng số ô = 5 trạng thái × 4 sự kiện = 20; chuyển hợp lệ 7 → ô không hợp lệ = 20 − 7 = 13.)"
+      },
+      {
+        "key": "c",
+        "text": "20",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "27",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Bảng trạng thái có 5 hàng (trạng thái) × 4 cột (sự kiện) = 20 ô. Đã biết 7 ô là chuyển hợp lệ → 20 − 7 = 13 ô chuyển không hợp lệ.",
+    "answerKey": "The correct answer is: B. 13",
+    "topic": "Buổi 2: Bảng quyết định & Chuyển đổi trạng thái"
+  },
+  {
+    "id": "slides-014",
+    "deck": "slides",
+    "number": 14,
+    "type": "single",
+    "stem": "Bao phủ 0-switch nghĩa là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Mọi trạng thái được đi qua ít nhất một lần",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Mọi chuyển hợp lệ đơn lẻ được thực thi ít nhất một lần",
+        "isCorrect": true,
+        "note": "(Chính xác. 0-switch = bao phủ mọi chuyển đơn lẻ, tương đương all-transitions.)"
+      },
+      {
+        "key": "c",
+        "text": "Mọi cặp chuyển liên tiếp được thực thi",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Không có chuyển nào được thực thi hai lần",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Bao phủ 0-switch (hay all-transitions): mỗi chuyển hợp lệ đơn lẻ được thực thi ít nhất một lần. Mở rộng: 1-switch bao phủ mọi cặp chuyển liên tiếp (câu C).",
+    "answerKey": "The correct answer is: B. Mọi chuyển hợp lệ đơn lẻ được thực thi ít nhất một lần",
+    "topic": "Buổi 2: Bảng quyết định & Chuyển đổi trạng thái"
+  },
+  {
+    "id": "slides-015",
+    "deck": "slides",
+    "number": 15,
+    "type": "single",
+    "stem": "\"Tài khoản bị khóa sau 3 lần nhập sai mật khẩu liên tiếp và tự mở sau 30 phút\". Kỹ thuật phù hợp nhất là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Phân vùng tương đương",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Chuyển đổi trạng thái",
+        "isCorrect": true,
+        "note": "(Chính xác. Có trạng thái (đang chờ, bị khóa), sự kiện (sai/đúng mật khẩu) và yếu tố thời gian (30 phút) → mô hình trạng thái là kỹ thuật phù hợp nhất.)"
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử cặp đôi",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Bao phủ lệnh",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Yêu cầu mô tả các trạng thái (chờ nhập, bị khóa) và các sự kiện làm chuyển trạng thái (nhập sai 3 lần liên tiếp, hết 30 phút) — đặc trưng của kỹ thuật chuyển đổi trạng thái (State Transition Testing).",
+    "answerKey": "The correct answer is: B. Chuyển đổi trạng thái",
+    "topic": "Buổi 2: Bảng quyết định & Chuyển đổi trạng thái"
+  },
+  {
+    "id": "slides-016",
+    "deck": "slides",
+    "number": 16,
+    "type": "single",
+    "stem": "Kết quả mong đợi khi thử một chuyển không hợp lệ thường là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Hệ thống chuyển về trạng thái ban đầu",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Hệ thống từ chối sự kiện và trạng thái giữ nguyên",
+        "isCorrect": true,
+        "note": "(Chính xác. Chuyển không hợp lệ thường được kỳ vọng bị hệ thống từ chối, giữ nguyên trạng thái hiện tại.)"
+      },
+      {
+        "key": "c",
+        "text": "Hệ thống chuyển sang trạng thái lỗi",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Không cần kết quả mong đợi vì chuyển này không tồn tại",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Mục đích của việc thử chuyển không hợp lệ (negative testing trên bảng trạng thái) là xác minh hệ thống xử lý đúng sự kiện bất ngờ: từ chối sự kiện và không làm thay đổi trạng thái hiện tại.",
+    "answerKey": "The correct answer is: B. Hệ thống từ chối sự kiện và trạng thái giữ nguyên",
+    "topic": "Buổi 2: Bảng quyết định & Chuyển đổi trạng thái"
+  },
+  {
+    "id": "slides-017",
+    "deck": "slides",
+    "number": 17,
+    "type": "single",
+    "stem": "Đoạn mã `if (x > 0) { y = 1; } return y;` chạy với x = 5. Độ bao phủ nhánh là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "0%",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "50%",
+        "isCorrect": true,
+        "note": "(Chính xác. Với x = 5 chỉ đi nhánh True (y = 1), bỏ sót nhánh False → 1/2 = 50%.)"
+      },
+      {
+        "key": "c",
+        "text": "75%",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "100%",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Quyết định `x > 0` có 2 kết quả (True/False). Với x = 5 chỉ kết quả True được thực thi, nhánh False chưa bao giờ đi qua → bao phủ nhánh = 1/2 = 50%.",
+    "answerKey": "The correct answer is: B. 50%",
+    "topic": "Buổi 3: Kiểm thử hộp trắng (Lệnh & Nhánh)"
+  },
+  {
+    "id": "slides-018",
+    "deck": "slides",
+    "number": 18,
+    "type": "single",
+    "stem": "Phát biểu nào **đúng**?",
+    "options": [
+      {
+        "key": "a",
+        "text": "100% bao phủ lệnh đảm bảo 100% bao phủ nhánh",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "100% bao phủ nhánh đảm bảo 100% bao phủ lệnh",
+        "isCorrect": true,
+        "note": "(Chính xác. Quy tắc vàng: 100% Decision/Branch Coverage ⇒ 100% Statement Coverage, chiều ngược lại không đúng.)"
+      },
+      {
+        "key": "c",
+        "text": "Hai loại bao phủ luôn bằng nhau",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Bao phủ nhánh không áp dụng được cho vòng lặp",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Quy tắc vàng của kiểm thử hộp trắng: đạt 100% bao phủ nhánh thì chắc chắn đạt 100% bao phủ lệnh, nhưng đạt 100% bao phủ lệnh không đảm bảo 100% bao phủ nhánh.",
+    "answerKey": "The correct answer is: B. 100% bao phủ nhánh đảm bảo 100% bao phủ lệnh",
+    "topic": "Buổi 3: Kiểm thử hộp trắng (Lệnh & Nhánh)"
+  },
+  {
+    "id": "slides-019",
+    "deck": "slides",
+    "number": 19,
+    "type": "single",
+    "stem": "Một hàm có 3 câu `if` nối tiếp, độc lập, không lồng nhau, không có `else`. Số ca tối thiểu để đạt 100% bao phủ **nhánh**:",
+    "options": [
+      {
+        "key": "a",
+        "text": "1",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "2",
+        "isCorrect": true,
+        "note": "(Chính xác. 3 câu if nối tiếp độc lập: ca 1 cho cả 3 if = True (bao phủ 3 nhánh True), ca 2 cho cả 3 if = False (bao phủ 3 nhánh False).)"
+      },
+      {
+        "key": "c",
+        "text": "3",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "8",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Vì 3 câu if nối tiếp và độc lập, một ca kiểm thử có thể đi qua cả 3 nhánh True cùng lúc (ca 1) và một ca khác đi qua cả 3 nhánh False (ca 2) → chỉ cần 2 ca để bao phủ cả 6 nhánh.",
+    "answerKey": "The correct answer is: B. 2",
+    "topic": "Buổi 3: Kiểm thử hộp trắng (Lệnh & Nhánh)"
+  },
+  {
+    "id": "slides-020",
+    "deck": "slides",
+    "number": 20,
+    "type": "single",
+    "stem": "Với hàm ở câu 3, số ca tối thiểu để đạt 100% bao phủ **lệnh**:",
+    "options": [
+      {
+        "key": "a",
+        "text": "1",
+        "isCorrect": true,
+        "note": "(Chính xác. Một ca với cả 3 if = True sẽ thực thi mọi lệnh trong hàm → 100% Statement Coverage chỉ cần 1 ca.)"
+      },
+      {
+        "key": "b",
+        "text": "2",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "3",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "6",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Bao phủ lệnh chỉ yêu cầu mỗi dòng code được chạy qua ít nhất một lần. Một ca duy nhất với cả 3 điều kiện = True sẽ chạy qua mọi lệnh trong hàm.",
+    "answerKey": "The correct answer is: A. 1",
+    "topic": "Buổi 3: Kiểm thử hộp trắng (Lệnh & Nhánh)"
+  },
+  {
+    "id": "slides-021",
+    "deck": "slides",
+    "number": 21,
+    "type": "single",
+    "stem": "Ở mức bao phủ nhánh, câu `if (a > 0 && b > 0)` được tính là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "1 quyết định, 2 kết quả",
+        "isCorrect": true,
+        "note": "(Chính xác. Ở mức bao phủ nhánh, toàn bộ biểu thức điều kiện được tính là 1 quyết định với 2 kết quả True/False, không tách các điều kiện atomic.)"
+      },
+      {
+        "key": "b",
+        "text": "2 quyết định, 4 kết quả",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "1 quyết định, 4 kết quả",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "2 quyết định, 2 kết quả",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Bao phủ nhánh (branch/decision coverage) đo theo quyết định (decision), không theo từng điều kiện nguyên tử (atomic condition). Toàn bộ `if (a > 0 && b > 0)` là 1 quyết định với 2 kết quả True/False.",
+    "answerKey": "The correct answer is: A. 1 quyết định, 2 kết quả",
+    "topic": "Buổi 3: Kiểm thử hộp trắng (Lệnh & Nhánh)"
+  },
+  {
+    "id": "slides-022",
+    "deck": "slides",
+    "number": 22,
+    "type": "single",
+    "stem": "Để một ca kiểm thử bao phủ cả hai kết quả của vòng lặp `while (i < n)` (với i bắt đầu từ 0), cần:",
+    "options": [
+      {
+        "key": "a",
+        "text": "n = 0",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "n ≥ 1",
+        "isCorrect": true,
+        "note": "(Chính xác. Với n = 0 vòng lặp không bao giờ được vào (chỉ 1 kết quả); với n ≥ 1 vòng lặp vào ít nhất 1 lần rồi thoát → bao phủ cả hai kết quả của điều kiện.)"
+      },
+      {
+        "key": "c",
+        "text": "n < 0",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Không thể trong một ca",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Điều kiện `i < n` có 2 kết quả. Với n = 0: điều kiện luôn False ngay từ đầu, vòng lặp không vào (chỉ 1 kết quả). Với n ≥ 1: điều kiện True ít nhất một lần rồi False để thoát → cả hai kết quả đều được thực thi trong một ca.",
+    "answerKey": "The correct answer is: B. n ≥ 1",
+    "topic": "Buổi 3: Kiểm thử hộp trắng (Lệnh & Nhánh)"
+  },
+  {
+    "id": "slides-023",
+    "deck": "slides",
+    "number": 23,
+    "type": "single",
+    "stem": "Bộ ca kiểm thử thực thi 8 trong 10 kết quả quyết định. Độ bao phủ nhánh là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "8%",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "20%",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "80%",
+        "isCorrect": true,
+        "note": "(Chính xác. 8/10 = 80%.)"
+      },
+      {
+        "key": "d",
+        "text": "100%",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Độ bao phủ nhánh = số kết quả quyết định đã thực thi / tổng số kết quả quyết định = 8 / 10 = 80%.",
+    "answerKey": "The correct answer is: C. 80%",
+    "topic": "Buổi 3: Kiểm thử hộp trắng (Lệnh & Nhánh)"
+  },
+  {
+    "id": "slides-024",
+    "deck": "slides",
+    "number": 24,
+    "type": "single",
+    "stem": "Hạn chế lớn nhất của độ bao phủ hộp trắng là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Không đo được bằng công cụ",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Không phát hiện được yêu cầu chưa được cài đặt",
+        "isCorrect": true,
+        "note": "(Chính xác. Hộp trắng chỉ đo code đã được viết — nó không thể phát hiện chức năng còn thiếu so với yêu cầu.)"
+      },
+      {
+        "key": "c",
+        "text": "Chỉ áp dụng cho JavaScript",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Luôn cần nhiều ca hơn kỹ thuật hộp đen",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Độ bao phủ hộp trắng chỉ đo mức độ code đã viết được thực thi — nó không thể phát hiện các yêu cầu bị bỏ sót chưa được cài đặt (missing functionality), cũng như các lỗi logic đúng về mặt cú pháp nhưng sai về yêu cầu nghiệp vụ.",
+    "answerKey": "The correct answer is: B. Không phát hiện được yêu cầu chưa được cài đặt",
+    "topic": "Buổi 3: Kiểm thử hộp trắng (Lệnh & Nhánh)"
+  }
+]

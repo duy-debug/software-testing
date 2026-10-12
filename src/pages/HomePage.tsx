@@ -1,9 +1,9 @@
 import React from 'react';
 import { ModeCard } from '../components/ModeCard';
-import { BookOpen, GraduationCap, Award, ShieldCheck, CheckCircle2, Sparkles } from 'lucide-react';
+import { BookOpen, GraduationCap, Award, ShieldCheck, CheckCircle2, Sparkles, FileText } from 'lucide-react';
 
 export interface HomePageProps {
-  onSelectMode: (mode: 'practice' | 'exam1' | 'exam2') => void;
+  onSelectMode: (mode: 'practice' | 'slides' | 'exam1' | 'exam2') => void;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({ onSelectMode }) => {
@@ -17,7 +17,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectMode }) => {
 
       <div className="relative max-w-6xl mx-auto px-4 py-12 md:py-16 w-full">
         {/* Hero Section */}
-        <div className="text-center max-w-3xl mx-auto mb-14 md:mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold mb-6 shadow-sm">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Học phần SOT357 — ĐH Nha Trang</span>
@@ -31,14 +31,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectMode }) => {
           </h1>
 
           <p className="text-slate-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-            Bộ ngân hàng <strong>120 câu hỏi trắc nghiệm</strong> chuẩn hóa, bám sát giáo trình & chuẩn ISTQB Foundation Level. Tối ưu trải nghiệm ôn tập với phản hồi tức thì và đề thi bấm giờ.
+            Bộ ngân hàng <strong>144 câu hỏi trắc nghiệm</strong> chuẩn hóa: gồm 40 câu ôn tập tổng hợp, 24 câu bài giảng slide (3 buổi), và 2 đề thi thử 80 câu bám sát chuẩn ISTQB.
           </p>
 
           {/* Quick stats badges */}
           <div className="flex flex-wrap items-center justify-center gap-6 mt-8 pt-6 border-t border-slate-800/60 text-xs font-medium text-slate-400">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              <span>120 Câu hỏi chuẩn hóa</span>
+              <span>144 Câu hỏi chuẩn hóa (4 bộ đề)</span>
             </div>
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-indigo-400" />
@@ -51,18 +51,30 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectMode }) => {
           </div>
         </div>
 
-        {/* 3 Chế độ làm bài (ModeCards) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        {/* 4 Chế độ làm bài (ModeCards) - Lưới 2x2 cân đối */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
           <ModeCard
             title="Ôn Tập Kiến Thức"
             description="Làm từng câu không giới hạn thời gian. Nhận phản hồi đúng/sai tức thì kèm cơ sở lý thuyết chi tiết sau mỗi câu."
             badge="Khuyên dùng đầu tiên"
             questionCount={40}
-            duration="Không giới hạn"
+            duration="Tự do suy nghĩ"
             icon={<BookOpen className="w-6 h-6" />}
             gradient="bg-gradient-to-br from-indigo-500 to-blue-600"
             buttonText="Bắt đầu ôn tập"
             onSelect={() => onSelectMode('practice')}
+          />
+
+          <ModeCard
+            title="Trắc Nghiệm Slide Bài Giảng"
+            description="Luyện riêng 24 câu hỏi trắc nghiệm cuối buổi 1, 2, 3 từ slide bài giảng: BVA/EP, Bảng quyết định, Trạng thái & Hộp trắng."
+            badge="Bài tập trên lớp"
+            questionCount={24}
+            duration="3 Buổi học"
+            icon={<FileText className="w-6 h-6" />}
+            gradient="bg-gradient-to-br from-teal-500 to-emerald-600"
+            buttonText="Luyện tập slide"
+            onSelect={() => onSelectMode('slides')}
           />
 
           <ModeCard
@@ -95,7 +107,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectMode }) => {
       <footer className="relative border-t border-slate-800/80 py-6 text-center text-xs text-slate-500">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <span>© 2026 Hệ thống ôn tập trắc nghiệm Kiểm thử phần mềm (SOT357)</span>
-          <span className="text-slate-400">Kiến trúc chuẩn ReactJS • Single-Owner • 0 Lỗi Parse</span>
+          <span className="text-slate-400">Kiến trúc chuẩn ReactJS • Single-Owner • 144 Câu hỏi</span>
         </div>
       </footer>
     </div>

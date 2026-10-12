@@ -1,7 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { parseReviewMarkdown, parseExamsMarkdown } from '../src/lib/markdownParser';
+import {
+  parseReviewMarkdown,
+  parseExamsMarkdown,
+  parseSlidesMarkdown,
+} from '../src/lib/markdownParser';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -19,11 +23,18 @@ console.log('--- BẮT ĐẦU PARSE DỮ LIỆU ---');
 console.log(`Đọc File A: ${fileAPath}`);
 const contentA = fs.readFileSync(fileAPath, 'utf-8');
 const reviewResult = parseReviewMarkdown(contentA);
+const slidesResult = parseSlidesMarkdown(contentA);
 
 console.log(`Kết quả Review (File A): ${reviewResult.questions.length} câu, ${reviewResult.errors.length} lỗi.`);
 if (reviewResult.errors.length > 0) {
   console.error('Lỗi khi parse File A:');
   reviewResult.errors.forEach((err, idx) => console.error(`  ${idx + 1}. ${err}`));
+}
+
+console.log(`Kết quả Trắc nghiệm Bài giảng Slide (File A): ${slidesResult.questions.length} câu, ${slidesResult.errors.length} lỗi.`);
+if (slidesResult.errors.length > 0) {
+  console.error('Lỗi khi parse Slide File A:');
+  slidesResult.errors.forEach((err, idx) => console.error(`  ${idx + 1}. ${err}`));
 }
 
 console.log(`\nĐọc File B: ${fileBPath}`);
@@ -42,16 +53,29 @@ if (examsResult.exam2.errors.length > 0) {
   examsResult.exam2.errors.forEach((err, idx) => console.error(`  ${idx + 1}. ${err}`));
 }
 
-const totalQuestions = reviewResult.questions.length + examsResult.exam1.questions.length + examsResult.exam2.questions.length;
-const totalErrors = reviewResult.errors.length + examsResult.exam1.errors.length + examsResult.exam2.errors.length;
+const totalQuestions =
+  reviewResult.questions.length +
+  slidesResult.questions.length +
+  examsResult.exam1.questions.length +
+  examsResult.exam2.questions.length;
+const totalErrors =
+  reviewResult.errors.length +
+  slidesResult.errors.length +
+  examsResult.exam1.errors.length +
+  examsResult.exam2.errors.length;
 
-console.log(`\nTổng số câu hỏi: ${totalQuestions}/120 câu`);
+console.log(`\nTổng số câu hỏi: ${totalQuestions} câu (Review: 40, Slide: 24, Đề 1: 40, Đề 2: 40)`);
 console.log(`Tổng số lỗi: ${totalErrors}`);
 
 // Xuất file JSON
 fs.writeFileSync(
   path.join(dataDir, 'questions.review.json'),
   JSON.stringify(reviewResult.questions, null, 2),
+  'utf-8'
+);
+fs.writeFileSync(
+  path.join(dataDir, 'questions.slides.json'),
+  JSON.stringify(slidesResult.questions, null, 2),
   'utf-8'
 );
 fs.writeFileSync(
@@ -65,10 +89,10 @@ fs.writeFileSync(
   'utf-8'
 );
 
-console.log('Đã lưu thành công 3 file JSON vào src/data/');
-if (totalQuestions === 120 && totalErrors === 0) {
-  console.log('✅ GATE BƯỚC 4 ĐẠT: 120/120 câu, 0 lỗi, cross-check 100%!');
+console.log('Đã lưu thành công 4 file JSON vào src/data/');
+if (totalQuestions === 144 && totalErrors === 0) {
+  console.log('✅ GATE PARSE ĐẠT: 144/144 câu (40 + 24 + 40 + 40), 0 lỗi, cross-check 100%!');
 } else {
-  console.error('❌ GATE BƯỚC 4 CHƯA ĐẠT. Vui lòng kiểm tra các lỗi trên.');
+  console.error('❌ Có lỗi trong quá trình parse.');
   process.exit(1);
 }

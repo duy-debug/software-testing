@@ -18,11 +18,19 @@ import {
 } from 'lucide-react';
 
 export interface PracticeRunnerProps {
+  deckId?: 'review' | 'slides';
+  title?: string;
+  subtitle?: string;
+  badge?: string;
   questions: Question[];
   onExit: () => void;
 }
 
 export const PracticeRunner: React.FC<PracticeRunnerProps> = ({
+  deckId = 'review',
+  title = 'Ôn Tập Kiến Thức Kiểm Thử Phần Mềm',
+  subtitle = 'Chế độ ôn tập gồm các câu hỏi trắc nghiệm chuyên sâu. Bạn sẽ nhận phản hồi đúng/sai tức thì và lời giải thích chi tiết ngay sau mỗi câu trả lời.',
+  badge = 'Phản hồi tức thì',
   questions,
   onExit,
 }) => {
@@ -40,7 +48,7 @@ export const PracticeRunner: React.FC<PracticeRunnerProps> = ({
     submitSession,
     resetSession,
     scoreResult,
-  } = useQuizSession('review', 'practice', questions);
+  } = useQuizSession(deckId, 'practice', questions);
 
   const [showExitConfirm, setShowExitConfirm] = useState(false);
   const [showSubmitConfirm, setShowSubmitConfirm] = useState(false);
@@ -55,10 +63,10 @@ export const PracticeRunner: React.FC<PracticeRunnerProps> = ({
           </div>
 
           <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-3">
-            Ôn Tập Kiến Thức Kiểm Thử Phần Mềm
+            {title}
           </h2>
           <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-6">
-            Chế độ ôn tập gồm <strong>{questions.length} câu hỏi</strong> trắc nghiệm chuyên sâu. Bạn sẽ nhận phản hồi đúng/sai tức thì và lời giải thích chi tiết ngay sau mỗi câu trả lời.
+            {subtitle} (Tổng cộng <strong>{questions.length} câu hỏi</strong>).
           </p>
 
           <div className="grid grid-cols-2 gap-3 text-left mb-8 max-w-md mx-auto">
@@ -139,9 +147,9 @@ export const PracticeRunner: React.FC<PracticeRunnerProps> = ({
           </button>
           <div>
             <h1 className="text-base font-bold text-white flex items-center gap-2">
-              <span>Chế độ Ôn tập</span>
+              <span>{title}</span>
               <span className="text-xs px-2 py-0.5 rounded-md bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
-                Phản hồi tức thì
+                {badge}
               </span>
             </h1>
             <p className="text-xs text-slate-400">

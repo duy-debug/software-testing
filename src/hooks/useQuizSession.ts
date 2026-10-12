@@ -32,7 +32,7 @@ export interface UseQuizSessionReturn {
 }
 
 export function useQuizSession(
-  deckId: 'review' | 'exam1' | 'exam2',
+  deckId: 'review' | 'exam1' | 'exam2' | 'slides',
   mode: QuizMode,
   questions: Question[]
 ): UseQuizSessionReturn {

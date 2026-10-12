@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { HomePage } from './pages/HomePage';
 import { PracticePage } from './pages/PracticePage';
+import { SlidesPage } from './pages/SlidesPage';
 import { ExamPage } from './pages/ExamPage';
 
-type ViewMode = 'home' | 'practice' | 'exam1' | 'exam2';
+type ViewMode = 'home' | 'practice' | 'slides' | 'exam1' | 'exam2';
 
 export function App() {
   const [view, setView] = useState<ViewMode>('home');
@@ -12,13 +13,15 @@ export function App() {
     setView('home');
   };
 
-  const handleSelectMode = (mode: 'practice' | 'exam1' | 'exam2') => {
+  const handleSelectMode = (mode: 'practice' | 'slides' | 'exam1' | 'exam2') => {
     setView(mode);
   };
 
   switch (view) {
     case 'practice':
       return <PracticePage onBackToHome={handleBackToHome} />;
+    case 'slides':
+      return <SlidesPage onBackToHome={handleBackToHome} />;
     case 'exam1':
       return <ExamPage deckId="exam1" onBackToHome={handleBackToHome} />;
     case 'exam2':

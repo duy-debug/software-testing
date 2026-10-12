@@ -467,3 +467,134 @@ export function validateQuestion(q: Question): string[] {
 
   return errors;
 }
+
+/**
+ * Tách các lựa chọn từ chuỗi (hỗ trợ cả từng dòng riêng và A. B. C. D. trên cùng 1 dòng)
+ */
+export function parseSlideOptions(rawText: string): Option[] {
+  const optionRegex = /(?:^|\s+)(?:-\s*)?([A-D])\.\s+/g;
+  const matches: { key: string; index: number; textStart: number }[] = [];
+  let m: RegExpExecArray | null;
+
+  while ((m = optionRegex.exec(rawText)) !== null) {
+    matches.push({
+      key: m[1].toLowerCase(),
+      index: m.index,
+      textStart: m.index + m[0].length,
+    });
+  }
+
+  const options: Option[] = [];
+  for (let i = 0; i < matches.length; i++) {
+    const cur = matches[i];
+    const next = matches[i + 1];
+    const rawOptChunk = next
+      ? rawText.slice(cur.textStart, next.index).trim()
+      : rawText.slice(cur.textStart).trim();
+
+    const checkMatch = rawOptChunk.match(/^([\s\S]+?)\s+✅(?:\s+\*([^*]+)\*)?\s*$/);
+    if (checkMatch) {
+      options.push({
+        key: cur.key,
+        text: checkMatch[1].trim(),
+        isCorrect: true,
+        note: checkMatch[2] ? checkMatch[2].trim() : null,
+      });
+    } else {
+      options.push({
+        key: cur.key,
+        text: rawOptChunk.trim(),
+        isCorrect: false,
+        note: null,
+      });
+    }
+  }
+
+  return options;
+}
+
+/**
+ * Parse 24 câu trắc nghiệm cuối buổi slide từ File A
+ */
+export function parseSlidesMarkdown(markdownContent: string): ParseResult {
+  const errors: string[] = [];
+  const questions: Question[] = [];
+
+  const slidePartIndex = markdownContent.indexOf('# Trắc nghiệm cuối buổi 1');
+  if (slidePartIndex === -1) {
+    return { questions: [], errors: ['Không tìm thấy phần trắc nghiệm slide trong file'] };
+  }
+
+  const slideContent = markdownContent.slice(slidePartIndex);
+  const rawBlocks = slideContent
+    .split(/\n(?=## Câu \d+)/g)
+    .filter((b) => b.trim().startsWith('## Câu'));
+
+  rawBlocks.forEach((block, idx) => {
+    const blockLines = block.trim().split('\n');
+
+    let topic = 'Buổi 1: BVA & Phân vùng tương đương';
+    if (idx >= 8 && idx < 16) {
+      topic = 'Buổi 2: Bảng quyết định & Chuyển đổi trạng thái';
+    } else if (idx >= 16) {
+      topic = 'Buổi 3: Kiểm thử hộp trắng (Lệnh & Nhánh)';
+    }
+
+    const stemLines: string[] = [];
+    const optionLines: string[] = [];
+    const bqLines: string[] = [];
+    let answerKey = '';
+    let phase: 'stem' | 'options' | 'bq' = 'stem';
+
+    for (let i = 1; i < blockLines.length; i++) {
+      const l = blockLines[i].trim();
+      if (l.startsWith('---')) continue;
+      if (l.startsWith('>')) {
+        phase = 'bq';
+        const bqContent = l.replace(/^>\s?/, '');
+        if (bqContent.startsWith('The correct answer is:')) {
+          answerKey = bqContent;
+        } else if (!bqContent.match(/^Chính xác!?$/i)) {
+          bqLines.push(bqContent);
+        }
+        continue;
+      }
+
+      if (phase === 'stem' && (l.startsWith('- A.') || l.match(/^-?\s*A\.\s+/))) {
+        phase = 'options';
+      }
+
+      if (phase === 'stem') {
+        stemLines.push(blockLines[i]);
+      } else if (phase === 'options') {
+        optionLines.push(blockLines[i]);
+      }
+    }
+
+    const options = parseSlideOptions(optionLines.join('\n'));
+    const stem = stemLines.join('\n').trim();
+    const explanation = bqLines.join('\n').trim();
+    const num = idx + 1;
+
+    const q: Question = {
+      id: `slides-${String(num).padStart(3, '0')}`,
+      deck: 'slides',
+      number: num,
+      type: 'single',
+      stem,
+      options,
+      explanation,
+      answerKey,
+      topic,
+    };
+
+    const valErrors = validateQuestion(q);
+    if (valErrors.length > 0) {
+      errors.push(...valErrors);
+    }
+
+    questions.push(q);
+  });
+
+  return { questions, errors };
+}

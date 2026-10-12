@@ -34,6 +34,11 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           <span className="text-xs text-slate-400 font-mono">
             ID: {question.id}
           </span>
+          {question.topic && (
+            <span className="px-2.5 py-1 rounded-lg bg-purple-500/15 text-purple-300 border border-purple-500/30 text-xs font-medium hidden sm:inline-block">
+              {question.topic}
+            </span>
+          )}
         </div>
 
         <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700/60">

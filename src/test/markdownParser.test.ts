@@ -4,6 +4,7 @@ import path from 'node:path';
 import {
   parseReviewMarkdown,
   parseExamsMarkdown,
+  parseSlidesMarkdown,
   validateQuestion,
 } from '../lib/markdownParser';
 
@@ -16,6 +17,7 @@ const contentB = fs.readFileSync(fileBPath, 'utf-8');
 
 describe('Markdown Parser & Data Validation (Skill 04 & 11)', () => {
   const reviewResult = parseReviewMarkdown(contentA);
+  const slidesResult = parseSlidesMarkdown(contentA);
   const examsResult = parseExamsMarkdown(contentB);
 
   describe('Nhóm 1 — Số lượng và cấu trúc', () => {
@@ -26,6 +28,18 @@ describe('Markdown Parser & Data Validation (Skill 04 & 11)', () => {
         expect(q.deck).toBe('review');
         expect(q.number).toBe(idx + 1);
         expect(q.id).toBe(`review-${String(idx + 1).padStart(3, '0')}`);
+      });
+    });
+
+    it('TC-P01b: Parse Slide File A đúng 24 questions, deck = "slides", id slides-001..slides-024', () => {
+      expect(slidesResult.errors).toHaveLength(0);
+      expect(slidesResult.questions).toHaveLength(24);
+      slidesResult.questions.forEach((q, idx) => {
+        expect(q.deck).toBe('slides');
+        expect(q.number).toBe(idx + 1);
+        expect(q.id).toBe(`slides-${String(idx + 1).padStart(3, '0')}`);
+        expect(q.options).toHaveLength(4);
+        expect(q.options.filter((o) => o.isCorrect)).toHaveLength(1);
       });
     });
 
@@ -49,20 +63,22 @@ describe('Markdown Parser & Data Validation (Skill 04 & 11)', () => {
       });
     });
 
-    it('TC-P04: Tổng toàn bộ 120 questions, không trùng id', () => {
+    it('TC-P04: Tổng toàn bộ 144 questions, không trùng id', () => {
       const allQuestions = [
         ...reviewResult.questions,
+        ...slidesResult.questions,
         ...examsResult.exam1.questions,
         ...examsResult.exam2.questions,
       ];
-      expect(allQuestions).toHaveLength(120);
+      expect(allQuestions).toHaveLength(144);
       const idSet = new Set(allQuestions.map((q) => q.id));
-      expect(idSet.size).toBe(120);
+      expect(idSet.size).toBe(144);
     });
 
-    it('TC-P05: Mỗi câu hỏi có ít nhất 1 option isCorrect = true (120/120 đạt)', () => {
+    it('TC-P05: Mỗi câu hỏi có ít nhất 1 option isCorrect = true (144/144 đạt)', () => {
       const allQuestions = [
         ...reviewResult.questions,
+        ...slidesResult.questions,
         ...examsResult.exam1.questions,
         ...examsResult.exam2.questions,
       ];
@@ -75,6 +91,7 @@ describe('Markdown Parser & Data Validation (Skill 04 & 11)', () => {
     it('TC-P06 & TC-P07: type = "multiple" có > 1 đáp án đúng, "single" có đúng 1 đáp án đúng', () => {
       const allQuestions = [
         ...reviewResult.questions,
+        ...slidesResult.questions,
         ...examsResult.exam1.questions,
         ...examsResult.exam2.questions,
       ];
@@ -90,9 +107,10 @@ describe('Markdown Parser & Data Validation (Skill 04 & 11)', () => {
   });
 
   describe('Nhóm 2 — Cross-check đáp án (ground truth)', () => {
-    it('TC-P08: 120/120 câu khớp ground truth (answerKey)', () => {
+    it('TC-P08: 144/144 câu khớp ground truth (answerKey)', () => {
       const allQuestions = [
         ...reviewResult.questions,
+        ...slidesResult.questions,
         ...examsResult.exam1.questions,
         ...examsResult.exam2.questions,
       ];
@@ -105,6 +123,7 @@ describe('Markdown Parser & Data Validation (Skill 04 & 11)', () => {
     it('TC-P09: note của option đúng nằm trong *(...)*; option sai note = null', () => {
       const allQuestions = [
         ...reviewResult.questions,
+        ...slidesResult.questions,
         ...examsResult.exam1.questions,
         ...examsResult.exam2.questions,
       ];
@@ -120,6 +139,7 @@ describe('Markdown Parser & Data Validation (Skill 04 & 11)', () => {
     it('TC-P10: explanation không chứa dòng "Chính xác!" và không chứa dòng ground-truth', () => {
       const allQuestions = [
         ...reviewResult.questions,
+        ...slidesResult.questions,
         ...examsResult.exam1.questions,
         ...examsResult.exam2.questions,
       ];
