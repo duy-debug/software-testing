@@ -21,29 +21,29 @@ export const ReviewItem: React.FC<ReviewItemProps> = ({
   const isBlank = selectedKeys.length === 0;
 
   return (
-    <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 md:p-7 shadow-lg">
+    <div className="bg-white dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-800 rounded-2xl p-5 md:p-7 shadow-md dark:shadow-lg transition-colors duration-200">
       {/* Header câu trong Review */}
-      <div className="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3 border-b border-slate-800">
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3 border-b border-slate-200 dark:border-slate-800">
         <div className="flex items-center gap-2.5">
-          <span className="px-3 py-1 rounded-lg bg-slate-800 text-slate-200 font-mono text-sm font-bold">
+          <span className="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/60 font-mono text-sm font-bold">
             Câu {question.number}
           </span>
-          <span className="text-xs text-slate-400 font-mono">{question.id}</span>
+          <span className="text-xs text-slate-500 dark:text-slate-400 font-mono">{question.id}</span>
         </div>
 
         {/* Trạng thái kết quả */}
         {isBlank ? (
-          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-950/60 border border-amber-500/40 text-amber-300 text-xs font-semibold">
+          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-950/60 border border-amber-300 dark:border-amber-500/40 text-amber-800 dark:text-amber-300 text-xs font-semibold">
             <AlertCircle className="w-3.5 h-3.5" />
             <span>Chưa trả lời</span>
           </div>
         ) : result.isCorrect ? (
-          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs font-semibold">
+          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-500/40 text-emerald-800 dark:text-emerald-300 text-xs font-semibold">
             <CheckCircle2 className="w-3.5 h-3.5" />
             <span>Chính xác (+1.0đ)</span>
           </div>
         ) : (
-          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-950/60 border border-rose-500/40 text-rose-300 text-xs font-semibold">
+          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-100 dark:bg-rose-950/60 border border-rose-300 dark:border-rose-500/40 text-rose-800 dark:text-rose-300 text-xs font-semibold">
             <XCircle className="w-3.5 h-3.5" />
             <span>Sai (0đ)</span>
           </div>
@@ -51,7 +51,7 @@ export const ReviewItem: React.FC<ReviewItemProps> = ({
       </div>
 
       {/* Thân câu hỏi */}
-      <div className="markdown-content text-slate-100 text-base mb-5 overflow-x-auto">
+      <div className="markdown-content text-slate-800 dark:text-slate-100 text-base mb-5 overflow-x-auto">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>
           {question.stem}
         </ReactMarkdown>

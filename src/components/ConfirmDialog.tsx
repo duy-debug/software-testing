@@ -27,13 +27,13 @@ export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-fadeIn">
-      <div className="relative w-full max-w-md p-6 bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl animate-scaleUp">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 dark:bg-slate-950/80 backdrop-blur-sm animate-fadeIn">
+      <div className="relative w-full max-w-md p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl animate-scaleUp">
         {/* Nút đóng */}
         <button
           type="button"
           onClick={onCancel}
-          className="absolute top-4 right-4 p-1 text-slate-400 hover:text-slate-200 rounded-lg hover:bg-slate-800 transition"
+          className="absolute top-4 right-4 p-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition"
         >
           <X className="w-5 h-5" />
         </button>
@@ -43,21 +43,21 @@ export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
           <div
             className={`p-2.5 rounded-xl ${
               isDanger
-                ? 'bg-rose-500/20 text-rose-400 border border-rose-500/30'
-                : 'bg-indigo-500/20 text-indigo-400 border border-indigo-500/30'
+                ? 'bg-rose-500/10 dark:bg-rose-500/20 text-rose-600 dark:text-rose-400 border border-rose-500/20 dark:border-rose-500/30'
+                : 'bg-indigo-500/10 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 dark:border-indigo-500/30'
             }`}
           >
             <AlertCircle className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="text-lg font-bold text-slate-100">{title}</h3>
-            <p className="text-sm text-slate-400 mt-1 leading-relaxed">{message}</p>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">{title}</h3>
+            <p className="text-sm text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">{message}</p>
           </div>
         </div>
 
         {/* Cảnh báo số câu chưa làm nếu có */}
         {unansweredCount > 0 && (
-          <div className="my-4 p-3.5 rounded-xl bg-amber-950/40 border border-amber-500/30 text-amber-200 text-xs md:text-sm">
+          <div className="my-4 p-3.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-500/30 text-amber-900 dark:text-amber-200 text-xs md:text-sm">
             ⚠️ <strong>Lưu ý:</strong> Bạn vẫn còn <strong>{unansweredCount}</strong> câu chưa chọn đáp án. Các câu chưa làm sẽ được tính 0 điểm.
           </div>
         )}
@@ -67,17 +67,17 @@ export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
           <button
             type="button"
             onClick={onCancel}
-            className="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 transition border border-slate-700/60"
+            className="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition border border-slate-300 dark:border-slate-700/60 cursor-pointer"
           >
             {cancelLabel}
           </button>
           <button
             type="button"
             onClick={onConfirm}
-            className={`px-5 py-2.5 rounded-xl text-sm font-semibold text-white shadow-lg transition ${
+            className={`px-5 py-2.5 rounded-xl text-sm font-semibold text-white shadow-lg transition cursor-pointer ${
               isDanger
-                ? 'bg-rose-600 hover:bg-rose-500 shadow-rose-900/30'
-                : 'bg-indigo-600 hover:bg-indigo-500 shadow-indigo-900/30'
+                ? 'bg-rose-600 hover:bg-rose-500 shadow-rose-600/20 dark:shadow-rose-900/30'
+                : 'bg-indigo-600 hover:bg-indigo-500 shadow-indigo-600/20 dark:shadow-indigo-900/30'
             }`}
           >
             {confirmLabel}

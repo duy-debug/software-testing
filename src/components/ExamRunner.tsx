@@ -9,6 +9,7 @@ import { TimerDisplay } from './TimerDisplay';
 import { ScoreSummary } from './ScoreSummary';
 import { ReviewList } from './ReviewList';
 import { ConfirmDialog } from './ConfirmDialog';
+import { ThemeToggle } from './ThemeToggle';
 import {
   ArrowLeft,
   ArrowRight,
@@ -90,36 +91,40 @@ export const ExamRunner: React.FC<ExamRunnerProps> = ({
   if (state.status === 'idle') {
     return (
       <div className="max-w-2xl mx-auto py-12 px-4 animate-fadeIn">
-        <div className="p-8 md:p-10 rounded-3xl bg-slate-900/90 border border-slate-800 shadow-2xl backdrop-blur-xl text-center">
-          <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-purple-600/20 border border-purple-500/30 text-purple-400 flex items-center justify-center shadow-lg">
+        <div className="relative p-8 md:p-10 rounded-3xl bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 shadow-xl dark:shadow-2xl backdrop-blur-xl text-center transition-colors duration-200">
+          <div className="absolute top-5 right-5">
+            <ThemeToggle />
+          </div>
+
+          <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-purple-500/10 dark:bg-purple-600/20 border border-purple-500/20 dark:border-purple-500/30 text-purple-600 dark:text-purple-400 flex items-center justify-center shadow-md">
             <GraduationCap className="w-8 h-8" />
           </div>
 
-          <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-2">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white mb-2">
             {title}
           </h2>
-          <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-6">
+          <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base leading-relaxed mb-6">
             Đề thi mô phỏng chuẩn kỳ thi giữa kỳ / kết thúc học phần Kiểm thử phần mềm.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center mb-8 max-w-lg mx-auto">
-            <div className="p-4 rounded-2xl bg-slate-800/60 border border-slate-700/60">
-              <span className="text-xs text-slate-400 uppercase font-semibold">Số lượng</span>
-              <div className="text-lg font-bold text-white mt-0.5">{questions.length} câu</div>
+            <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60">
+              <span className="text-xs text-slate-500 dark:text-slate-400 uppercase font-semibold">Số lượng</span>
+              <div className="text-lg font-bold text-slate-900 dark:text-white mt-0.5">{questions.length} câu</div>
             </div>
-            <div className="p-4 rounded-2xl bg-slate-800/60 border border-slate-700/60">
-              <span className="text-xs text-slate-400 uppercase font-semibold">Thời gian</span>
-              <div className="text-lg font-bold text-purple-400 mt-0.5">{Math.floor(durationSec / 60)} phút</div>
+            <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60">
+              <span className="text-xs text-slate-500 dark:text-slate-400 uppercase font-semibold">Thời gian</span>
+              <div className="text-lg font-bold text-purple-600 dark:text-purple-400 mt-0.5">{Math.floor(durationSec / 60)} phút</div>
             </div>
-            <div className="p-4 rounded-2xl bg-slate-800/60 border border-slate-700/60">
-              <span className="text-xs text-slate-400 uppercase font-semibold">Thang điểm</span>
-              <div className="text-lg font-bold text-emerald-400 mt-0.5">10.0 điểm</div>
+            <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60">
+              <span className="text-xs text-slate-500 dark:text-slate-400 uppercase font-semibold">Thang điểm</span>
+              <div className="text-lg font-bold text-emerald-600 dark:text-emerald-400 mt-0.5">10.0 điểm</div>
             </div>
           </div>
 
-          <div className="p-4 rounded-2xl bg-slate-800/40 border border-slate-700/40 text-left text-xs text-slate-300 mb-8 max-w-lg mx-auto space-y-2">
+          <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/40 text-left text-xs text-slate-700 dark:text-slate-300 mb-8 max-w-lg mx-auto space-y-2">
             <div>📌 <strong>Quy chế thi:</strong></div>
-            <ul className="list-disc list-inside space-y-1 text-slate-400">
+            <ul className="list-disc list-inside space-y-1 text-slate-600 dark:text-slate-400">
               <li>Bạn có thể tự do thay đổi đáp án các câu trước khi bấm Nộp bài.</li>
               <li>Đáp án và lời giải chi tiết sẽ được bảo mật tuyệt đối cho đến khi nộp bài.</li>
               <li>Khi hết 40 phút, hệ thống sẽ tự động khóa và thu bài thi.</li>
@@ -137,7 +142,7 @@ export const ExamRunner: React.FC<ExamRunnerProps> = ({
             <button
               type="button"
               onClick={onExit}
-              className="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-sm border border-slate-700 transition cursor-pointer"
+              className="px-6 py-3.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold text-sm border border-slate-300 dark:border-slate-700 transition cursor-pointer"
             >
               Quay lại
             </button>
@@ -152,8 +157,8 @@ export const ExamRunner: React.FC<ExamRunnerProps> = ({
     return (
       <div className="py-8 px-4">
         {showTimeExpiredNotice && (
-          <div className="max-w-2xl mx-auto mb-6 p-4 rounded-2xl bg-amber-950/50 border border-amber-500/50 text-amber-200 flex items-center gap-3">
-            <AlertTriangle className="w-5 h-5 text-amber-400 flex-shrink-0" />
+          <div className="max-w-2xl mx-auto mb-6 p-4 rounded-2xl bg-amber-50 dark:bg-amber-950/50 border border-amber-300 dark:border-amber-500/50 text-amber-900 dark:text-amber-200 flex items-center gap-3">
+            <AlertTriangle className="w-5 h-5 text-amber-500 dark:text-amber-400 flex-shrink-0" />
             <span className="text-sm font-semibold">
               Đã hết giờ làm bài! Bài thi của bạn đã được hệ thống tự động nộp.
             </span>
@@ -175,21 +180,22 @@ export const ExamRunner: React.FC<ExamRunnerProps> = ({
   if (state.status === 'reviewing' && scoreResult) {
     return (
       <div className="max-w-4xl mx-auto py-8 px-4 space-y-6">
-        <div className="flex flex-wrap items-center justify-between gap-4 p-5 rounded-2xl bg-slate-900/90 border border-slate-800">
+        <div className="flex flex-wrap items-center justify-between gap-4 p-5 rounded-2xl bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 shadow-md dark:shadow-xl transition-colors duration-200">
           <div>
-            <h2 className="text-xl font-bold text-white flex items-center gap-2">
+            <h2 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
               <span>Xem lại bài thi: {title}</span>
             </h2>
-            <p className="text-xs text-slate-400 mt-1">
-              Điểm số: <strong className="text-indigo-400 font-mono text-sm">{scoreResult.totalScore}/10</strong> ({scoreResult.correctCount}/{totalCount} câu đúng)
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+              Điểm số: <strong className="text-indigo-600 dark:text-indigo-400 font-mono text-sm">{scoreResult.totalScore}/10</strong> ({scoreResult.correctCount}/{totalCount} câu đúng)
             </p>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2.5">
+            <ThemeToggle />
             <button
               type="button"
               onClick={handleRetryExam}
-              className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition flex items-center gap-1.5 cursor-pointer"
+              className="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold border border-slate-300 dark:border-slate-700 transition flex items-center gap-1.5 cursor-pointer"
             >
               <RotateCcw className="w-3.5 h-3.5" />
               <span>Thi lại</span>
@@ -197,7 +203,7 @@ export const ExamRunner: React.FC<ExamRunnerProps> = ({
             <button
               type="button"
               onClick={onExit}
-              className="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold transition flex items-center gap-1.5 cursor-pointer"
+              className="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold transition flex items-center gap-1.5 cursor-pointer shadow-md"
             >
               <Home className="w-3.5 h-3.5" />
               <span>Trang chủ</span>
@@ -215,7 +221,7 @@ export const ExamRunner: React.FC<ExamRunnerProps> = ({
   }
 
   if (!currentQuestion) {
-    return <div className="text-center py-12 text-slate-400">Không tìm thấy câu hỏi.</div>;
+    return <div className="text-center py-12 text-slate-500 dark:text-slate-400">Không tìm thấy câu hỏi.</div>;
   }
 
   const selectedKeys = state.answers[currentQuestion.id] || [];
@@ -224,21 +230,21 @@ export const ExamRunner: React.FC<ExamRunnerProps> = ({
   return (
     <div className="max-w-6xl mx-auto py-6 px-4 space-y-6">
       {/* Thanh Header kỳ thi */}
-      <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-slate-900/80 border border-slate-800 backdrop-blur-md">
+      <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-800 backdrop-blur-md shadow-md dark:shadow-xl transition-colors duration-200">
         <div className="flex items-center gap-3">
           <button
             type="button"
             onClick={() => setShowExitConfirm(true)}
-            className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition border border-slate-700/60 cursor-pointer"
+            className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition border border-slate-300 dark:border-slate-700/60 cursor-pointer"
             title="Thoát bài thi"
           >
             <Home className="w-4 h-4" />
           </button>
           <div>
-            <h1 className="text-base font-bold text-white flex items-center gap-2">
+            <h1 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
               <span>{title}</span>
             </h1>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-slate-500 dark:text-slate-400">
               Câu {state.currentIndex + 1} / {totalCount}
             </p>
           </div>
@@ -249,7 +255,8 @@ export const ExamRunner: React.FC<ExamRunnerProps> = ({
           <TimerDisplay secondsLeft={secondsLeft} totalDurationSec={durationSec} />
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5">
+          <ThemeToggle />
           <button
             type="button"
             onClick={() => setShowSubmitConfirm(true)}
@@ -284,7 +291,7 @@ export const ExamRunner: React.FC<ExamRunnerProps> = ({
               type="button"
               disabled={state.currentIndex === 0}
               onClick={prevQuestion}
-              className="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 disabled:opacity-40 disabled:hover:bg-slate-800 text-slate-200 text-sm font-semibold border border-slate-700 transition flex items-center gap-2 cursor-pointer disabled:cursor-not-allowed"
+              className="px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 disabled:opacity-40 disabled:hover:bg-slate-100 dark:disabled:hover:bg-slate-800 text-slate-700 dark:text-slate-200 text-sm font-semibold border border-slate-300 dark:border-slate-700 transition flex items-center gap-2 cursor-pointer disabled:cursor-not-allowed"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Câu trước</span>

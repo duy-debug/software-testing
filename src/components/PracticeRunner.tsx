@@ -9,6 +9,7 @@ import { QuestionNavigator } from './QuestionNavigator';
 import { ProgressBar } from './ProgressBar';
 import { ScoreSummary } from './ScoreSummary';
 import { ConfirmDialog } from './ConfirmDialog';
+import { ThemeToggle } from './ThemeToggle';
 import {
   ArrowLeft,
   ArrowRight,
@@ -57,23 +58,27 @@ export const PracticeRunner: React.FC<PracticeRunnerProps> = ({
   if (state.status === 'idle') {
     return (
       <div className="max-w-2xl mx-auto py-12 px-4 animate-fadeIn">
-        <div className="p-8 md:p-10 rounded-3xl bg-slate-900/90 border border-slate-800 shadow-2xl backdrop-blur-xl text-center">
-          <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 text-indigo-400 flex items-center justify-center shadow-lg">
+        <div className="relative p-8 md:p-10 rounded-3xl bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 shadow-xl dark:shadow-2xl backdrop-blur-xl text-center transition-colors duration-200">
+          <div className="absolute top-5 right-5">
+            <ThemeToggle />
+          </div>
+
+          <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-indigo-500/10 dark:bg-indigo-600/20 border border-indigo-500/20 dark:border-indigo-500/30 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shadow-md">
             <BookOpen className="w-8 h-8" />
           </div>
 
-          <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-3">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white mb-3">
             {title}
           </h2>
-          <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-6">
+          <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base leading-relaxed mb-6">
             {subtitle} (Tổng cộng <strong>{questions.length} câu hỏi</strong>).
           </p>
 
           <div className="grid grid-cols-2 gap-3 text-left mb-8 max-w-md mx-auto">
-            <div className="p-3.5 rounded-xl bg-slate-800/60 border border-slate-700/60 text-xs text-slate-300">
+            <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 text-xs text-slate-700 dark:text-slate-300">
               ⚡ <strong>Phản hồi tức thì:</strong> Biết ngay đáp án đúng/sai
             </div>
-            <div className="p-3.5 rounded-xl bg-slate-800/60 border border-slate-700/60 text-xs text-slate-300">
+            <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 text-xs text-slate-700 dark:text-slate-300">
               💡 <strong>Lời giải chi tiết:</strong> Dẫn chứng cơ sở lý thuyết
             </div>
           </div>
@@ -89,7 +94,7 @@ export const PracticeRunner: React.FC<PracticeRunnerProps> = ({
             <button
               type="button"
               onClick={onExit}
-              className="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-sm border border-slate-700 transition cursor-pointer"
+              className="px-6 py-3.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold text-sm border border-slate-300 dark:border-slate-700 transition cursor-pointer"
             >
               Quay lại
             </button>
@@ -114,7 +119,7 @@ export const PracticeRunner: React.FC<PracticeRunnerProps> = ({
 
   if (!currentQuestion) {
     return (
-      <div className="text-center py-12 text-slate-400">
+      <div className="text-center py-12 text-slate-500 dark:text-slate-400">
         Không tìm thấy câu hỏi.
       </div>
     );
@@ -135,24 +140,24 @@ export const PracticeRunner: React.FC<PracticeRunnerProps> = ({
   return (
     <div className="max-w-6xl mx-auto py-6 px-4 space-y-6">
       {/* Thanh Header phiên làm bài */}
-      <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-slate-900/80 border border-slate-800 backdrop-blur-md">
+      <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-800 backdrop-blur-md shadow-md dark:shadow-xl transition-colors duration-200">
         <div className="flex items-center gap-3">
           <button
             type="button"
             onClick={() => setShowExitConfirm(true)}
-            className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition border border-slate-700/60 cursor-pointer"
+            className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition border border-slate-300 dark:border-slate-700/60 cursor-pointer"
             title="Thoát ôn tập"
           >
             <Home className="w-4 h-4" />
           </button>
           <div>
-            <h1 className="text-base font-bold text-white flex items-center gap-2">
+            <h1 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
               <span>{title}</span>
-              <span className="text-xs px-2 py-0.5 rounded-md bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+              <span className="text-xs px-2 py-0.5 rounded-md bg-indigo-500/10 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-300 border border-indigo-500/20 dark:border-indigo-500/30">
                 {badge}
               </span>
             </h1>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-slate-500 dark:text-slate-400">
               Câu {state.currentIndex + 1} / {totalCount}
             </p>
           </div>
@@ -162,11 +167,12 @@ export const PracticeRunner: React.FC<PracticeRunnerProps> = ({
           <ProgressBar answered={answeredCount} total={totalCount} />
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2.5">
+          <ThemeToggle />
           <button
             type="button"
             onClick={() => setShowSubmitConfirm(true)}
-            className="px-4 py-2 rounded-xl bg-indigo-600/90 hover:bg-indigo-600 text-white font-semibold text-xs transition border border-indigo-500/40 cursor-pointer shadow-md"
+            className="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition border border-indigo-500/40 cursor-pointer shadow-md"
           >
             Kết thúc ôn tập
           </button>
@@ -199,7 +205,7 @@ export const PracticeRunner: React.FC<PracticeRunnerProps> = ({
               type="button"
               disabled={state.currentIndex === 0}
               onClick={prevQuestion}
-              className="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 disabled:opacity-40 disabled:hover:bg-slate-800 text-slate-200 text-sm font-semibold border border-slate-700 transition flex items-center gap-2 cursor-pointer disabled:cursor-not-allowed"
+              className="px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 disabled:opacity-40 disabled:hover:bg-slate-100 dark:disabled:hover:bg-slate-800 text-slate-700 dark:text-slate-200 text-sm font-semibold border border-slate-300 dark:border-slate-700 transition flex items-center gap-2 cursor-pointer disabled:cursor-not-allowed"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Câu trước</span>

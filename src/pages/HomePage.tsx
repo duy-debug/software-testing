@@ -1,5 +1,6 @@
 import React from 'react';
 import { ModeCard } from '../components/ModeCard';
+import { ThemeToggle } from '../components/ThemeToggle';
 import { BookOpen, GraduationCap, Award, ShieldCheck, CheckCircle2, Sparkles, FileText } from 'lucide-react';
 
 export interface HomePageProps {
@@ -8,44 +9,63 @@ export interface HomePageProps {
 
 export const HomePage: React.FC<HomePageProps> = ({ onSelectMode }) => {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 flex flex-col justify-between selection:bg-indigo-500 selection:text-white transition-colors duration-200">
       {/* Background glow effects */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
-        <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[100px]" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-indigo-500/10 dark:bg-indigo-600/10 rounded-full blur-[120px]" />
+        <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-purple-500/10 dark:bg-purple-600/10 rounded-full blur-[100px]" />
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-4 py-12 md:py-16 w-full">
+      <div className="relative max-w-6xl mx-auto px-4 py-8 md:py-12 w-full">
+        {/* Top Bar with brand & ThemeToggle */}
+        <div className="flex items-center justify-between pb-6 mb-8 border-b border-slate-200 dark:border-slate-800/80">
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/20">
+              <GraduationCap className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="text-sm font-extrabold text-slate-900 dark:text-white tracking-wide">
+                SOT357 QUIZ
+              </div>
+              <div className="text-[11px] text-slate-500 dark:text-slate-400">
+                Kiểm Thử Phần Mềm — ĐH Nha Trang
+              </div>
+            </div>
+          </div>
+
+          <ThemeToggle showLabel={true} />
+        </div>
+
         {/* Hero Section */}
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold mb-6 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-700 dark:text-indigo-300 text-xs font-semibold mb-6 shadow-xs">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Học phần SOT357 — ĐH Nha Trang</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight mb-5">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight mb-5">
             Hệ Thống Ôn Tập & Thi Thử <br />
-            <span className="bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 dark:from-indigo-400 dark:via-purple-300 dark:to-pink-400 bg-clip-text text-transparent">
               Kiểm Thử Phần Mềm
             </span>
           </h1>
 
-          <p className="text-slate-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
             Bộ ngân hàng <strong>144 câu hỏi trắc nghiệm</strong> chuẩn hóa: gồm 40 câu ôn tập tổng hợp, 24 câu bài giảng slide (3 buổi), và 2 đề thi thử 80 câu bám sát chuẩn ISTQB.
           </p>
 
           {/* Quick stats badges */}
-          <div className="flex flex-wrap items-center justify-center gap-6 mt-8 pt-6 border-t border-slate-800/60 text-xs font-medium text-slate-400">
+          <div className="flex flex-wrap items-center justify-center gap-6 mt-8 pt-6 border-t border-slate-200 dark:border-slate-800/60 text-xs font-medium text-slate-600 dark:text-slate-400">
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+              <CheckCircle2 className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
               <span>144 Câu hỏi chuẩn hóa (4 bộ đề)</span>
             </div>
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-indigo-400" />
+              <ShieldCheck className="w-4 h-4 text-indigo-500 dark:text-indigo-400" />
               <span>Đối chiếu Ground Truth 100%</span>
             </div>
             <div className="flex items-center gap-2">
-              <Award className="w-4 h-4 text-purple-400" />
+              <Award className="w-4 h-4 text-purple-500 dark:text-purple-400" />
               <span>Chấm điểm All-or-nothing</span>
             </div>
           </div>
@@ -104,10 +124,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectMode }) => {
       </div>
 
       {/* Footer */}
-      <footer className="relative border-t border-slate-800/80 py-6 text-center text-xs text-slate-500">
+      <footer className="relative border-t border-slate-200 dark:border-slate-800/80 py-6 text-center text-xs text-slate-500 dark:text-slate-400">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <span>© 2026 Hệ thống ôn tập trắc nghiệm Kiểm thử phần mềm (SOT357)</span>
-          <span className="text-slate-400">Kiến trúc chuẩn ReactJS • Single-Owner • 144 Câu hỏi</span>
+          <span className="text-slate-500 dark:text-slate-400">Kiến trúc chuẩn ReactJS • Single-Owner • 144 Câu hỏi</span>
         </div>
       </footer>
     </div>

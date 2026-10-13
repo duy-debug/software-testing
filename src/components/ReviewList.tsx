@@ -36,9 +36,9 @@ export const ReviewList: React.FC<ReviewListProps> = ({
   return (
     <div className="space-y-6">
       {/* Bộ lọc câu hỏi */}
-      <div className="flex flex-wrap items-center justify-between gap-3 p-4 bg-slate-900/80 border border-slate-800 rounded-2xl">
-        <div className="flex items-center gap-2 text-sm font-semibold text-slate-200">
-          <Filter className="w-4 h-4 text-indigo-400" />
+      <div className="flex flex-wrap items-center justify-between gap-3 p-4 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 rounded-2xl transition-colors duration-200">
+        <div className="flex items-center gap-2 text-sm font-semibold text-slate-800 dark:text-slate-200">
+          <Filter className="w-4 h-4 text-indigo-500 dark:text-indigo-400" />
           <span>Lọc câu hỏi:</span>
         </div>
 
@@ -49,7 +49,7 @@ export const ReviewList: React.FC<ReviewListProps> = ({
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer ${
               filter === 'all'
                 ? 'bg-indigo-600 text-white'
-                : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
             }`}
           >
             Tất cả ({questions.length})
@@ -60,7 +60,7 @@ export const ReviewList: React.FC<ReviewListProps> = ({
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer ${
               filter === 'correct'
                 ? 'bg-emerald-600 text-white'
-                : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
             }`}
           >
             Đúng ({scoreResult.correctCount})
@@ -71,7 +71,7 @@ export const ReviewList: React.FC<ReviewListProps> = ({
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer ${
               filter === 'wrong'
                 ? 'bg-rose-600 text-white'
-                : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
             }`}
           >
             Sai ({scoreResult.answeredCount - scoreResult.correctCount})
@@ -82,7 +82,7 @@ export const ReviewList: React.FC<ReviewListProps> = ({
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer ${
               filter === 'blank'
                 ? 'bg-amber-600 text-white'
-                : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
             }`}
           >
             Chưa làm ({questions.length - scoreResult.answeredCount})
@@ -107,7 +107,7 @@ export const ReviewList: React.FC<ReviewListProps> = ({
         <button
           type="button"
           onClick={scrollToTop}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold border border-slate-700 cursor-pointer transition"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold border border-slate-300 dark:border-slate-700 cursor-pointer transition"
         >
           <ArrowUp className="w-4 h-4" />
           <span>Lên đầu trang</span>

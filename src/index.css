@@ -1,31 +1,33 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   body {
-    @apply bg-slate-900 text-slate-100 antialiased font-sans min-h-screen selection:bg-indigo-500 selection:text-white;
+    @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased font-sans min-h-screen selection:bg-indigo-500 selection:text-white transition-colors duration-200;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }
 
 /* Custom Markdown Table Styling */
 .markdown-content table {
-  @apply w-full border-collapse my-4 text-sm text-left;
+  @apply w-full border-collapse my-4 text-sm text-left shadow-xs rounded-lg overflow-hidden;
 }
 
 .markdown-content th {
-  @apply bg-slate-800 text-indigo-300 font-semibold px-4 py-2.5 border border-slate-700;
+  @apply bg-slate-100 dark:bg-slate-800 text-indigo-700 dark:text-indigo-300 font-semibold px-4 py-2.5 border border-slate-300 dark:border-slate-700;
 }
 
 .markdown-content td {
-  @apply px-4 py-2 border border-slate-700/70 bg-slate-800/40;
+  @apply px-4 py-2 border border-slate-200 dark:border-slate-700/70 bg-white dark:bg-slate-800/40 text-slate-800 dark:text-slate-200;
 }
 
 .markdown-content tr:nth-child(even) td {
-  @apply bg-slate-800/80;
+  @apply bg-slate-50/80 dark:bg-slate-800/80;
 }
 
 .markdown-content tr:hover td {
-  @apply bg-indigo-950/40;
+  @apply bg-indigo-50/70 dark:bg-indigo-950/40;
 }
 
 .markdown-content p {
@@ -33,13 +35,13 @@
 }
 
 .markdown-content code {
-  @apply bg-slate-800 text-pink-300 px-1.5 py-0.5 rounded text-xs font-mono border border-slate-700;
+  @apply bg-slate-100 dark:bg-slate-800 text-pink-600 dark:text-pink-300 px-1.5 py-0.5 rounded text-xs font-mono border border-slate-200 dark:border-slate-700;
 }
 
 .markdown-content strong {
-  @apply text-white font-semibold;
+  @apply text-slate-900 dark:text-white font-semibold;
 }
 
 .markdown-content em {
-  @apply text-slate-300 italic;
+  @apply text-slate-700 dark:text-slate-300 italic;
 }
