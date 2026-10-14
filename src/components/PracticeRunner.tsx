@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { Question } from '../types/quiz';
+import type { Question, DeckId } from '../types/quiz';
 import { useQuizSession } from '../hooks/useQuizSession';
 import { scoreQuestion } from '../lib/scoring';
 import { QuestionCard } from './QuestionCard';
@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 
 export interface PracticeRunnerProps {
-  deckId?: 'review' | 'slides';
+  deckId?: DeckId;
   title?: string;
   subtitle?: string;
   badge?: string;

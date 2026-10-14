@@ -4,7 +4,14 @@ import { PracticePage } from './pages/PracticePage';
 import { SlidesPage } from './pages/SlidesPage';
 import { ExamPage } from './pages/ExamPage';
 
-type ViewMode = 'home' | 'practice' | 'slides' | 'exam1' | 'exam2';
+export type ViewMode =
+  | 'home'
+  | 'practice'
+  | 'slides'
+  | 'practice1'
+  | 'practice2'
+  | 'exam1'
+  | 'exam2';
 
 export function App() {
   const [view, setView] = useState<ViewMode>('home');
@@ -13,15 +20,19 @@ export function App() {
     setView('home');
   };
 
-  const handleSelectMode = (mode: 'practice' | 'slides' | 'exam1' | 'exam2') => {
+  const handleSelectMode = (mode: ViewMode) => {
     setView(mode);
   };
 
   switch (view) {
     case 'practice':
-      return <PracticePage onBackToHome={handleBackToHome} />;
+      return <PracticePage deckId="review" onBackToHome={handleBackToHome} />;
     case 'slides':
       return <SlidesPage onBackToHome={handleBackToHome} />;
+    case 'practice1':
+      return <PracticePage deckId="practice1" onBackToHome={handleBackToHome} />;
+    case 'practice2':
+      return <PracticePage deckId="practice2" onBackToHome={handleBackToHome} />;
     case 'exam1':
       return <ExamPage deckId="exam1" onBackToHome={handleBackToHome} />;
     case 'exam2':

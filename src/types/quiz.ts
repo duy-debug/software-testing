@@ -7,9 +7,11 @@ export interface Option {
   note: string | null;
 }
 
+export type DeckId = 'review' | 'exam1' | 'exam2' | 'slides' | 'practice1' | 'practice2';
+
 export interface Question {
-  id: string; // e.g., "review-001", "exam1-040", "slides-001"
-  deck: 'review' | 'exam1' | 'exam2' | 'slides';
+  id: string; // e.g., "review-001", "exam1-040", "slides-001", "practice1-001"
+  deck: DeckId;
   number: number;
   type: QuestionType;
   stem: string;
@@ -24,7 +26,7 @@ export type QuizMode = 'practice' | 'exam';
 export type SessionStatus = 'idle' | 'in_progress' | 'submitted' | 'reviewing';
 
 export interface QuizSessionState {
-  deckId: 'review' | 'exam1' | 'exam2' | 'slides';
+  deckId: DeckId;
   mode: QuizMode;
   status: SessionStatus;
   questionIds: string[];

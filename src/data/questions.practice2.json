@@ -1,0 +1,1426 @@
+[
+  {
+    "id": "practice2-001",
+    "deck": "practice2",
+    "number": 1,
+    "type": "single",
+    "stem": "Phần mềm chấm điểm thi của trường yêu cầu: điểm thi là số thực từ **0 đến 10**, trong đó điểm **dưới 5** xếp loại \"Rớt\", điểm từ **5 đến dưới 8** xếp loại \"Đạt\", điểm từ **8 đến 10** xếp loại \"Giỏi\". Nếu áp dụng kỹ thuật **Phân vùng tương đương (Equivalence Partitioning)**, số phân vùng **hợp lệ** và số lượng test case tối thiểu để đạt 100% bao phủ EP (chỉ tính vùng hợp lệ) lần lượt là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "2 phân vùng và 2 test case",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "1 phân vùng và 1 test case",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "3 phân vùng và 3 test case",
+        "isCorrect": true,
+        "note": "(Chính xác. 3 khoảng điểm được xử lý bởi 3 quy tắc khác nhau → 3 phân vùng hợp lệ → cần 3 test case.)"
+      },
+      {
+        "key": "d",
+        "text": "4 phân vùng và 4 test case",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Ba khoảng điểm [0,5), [5,8), [8,10] được phần mềm xử lý theo ba quy tắc khác nhau nên là ba phân vùng hợp lệ riêng biệt. Quy tắc EP cơ bản: mỗi phân vùng hợp lệ cần ít nhất một test case → tối thiểu 3 test case. Các đáp án khác sai vì gộp nhầm các khoảng có quy tắc khác nhau thành một phân vùng.",
+    "answerKey": "The correct answer is: 3 phân vùng và 3 test case"
+  },
+  {
+    "id": "practice2-002",
+    "deck": "practice2",
+    "number": 2,
+    "type": "single",
+    "stem": "Trường học quy định: trường **\"Số tín chỉ đăng ký\"** mỗi học kỳ chỉ chấp nhận số nguyên từ **12 đến 24**. Áp dụng Phân vùng tương đương, số phân vùng (gồm cả hợp lệ và không hợp lệ) và số test case tối thiểu để bao phủ đủ tất cả các phân vùng lần lượt là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "3 phân vùng và 3 test case",
+        "isCorrect": true,
+        "note": "(Chính xác. Gồm vùng <12 không hợp lệ, vùng 12–24 hợp lệ, vùng >24 không hợp lệ → cần 3 test case.)"
+      },
+      {
+        "key": "b",
+        "text": "2 phân vùng và 2 test case",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "3 phân vùng và 4 test case",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "1 phân vùng và 3 test case",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Miền giá trị nguyên được chia thành: (1) giá trị nhỏ hơn 12 – không hợp lệ, (2) giá trị từ 12 đến 24 – hợp lệ, (3) giá trị lớn hơn 24 – không hợp lệ. Mỗi phân vùng (dù hợp lệ hay không) cần ít nhất một test case → tổng 3 test case. Đáp án b sai vì bỏ sót một vùng không hợp lệ; đáp án d sai vì gộp tất cả thành một vùng.",
+    "answerKey": "The correct answer is: 3 phân vùng và 3 test case"
+  },
+  {
+    "id": "practice2-003",
+    "deck": "practice2",
+    "number": 3,
+    "type": "single",
+    "stem": "Hệ thống đặt phòng khách sạn yêu cầu trường **\"Số đêm lưu trú\"** nhận số nguyên hợp lệ từ **1 đến 30**. Áp dụng Phân tích giá trị biên theo phương pháp **2 giá trị** (ISTQB), tập giá trị kiểm thử nào là **ĐÚNG**?",
+    "options": [
+      {
+        "key": "a",
+        "text": "1, 2, 29, 30",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "0, 1, 30, 31",
+        "isCorrect": true,
+        "note": "(Chính xác. Tại mỗi biên lấy giá trị ngay trên biên và giá trị liền kề ngoài vùng.)"
+      },
+      {
+        "key": "c",
+        "text": "1, 15, 30",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "0, 1, 2, 29, 30, 31",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "BVA 2 giá trị: tại biên dưới (1) lấy 1 và giá trị liền kề ngoài vùng là 0; tại biên trên (30) lấy 30 và giá trị liền kề ngoài vùng là 31 → {0, 1, 30, 31}. Đáp án a thiếu các giá trị ngoài vùng (không test được hành vi từ chối); đáp án d là BVA 3 giá trị, không phải yêu cầu của đề.",
+    "answerKey": "The correct answer is: 0, 1, 30, 31"
+  },
+  {
+    "id": "practice2-004",
+    "deck": "practice2",
+    "number": 4,
+    "type": "single",
+    "stem": "Vẫn trường **\"Số đêm lưu trú\"** (số nguyên, hợp lệ từ **1 đến 30**), nhưng lần này áp dụng Phân tích giá trị biên theo phương pháp **3 giá trị**. Tập giá trị kiểm thử nào là **ĐÚNG**?",
+    "options": [
+      {
+        "key": "a",
+        "text": "0, 1, 30, 31",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "1, 2, 29, 30",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "0, 15, 30",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "0, 1, 2, 29, 30, 31",
+        "isCorrect": true,
+        "note": "(Chính xác. Mỗi biên lấy: giá trị biên, giá trị liền kề trong vùng, giá trị liền kề ngoài vùng → 6 giá trị.)"
+      }
+    ],
+    "explanation": "BVA 3 giá trị: tại biên dưới lấy 0 (ngoài vùng), 1 (trên biên), 2 (trong vùng); tại biên trên lấy 29 (trong vùng), 30 (trên biên), 31 (ngoài vùng) → tổng 6 giá trị. Đáp án a là BVA 2 giá trị; đáp án b thiếu giá trị ngoài vùng nên không kiểm tra được khả năng từ chối đầu vào sai.",
+    "answerKey": "The correct answer is: 0, 1, 2, 29, 30, 31"
+  },
+  {
+    "id": "practice2-005",
+    "deck": "practice2",
+    "number": 5,
+    "type": "single",
+    "stem": "Một bảng kiểm thử liệt kê **8 giá trị biên** cần kiểm tra cho một trường đầu vào. Nhóm đã thực thi test case bao phủ được **6** trong 8 giá trị đó. Độ bao phủ giá trị biên đạt được là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "50%",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "60%",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "75%",
+        "isCorrect": true,
+        "note": "(Chính xác. 6/8 × 100% = 75%.)"
+      },
+      {
+        "key": "d",
+        "text": "80%",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Độ bao phủ = (số giá trị biên đã kiểm thử / tổng số giá trị biên cần kiểm thử) × 100% = (6/8) × 100% = 75%. Các đáp án còn lại tính sai tỷ lệ (b và d chia sai mẫu số, a là 4/8).",
+    "answerKey": "The correct answer is: 75%"
+  },
+  {
+    "id": "practice2-006",
+    "deck": "practice2",
+    "number": 6,
+    "type": "single",
+    "stem": "Khi áp dụng Phân vùng tương đương, phát biểu nào sau đây là **ĐÚNG** về cách kết hợp giá trị vào test case?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Có thể gộp nhiều giá trị **không hợp lệ** vào cùng một test case để tiết kiệm thời gian",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Có thể gộp nhiều giá trị **hợp lệ** (thậm chí từ các vùng hợp lệ khác nhau) vào cùng các test case, nhưng mỗi giá trị **không hợp lệ** nên được đặt trong test case riêng",
+        "isCorrect": true,
+        "note": "(Chính xác. Gộp giá trị không hợp lệ gây hiện tượng che lỗi – error masking.)"
+      },
+      {
+        "key": "c",
+        "text": "Mọi giá trị dù hợp lệ hay không đều nên gộp vào cùng một test case",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Không bao giờ được gộp hai giá trị thuộc hai phân vùng hợp lệ khác nhau vào cùng một test case",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Giá trị không hợp lệ thường làm hệ thống dừng xử lý và báo lỗi ngay tại giá trị đầu tiên, che mất lỗi ở các giá trị không hợp lệ còn lại (error masking) → mỗi giá trị không hợp lệ cần test case riêng. Ngược lại, nhiều giá trị hợp lệ (kể cả từ các vùng khác nhau) có thể gộp chung để tăng hiệu quả. Đáp án a và c gây che lỗi; đáp án d phủ nhận hoàn toàn nguyên tắc gộp vùng hợp lệ.",
+    "answerKey": "The correct answer is: Có thể gộp nhiều giá trị **hợp lệ** (thậm chí từ các vùng hợp lệ khác nhau) vào cùng các test case, nhưng mỗi giá trị **không hợp lệ** nên được đặt trong test case riêng"
+  },
+  {
+    "id": "practice2-007",
+    "deck": "practice2",
+    "number": 7,
+    "type": "single",
+    "stem": "Chương trình ưu đãi học phí của trung tâm xét **3 điều kiện Boolean** độc lập: (C1) học viên cũ, (C2) đăng ký trước hạn, (C3) đóng học phí một lần. Nếu lập bảng quyết định **đầy đủ** (không rút gọn), số cột quy tắc (rule) cần có là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "8 cột",
+        "isCorrect": true,
+        "note": "(Chính xác. 3 điều kiện Boolean → 2³ = 8 tổ hợp đầy đủ.)"
+      },
+      {
+        "key": "b",
+        "text": "3 cột",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "6 cột",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "9 cột",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Mỗi điều kiện Boolean có 2 trạng thái (Đúng/Sai); với 3 điều kiện độc lập, tổng số tổ hợp = 2³ = 8 cột quy tắc. Đáp án b lấy nhầm số điều kiện; đáp án d lấy 3² (công thức cho 2 điều kiện 3 trạng thái, không phù hợp).",
+    "answerKey": "The correct answer is: 8 cột"
+  },
+  {
+    "id": "practice2-008",
+    "deck": "practice2",
+    "number": 8,
+    "type": "single",
+    "stem": "Một cột của bảng quyết định đã rút gọn có **3 ô \"–\" (don't care)** tại các điều kiện Boolean, và cột này dẫn đến một hành động duy nhất. Cột rút gọn này đại diện cho bao nhiêu cột của bảng quyết định đầy đủ?",
+    "options": [
+      {
+        "key": "a",
+        "text": "3 cột",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "6 cột",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "4 cột",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "8 cột",
+        "isCorrect": true,
+        "note": "(Chính xác. Mỗi ô \"–\" nhân đôi số tổ hợp: 2³ = 8.)"
+      }
+    ],
+    "explanation": "Mỗi ô \"–\" (don't care) tương ứng với cả hai giá trị Đúng và Sai của điều kiện đó, nên một cột rút gọn với 3 ô \"–\" đại diện cho 2³ = 8 tổ hợp đầy đủ. Đáp án a và b lấy nhầm số ô \"–\" làm số cột hoặc cộng dồn; đáp án c là 2² (chỉ tính 2 ô \"–\").",
+    "answerKey": "The correct answer is: 8 cột"
+  },
+  {
+    "id": "practice2-009",
+    "deck": "practice2",
+    "number": 9,
+    "type": "single",
+    "stem": "Cửa hàng quy định: khách được **giảm 15%** khi thỏa mãn điều kiện: **C1 = T** (có thẻ thành viên Bạc trở lên) **VÀ** (**C2 = T** (đơn hàng trên 300.000đ) **HOẶC** **C3 = T** (có mã voucher)). Một khách hàng **không có thẻ thành viên Bạc** (C1 = F), đơn hàng **500.000đ** (C2 = T), **không có mã voucher** (C3 = F). Kết quả đúng là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Được giảm 15% vì đơn hàng trên 300.000đ",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Được giảm 10% vì không có thẻ thành viên",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Không được giảm 15% vì C1 = F (không có thẻ thành viên Bạc)",
+        "isCorrect": true,
+        "note": "(Chính xác. Điều kiện yêu cầu C1 = T VÀ (C2 = T HOẶC C3 = T); C1 = F nên toàn bộ biểu thức sai.)"
+      },
+      {
+        "key": "d",
+        "text": "Được giảm 15% vì có C2 = T nên không cần xét C1",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Quy tắc: Giảm 15% ⟺ C1=T ∧ (C2=T ∨ C3=T). Với C1=F, C2=T, C3=F: mệnh đề (C2∨C3)=T nhưng C1=F nên toàn bộ điều kiện là F → không được giảm. Đáp án a và d chỉ xét C2 mà bỏ qua yêu cầu bắt buộc C1=T; đáp án b bịa thêm mức giảm 10% không có trong quy định.",
+    "answerKey": "The correct answer is: Không được giảm 15% vì C1 = F (không có thẻ thành viên Bạc)"
+  },
+  {
+    "id": "practice2-010",
+    "deck": "practice2",
+    "number": 10,
+    "type": "single",
+    "stem": "Trong bảng quyết định của hệ thống quản lý đơn hàng có hai điều kiện: **C1** = \"Đơn hàng đã thanh toán\", **C2** = \"Đơn hàng chưa thanh toán\". Tổ hợp C1 = T và C2 = T cùng lúc là tổ hợp **không khả thi** (không thể xảy ra trong thực tế). Cách xử lý đúng khi tính độ bao phủ của bảng quyết định là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Vẫn giữ tổ hợp đó và bắt buộc viết test case cho nó để đạt 100% bao phủ",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Loại tổ hợp không khả thi khỏi mẫu số khi tính độ bao phủ",
+        "isCorrect": true,
+        "note": "(Chính xác. Tổ hợp không thể xảy ra không thể kiểm thử nên phải loại khỏi tổng số cột cần bao phủ.)"
+      },
+      {
+        "key": "c",
+        "text": "Ghi nhận tổ hợp đó là cột \"–\" (don't care) rồi rút gọn",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Bỏ qua toàn bộ bảng quyết định vì có tổ hợp không khả thi",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Tổ hợp không khả thi (infeasible combination) không bao giờ xảy ra nên không thể thực thi test case; khi tính độ bao phủ = (số cột đã test)/(tổng số cột khả thi), phải loại nó khỏi mẫu số. Đáp án a đòi hỏi kiểm thử điều không thể xảy ra; đáp án c nhầm lẫn \"không khả thi\" với \"don't care\"; đáp án d phản ứng thái quá.",
+    "answerKey": "The correct answer is: Loại tổ hợp không khả thi khỏi mẫu số khi tính độ bao phủ"
+  },
+  {
+    "id": "practice2-011",
+    "deck": "practice2",
+    "number": 11,
+    "type": "single",
+    "stem": "Máy bán nước tự động có các trạng thái: **S1: Chờ tiền**, **S2: Sẵn sàng bán**, **S3: Trả hàng**, với các chuyển trạng thái: S1 --(nạp đủ tiền)--> S2; S1 --(nạp chưa đủ tiền)--> S1; S2 --(chọn nước)--> S3; S3 --(trả hàng xong)--> S1. Người dùng thực hiện chuỗi sự kiện: **nạp đủ tiền → chọn nước → nạp chưa đủ tiền**. Trạng thái cuối cùng của máy là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "S1: Chờ tiền",
+        "isCorrect": true,
+        "note": "(Chính xác. Nạp đủ tiền: S1→S2; chọn nước: S2→S3→S1 (trả hàng xong quay về S1); nạp chưa đủ tiền: ở S1 vẫn ở S1.)"
+      },
+      {
+        "key": "b",
+        "text": "S2: Sẵn sàng bán",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "S3: Trả hàng",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Máy bị kẹt ở S3 vì chưa nạp thêm tiền",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Truy vết chuỗi: bắt đầu S1 → sự kiện \"nạp đủ tiền\" chuyển sang S2 → sự kiện \"chọn nước\" chuyển sang S3, sau đó \"trả hàng xong\" tự động quay về S1 → sự kiện \"nạp chưa đủ tiền\" tại S1 vẫn ở S1. Trạng thái cuối là S1 (Chờ tiền). Đáp án b dừng ở giữa chuỗi; đáp án c quên bước tự động quay về S1 sau khi trả hàng.",
+    "answerKey": "The correct answer is: S1: Chờ tiền"
+  },
+  {
+    "id": "practice2-012",
+    "deck": "practice2",
+    "number": 12,
+    "type": "single",
+    "stem": "Một hệ thống có **4 trạng thái** và **5 sự kiện** có thể xảy ra ở mỗi trạng thái. Phân tích cho thấy có **9 chuyển trạng thái hợp lệ**. Số lượng **ô chuyển không hợp lệ** trong bảng chuyển trạng thái là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "5",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "16",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "9",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "11",
+        "isCorrect": true,
+        "note": "(Chính xác. Tổng số ô = 4 × 5 = 20; ô không hợp lệ = 20 − 9 = 11.)"
+      }
+    ],
+    "explanation": "Bảng chuyển trạng thái có 4 × 5 = 20 ô (mỗi cặp trạng thái–sự kiện một ô). Trong đó 9 ô là chuyển hợp lệ, số còn lại 20 − 9 = 11 ô là chuyển không hợp lệ (cần test để đảm bảo hệ thống xử lý đúng). Đáp án b tính 4² (nhầm ma trận trạng thái–trạng thái); đáp án c lấy số chuyển hợp lệ.",
+    "answerKey": "The correct answer is: 11"
+  },
+  {
+    "id": "practice2-013",
+    "deck": "practice2",
+    "number": 13,
+    "type": "single",
+    "stem": "Trong kiểm thử chuyển trạng thái, **bao phủ 1-switch** (N-switch với N=1) được định nghĩa là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Thực thi mỗi trạng thái ít nhất một lần",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Thực thi mỗi chuyển trạng thái hợp lệ đơn lẻ ít nhất một lần",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Thực thi mọi **cặp chuyển trạng thái hợp lệ liên tiếp** (hai chuyển liên tiếp nhau) ít nhất một lần",
+        "isCorrect": true,
+        "note": "(Chính xác. 1-switch bao phủ mọi chuỗi 2 chuyển liên tiếp.)"
+      },
+      {
+        "key": "d",
+        "text": "Thực thi mọi chuyển không hợp lệ ít nhất một lần",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Bao phủ N-switch yêu cầu bao phủ mọi chuỗi gồm N+1 chuyển hợp lệ liên tiếp; với N=1 là mọi cặp chuyển liên tiếp (hai chuyển nối tiếp nhau). Đáp án b mô tả bao phủ 0-switch (mọi chuyển đơn lẻ); đáp án a là bao phủ trạng thái; đáp án d sai vì chuyển không hợp lệ thuộc phạm vi kiểm thử robustness, không phải định nghĩa 1-switch.",
+    "answerKey": "The correct answer is: Thực thi mọi **cặp chuyển trạng thái hợp lệ liên tiếp** (hai chuyển liên tiếp nhau) ít nhất một lần"
+  },
+  {
+    "id": "practice2-014",
+    "deck": "practice2",
+    "number": 14,
+    "type": "single",
+    "stem": "Sắp xếp nào sau đây thể hiện đúng thứ tự độ mạnh của các tiêu chí bao phủ chuyển trạng thái, **từ mạnh đến yếu**?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Bao phủ trạng thái > Bao phủ mọi chuyển (0-switch) > Bao phủ mọi cặp chuyển (1-switch)",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Bao phủ mọi cặp chuyển (1-switch) > Bao phủ mọi chuyển hợp lệ (0-switch) > Bao phủ mọi trạng thái",
+        "isCorrect": true,
+        "note": "(Chính xác. Bao phủ cặp chuyển ngụ ý đã bao phủ từng chuyển, và bao phủ từng chuyển ngụ ý đã qua mọi trạng thái liên quan.)"
+      },
+      {
+        "key": "c",
+        "text": "Bao phủ mọi chuyển hợp lệ (0-switch) > Bao phủ mọi cặp chuyển (1-switch) > Bao phủ mọi trạng thái",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Cả ba tiêu chí mạnh ngang nhau vì đều kiểm thử chuyển trạng thái",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Quan hệ bao hàm: đạt bao phủ 1-switch (mọi cặp chuyển liên tiếp) thì tự động đạt 0-switch (mọi chuyển đơn lẻ, vì mỗi cặp chứa hai chuyển); đạt 0-switch thì đã đi qua các trạng thái đầu–cuối của mọi chuyển. Do đó thứ tự mạnh→yếu: 1-switch > 0-switch > bao phủ trạng thái. Đáp án a đảo ngược hoàn toàn; đáp án c đảo 1-switch và 0-switch.",
+    "answerKey": "The correct answer is: Bao phủ mọi cặp chuyển (1-switch) > Bao phủ mọi chuyển hợp lệ (0-switch) > Bao phủ mọi trạng thái"
+  },
+  {
+    "id": "practice2-015",
+    "deck": "practice2",
+    "number": 15,
+    "type": "single",
+    "stem": "Cho đoạn code:\n\n```c\nint f(int x) {\n    int y = 0;          // (1)\n    if (x > 10) {       // (2)\n        y = 1;          // (3)\n        y = y + 2;      // (4)\n    }\n    return y;           // (5)\n}\n```\n\nChạy một test case với **x = 5**. Độ bao phủ **lệnh** (statement coverage) đạt được là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "100%",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "80%",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "60%",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "50%",
+        "isCorrect": true,
+        "note": "(Chính xác. Chỉ 2/4 lệnh thực thi được chạy: (1) và (5); các lệnh (3), (4) trong nhánh if không chạy vì x = 5.)"
+      }
+    ],
+    "explanation": "Tổng số lệnh có thể thực thi (không tính dòng if vì nó là quyết định): (1) gán y=0, (3) gán y=1, (4) cộng y, (5) return → 4 lệnh. Với x=5, điều kiện x>10 sai nên chỉ chạy (1) và (5) → 2/4 = 50%. Đáp án a và b nhầm lẫn với các ca test khác; đáp án c tính sai số lệnh (đếm cả dòng if).",
+    "answerKey": "The correct answer is: 50%"
+  },
+  {
+    "id": "practice2-016",
+    "deck": "practice2",
+    "number": 16,
+    "type": "single",
+    "stem": "Cho đoạn code:\n\n```c\nint g(int x) {\n    int y = 0;          // (1)\n    if (x > 0)          // (2)\n        y = 1;          // (3)\n    else\n        y = -1;         // (4)\n    return y;           // (5)\n}\n```\n\nChạy duy nhất một test case với **x = 5**. Phát biểu nào sau đây là **ĐÚNG**?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Bao phủ nhánh đạt 50% (chỉ nhánh True được chạy), trong khi bao phủ lệnh đạt 75% (3/4 lệnh)",
+        "isCorrect": true,
+        "note": "(Chính xác. Một ca test có thể đạt bao phủ lệnh cao nhưng bao phủ nhánh chỉ một nửa.)"
+      },
+      {
+        "key": "b",
+        "text": "Bao phủ nhánh đạt 100% vì điều kiện đã được đánh giá",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Bao phủ lệnh đạt 50% và bao phủ nhánh đạt 50%",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Bao phủ nhánh đạt 75% và bao phủ lệnh đạt 50%",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Với x=5, nhánh True chạy lệnh (3), nhánh False (lệnh (4)) không chạy → bao phủ nhánh = 1/2 = 50%. Các lệnh đã chạy: (1), (3), (5) → 3/4 lệnh có thể thực thi ((1), (3), (4), (5)) = 75% bao phủ lệnh. Đáp án b nhầm \"đánh giá điều kiện\" với \"chạy cả hai kết quả của quyết định\"; đáp án c và d đều hoán đổi sai hai con số — bao phủ lệnh là 75% (cao hơn), bao phủ nhánh mới là 50%.",
+    "answerKey": "The correct answer is: Bao phủ nhánh đạt 50% (chỉ nhánh True được chạy), trong khi bao phủ lệnh đạt 75% (3/4 lệnh)"
+  },
+  {
+    "id": "practice2-017",
+    "deck": "practice2",
+    "number": 17,
+    "type": "single",
+    "stem": "Một hàm chỉ chứa một câu lệnh `if` **không có** nhánh `else`. Bộ test case đạt **100% bao phủ lệnh** nhưng tất cả các ca test đều đi qua **nhánh True**. Kết luận nào sau đây là **ĐÚNG**?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Đạt 100% bao phủ lệnh thì chắc chắn đã đạt 100% bao phủ nhánh",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Cần thêm ca test đi qua nhánh False mới đạt 100% bao phủ nhánh",
+        "isCorrect": true,
+        "note": "(Chính xác. Bao phủ lệnh không đảm bảo bao phủ nhánh: nhánh False (nhánh ẩn của if không else) chưa bao giờ được chạy.)"
+      },
+      {
+        "key": "c",
+        "text": "Không thể đạt 100% bao phủ lệnh nếu chưa đạt 100% bao phủ nhánh",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Với if không có else thì bao phủ lệnh và bao phủ nhánh luôn bằng nhau",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Đạt 100% bao phủ lệnh KHÔNG đảm bảo 100% bao phủ nhánh: mọi lệnh trong thân if đã chạy nhưng nhánh False (khi điều kiện sai, bỏ qua thân if) chưa bao giờ được thực thi. Đây là ví dụ kinh điển cho quan hệ: 100% bao phủ nhánh ⇒ 100% bao phủ lệnh, nhưng chiều ngược lại không đúng. Đáp án a và c đảo ngược quan hệ này.",
+    "answerKey": "The correct answer is: Cần thêm ca test đi qua nhánh False mới đạt 100% bao phủ nhánh"
+  },
+  {
+    "id": "practice2-018",
+    "deck": "practice2",
+    "number": 18,
+    "type": "single",
+    "stem": "Xét vòng lặp `while (a > 0 || b > 0)` trong code Java. Ở mức **bao phủ nhánh** (branch coverage – KHÔNG phải bao phủ điều kiện), biểu thức điều kiện của vòng lặp được xem là:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Hai quyết định riêng biệt: `a > 0` và `b > 0`",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Một quyết định duy nhất với hai kết quả True/False",
+        "isCorrect": true,
+        "note": "(Chính xác. Branch coverage chỉ quan tâm toàn bộ biểu thức đúng hay sai, không tách các điều kiện nguyên tử.)"
+      },
+      {
+        "key": "c",
+        "text": "Ba nhánh: True, False và vòng lặp không bao giờ kết thúc",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Một lệnh nên không tính vào bao phủ nhánh",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Ở mức bao phủ nhánh, toàn bộ biểu thức Boolean của `while` được coi là MỘT quyết định (decision) với hai kết quả có thể: True (tiếp tục lặp) và False (thoát lặp). Việc tách `a > 0`, `b > 0` thành các điều kiện nguyên tử thuộc về bao phủ điều kiện (condition coverage), là tiêu chí mạnh hơn và khác với yêu cầu của đề. Đáp án c bịa thêm nhánh thứ ba.",
+    "answerKey": "The correct answer is: Một quyết định duy nhất với hai kết quả True/False"
+  },
+  {
+    "id": "practice2-019",
+    "deck": "practice2",
+    "number": 19,
+    "type": "single",
+    "stem": "Nhóm phát triển viết hàm tính lương nhưng cài đặt **sai công thức** so với đặc tả yêu cầu (thiếu khoản phụ cấp). Bộ test hộp trắng của họ đạt **100% bao phủ lệnh và 100% bao phủ nhánh**, tất cả test case đều pass. Hạn chế nào của kiểm thử hộp trắng được minh họa ở đây?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử hộp trắng không thể đạt 100% bao phủ nhánh",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử hộp trắng luôn tốn nhiều thời gian hơn kiểm thử hộp đen",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Kiểm thử hộp trắng không phát hiện được lỗi sai lệch so với yêu cầu / chức năng bị cài đặt sai hoặc thiếu",
+        "isCorrect": true,
+        "note": "(Chính xác. Bao phủ code chỉ đo mức độ code được chạy, không kiểm tra code có đúng yêu cầu hay không.)"
+      },
+      {
+        "key": "d",
+        "text": "Kiểm thử hộp trắng không thể áp dụng cho hàm tính lương",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Bao phủ lệnh/nhánh chỉ cho biết code đã được thực thi đến đâu, còn việc code có thực hiện ĐÚNG yêu cầu hay không là câu hỏi về đặc tả – thuộc phạm vi kiểm thử hộp đen. Code sai công thức nhưng test vẫn pass vì các test case được viết theo code hiện tại (hoặc thiếu oracle từ yêu cầu). Đáp án a sai về mặt kỹ thuật; đáp án b và d không liên quan đến tình huống.",
+    "answerKey": "The correct answer is: Kiểm thử hộp trắng không phát hiện được lỗi sai lệch so với yêu cầu / chức năng bị cài đặt sai hoặc thiếu"
+  },
+  {
+    "id": "practice2-020",
+    "deck": "practice2",
+    "number": 20,
+    "type": "multiple",
+    "stem": "Áp dụng kỹ thuật **đoán lỗi dựa trên kinh nghiệm** (Error Guessing) cho form đăng ký tài khoản, những tình huống nào sau đây là ví dụ **phù hợp**?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Nhập ngày sinh 29/02/2023 (năm 2023 không phải năm nhuận)",
+        "isCorrect": true,
+        "note": "(Đúng – ngày không tồn tại là lỗi biên ngày tháng kinh điển mà tester giàu kinh nghiệm thường đoán.)"
+      },
+      {
+        "key": "b",
+        "text": "Chạy lại toàn bộ bộ regression test tự động sau mỗi lần build",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Để trống (chuỗi rỗng) trường \"Họ tên\" bắt buộc rồi nhấn Đăng ký",
+        "isCorrect": true,
+        "note": "(Đúng – bỏ trống trường bắt buộc là tình huống lỗi phổ biến cần đoán trước.)"
+      },
+      {
+        "key": "d",
+        "text": "Đọc đặc tả yêu cầu để lập ma trận truy vết yêu cầu (RTM)",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "e",
+        "text": "Nhập ký tự đặc biệt như `' OR '1'='1` vào ô tìm kiếm tên đăng nhập",
+        "isCorrect": true,
+        "note": "(Đúng – ký tự đặc biệt/SQL injection cơ bản là mục tiêu đoán lỗi quen thuộc.)"
+      }
+    ],
+    "explanation": "Error Guessing dựa vào kinh nghiệm để dự đoán những đầu vào dễ gây lỗi: ngày không hợp lệ (29/02 năm không nhuận), chuỗi rỗng ở trường bắt buộc, ký tự đặc biệt/SQL injection. Đáp án b là kiểm thử hồi quy (kỹ thuật khác), đáp án d là công việc truy vết yêu cầu – cả hai đều không phải Error Guessing.",
+    "answerKey": "The correct answers are: Nhập ngày sinh 29/02/2023 (năm 2023 không phải năm nhuận), Để trống (chuỗi rỗng) trường \"Họ tên\" bắt buộc rồi nhấn Đăng ký, Nhập ký tự đặc biệt như `' OR '1'='1` vào ô tìm kiếm tên đăng nhập"
+  },
+  {
+    "id": "practice2-021",
+    "deck": "practice2",
+    "number": 21,
+    "type": "single",
+    "stem": "Trong một phiên kiểm thử khám phá (Exploratory Testing), trưởng nhóm đưa cho mỗi tester một tờ giấy ghi: *\"Khám phá chức năng thanh toán trong 60 phút, tập trung vào các tình huống thanh toán thất bại và thông báo lỗi hiển thị.\"* Theo khái niệm trong slide, tờ giấy này được gọi là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Test Charter — tuyên bố ngắn gọn về mục tiêu và phạm vi của một phiên khám phá, giúp tester tự do khám phá nhưng vẫn có định hướng",
+        "isCorrect": true,
+        "note": "(Chính xác. Charter định hướng \"khám phá cái gì\" mà không gò bó \"khám phá như thế nào\".)"
+      },
+      {
+        "key": "b",
+        "text": "Test Script chi tiết từng bước",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Báo cáo defect",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Kế hoạch kiểm thử tổng thể của dự án",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Test Charter là tuyên bố ngắn gọn về mục tiêu/phạm vi của một phiên khám phá (session): nó trả lời \"khám phá cái gì\" và trong bao lâu, nhưng không chỉ dẫn chi tiết từng bước như Test Script (đáp án b) — vì exploratory testing đề cao sự tự do và tư duy của tester. Nó cũng không phải báo cáo defect (đáp án c, là kết quả sau khi tìm lỗi) hay kế hoạch kiểm thử tổng thể (đáp án d, là tài liệu ở cấp độ dự án).",
+    "answerKey": "The correct answer is: Test Charter — tuyên bố ngắn gọn về mục tiêu và phạm vi của một phiên khám phá, giúp tester tự do khám phá nhưng vẫn có định hướng"
+  },
+  {
+    "id": "practice2-022",
+    "deck": "practice2",
+    "number": 22,
+    "type": "single",
+    "stem": "Tester báo một defect: *\"Nút 'Lưu nháp' trên form đăng ký không hoạt động.\"* Developer kiểm tra và phát hiện: theo đặc tả, form đăng ký này vốn không hề có chức năng lưu nháp — nút đó chỉ là nhãn trang trí do designer thêm vào. Developer nên chuyển defect sang trạng thái nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Fixed – vì đã xác minh hành vi",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Duplicate – vì lỗi này đã được báo trước đó",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Rejected – vì đây là hành vi đúng theo đặc tả, không phải lỗi, cần kèm giải thích cho tester",
+        "isCorrect": true,
+        "note": "(Chính xác. Rejected dùng khi báo cáo không phải là defect thực sự.)"
+      },
+      {
+        "key": "d",
+        "text": "Deferred – vì sẽ sửa ở phiên bản sau",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Khi developer xác minh và kết luận hành vi của hệ thống là đúng theo đặc tả (không phải lỗi), defect được đánh dấu **Rejected** kèm lời giải thích. Đáp án d (Deferred) sai vì Deferred nghĩa là công nhận đó là lỗi thật nhưng hoãn sửa sang phiên bản sau. Đáp án b (Duplicate) chỉ dùng khi defect đã được báo trùng trước đó. Đáp án a (Fixed) sai vì không có code nào được sửa.",
+    "answerKey": "The correct answer is: Rejected – vì đây là hành vi đúng theo đặc tả, không phải lỗi, cần kèm giải thích cho tester"
+  },
+  {
+    "id": "practice2-023",
+    "deck": "practice2",
+    "number": 23,
+    "type": "single",
+    "stem": "Ngày ra mắt sản phẩm, ứng dụng bị crash ngay khi người dùng mở màn hình chính, khiến toàn bộ người dùng không thể sử dụng. Khi ghi nhận defect này, phát biểu nào sau đây phân biệt **đúng** hai khái niệm Severity và Priority?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Severity và Priority là một: đều do tester quyết định dựa trên cảm tính về mức độ nghiêm trọng",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Severity do tester đánh giá mức ảnh hưởng kỹ thuật của lỗi (crash toàn app → Severity Cao); Priority phản ánh góc độ kinh doanh và mức độ khẩn cấp, quyết định thứ tự ưu tiên sửa (ngày ra mắt → Priority Cao)",
+        "isCorrect": true,
+        "note": "(Chính xác. Severity = ảnh hưởng kỹ thuật; Priority = thứ tự sửa theo kinh doanh.)"
+      },
+      {
+        "key": "c",
+        "text": "Severity do khách hàng quyết định thứ tự sửa, còn Priority do tester đánh giá ảnh hưởng kỹ thuật",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Lỗi này có Severity Cao nên Priority tự động Cao theo — hai khái niệm luôn đi cùng nhau",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "**Severity** (mức nghiêm trọng) do tester đánh giá dựa trên ảnh hưởng kỹ thuật của lỗi đối với hệ thống — crash toàn bộ app khi mở là Severity Cao. **Priority** (mức ưu tiên) phản ánh góc độ kinh doanh/khẩn cấp và quyết định defect nào được sửa trước — lỗi chặn toàn bộ người dùng đúng ngày ra mắt nên Priority Cao. Hai khái niệm độc lập: một lỗi sai chính tả (Severity thấp) trên banner trang chủ ngày ra mắt vẫn có thể Priority cao, và ngược lại.",
+    "answerKey": "The correct answer is: Severity do tester đánh giá mức ảnh hưởng kỹ thuật của lỗi (crash toàn app → Severity Cao); Priority phản ánh góc độ kinh doanh và mức độ khẩn cấp, quyết định thứ tự ưu tiên sửa (ngày ra mắt → Priority Cao)"
+  },
+  {
+    "id": "practice2-024",
+    "deck": "practice2",
+    "number": 24,
+    "type": "single",
+    "stem": "Một developer nhận được báo cáo defect chỉ ghi: *\"Chức năng tìm kiếm bị lỗi. Kết quả sai.\"* Developer mất nửa ngày mà vẫn không tái hiện được. Theo slide, trường thông tin nào sau đây là **quan trọng nhất** mà một báo cáo defect tốt bắt buộc phải có để developer tái hiện lỗi?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tên của tester đã phát hiện ra lỗi",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Ảnh chụp màn hình trang chủ của ứng dụng",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Mức lương của developer được giao sửa lỗi",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Các bước tái hiện chi tiết (steps to reproduce) kèm môi trường, dữ liệu kiểm thử, kết quả thực tế và kết quả mong đợi",
+        "isCorrect": true,
+        "note": "(Chính xác. Không tái hiện được thì không thể xác minh và sửa lỗi.)"
+      }
+    ],
+    "explanation": "Trường quan trọng nhất của defect report là **các bước tái hiện** kèm môi trường (trình duyệt, phiên bản, thiết bị), dữ liệu kiểm thử đã dùng, cùng **kết quả thực tế (actual)** và **kết quả mong đợi (expected)**. Nếu developer không tái hiện được lỗi thì không thể xác định nguyên nhân và không thể xác minh bản sửa. Các đáp án còn lại (tên tester, ảnh trang chủ không liên quan, thông tin lương) đều không giúp tái hiện lỗi.",
+    "answerKey": "The correct answer is: Các bước tái hiện chi tiết (steps to reproduce) kèm môi trường, dữ liệu kiểm thử, kết quả thực tế và kết quả mong đợi"
+  },
+  {
+    "id": "practice2-025",
+    "deck": "practice2",
+    "number": 25,
+    "type": "multiple",
+    "stem": "Chọn **HAI** trường hợp **nên** tự động hoá kiểm thử.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kiểm thử tính dễ sử dụng (usability) của một giao diện hoàn toàn mới",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Bộ kiểm thử hồi quy (regression) ổn định, được chạy lại mỗi khi có commit mới trên CI",
+        "isCorrect": true,
+        "note": "(Đúng – lặp lại thường xuyên, ít thay đổi, ROI cao.)"
+      },
+      {
+        "key": "c",
+        "text": "Test case cho một tính năng khuyến mãi chỉ chạy đúng một lần rồi bỏ",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Kịch bản cần sinh 10.000 bộ dữ liệu khách hàng khác nhau để kiểm tra nhập liệu hàng loạt",
+        "isCorrect": true,
+        "note": "(Đúng – máy làm nhanh và chính xác hơn người ở khối lượng lớn.)"
+      },
+      {
+        "key": "e",
+        "text": "Kiểm thử màn hình đang được designer thay đổi layout mỗi ngày",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Tự động hoá hiệu quả khi test **lặp lại nhiều lần** (regression chạy mỗi commit trên CI — đáp án b) hoặc **khối lượng lớn, máy làm tốt hơn người** (sinh 10.000 bộ dữ liệu — đáp án d). Ngược lại không nên tự động: usability cần đánh giá chủ quan của con người (a), test chỉ chạy một lần thì chi phí viết script cao hơn lợi ích (c), giao diện thay đổi liên tục khiến script hỏng liên tục, chi phí bảo trì lớn (e).",
+    "answerKey": "The correct answers are: Bộ kiểm thử hồi quy (regression) ổn định, được chạy lại mỗi khi có commit mới trên CI, Kịch bản cần sinh 10.000 bộ dữ liệu khách hàng khác nhau để kiểm tra nhập liệu hàng loạt"
+  },
+  {
+    "id": "practice2-026",
+    "deck": "practice2",
+    "number": 26,
+    "type": "single",
+    "stem": "Một team báo cáo cấu trúc bộ kiểm thử của họ: 80% là kiểm thử ở tầng UI (E2E qua trình duyệt), 15% kiểm thử API, 5% Unit Test. Theo slide, cấu trúc này được gọi là gì và hậu quả chính là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Ice-cream cone (anti-pattern của Test Pyramid): tháp bị \"lộn ngược\", test UI chậm, dễ flaky, phát hiện lỗi muộn và chi phí sửa đắt",
+        "isCorrect": true,
+        "note": "(Chính xác. Tầng UI phải là nhỏ nhất, Unit phải là lớn nhất.)"
+      },
+      {
+        "key": "b",
+        "text": "Test Pyramid chuẩn: càng lên cao càng nhiều test là đúng vì UI gần người dùng nhất",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Testing Trophy: tầng Integration chiếm tỉ trọng lớn nhất là hoàn toàn hợp lý",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Shift-Left: phát hiện lỗi sớm ngay từ giai đoạn yêu cầu",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Cấu trúc 80% UI / 5% Unit là **Ice-cream cone** — tháp kiểm thử bị lộn ngược (anti-pattern). Hậu quả: test UI chạy chậm (mở trình duyệt thật), dễ flaky (phụ thuộc render, mạng), và lỗi ở logic nghiệp vụ chỉ bị phát hiện ở tầng trên cùng — muộn và đắt đỏ để sửa. Tháp chuẩn yêu cầu ngược lại: nhiều Unit Test nhanh-rẻ ở đáy, ít E2E ở đỉnh. Đáp án c sai vì Testing Trophy ưu tiên tầng Integration chứ không phải UI.",
+    "answerKey": "The correct answer is: Ice-cream cone (anti-pattern của Test Pyramid): tháp bị \"lộn ngược\", test UI chậm, dễ flaky, phát hiện lỗi muộn và chi phí sửa đắt"
+  },
+  {
+    "id": "practice2-027",
+    "deck": "practice2",
+    "number": 27,
+    "type": "single",
+    "stem": "Một test case trong bộ kiểm thử tự động có hành vi kỳ lạ: chạy riêng lẻ thì luôn Pass, nhưng khi chạy cùng cả bộ test thì thỉnh thoảng Fail ở bước kiểm tra số dư tài khoản. Nguyên nhân **chính** của hiện tượng flaky test này là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tester đã viết sai yêu cầu nghiệp vụ nên test không ổn định",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Máy tính chạy test quá yếu nên kết quả sai ngẫu nhiên",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Test phụ thuộc vào thứ tự chạy và dùng chung dữ liệu với các test khác (ví dụ test trước đã thay đổi số dư), cộng với race condition khi chờ phản hồi bất đồng bộ",
+        "isCorrect": true,
+        "note": "(Chính xác. Flaky = không đơn lập và không đồng bộ.)"
+      },
+      {
+        "key": "d",
+        "text": "Ngôn ngữ lập trình dùng để viết test không phù hợp",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Flaky test (lúc Pass lúc Fail) thường do test **không đơn lập**: phụ thuộc thứ tự chạy, dùng chung dữ liệu/dùng chung tài khoản với test khác (test chạy trước đã làm thay đổi số dư), hoặc **race condition** với các thao tác bất đồng bộ (chưa chờ API/animation hoàn tất đã assert). Đáp án a sai vì viết sai yêu cầu sẽ gây Fail ổn định chứ không phải flaky. Khắc phục: mỗi test tự tạo và dọn dẹp dữ liệu riêng, dùng cơ chế chờ thông minh thay vì phụ thuộc thời gian.",
+    "answerKey": "The correct answer is: Test phụ thuộc vào thứ tự chạy và dùng chung dữ liệu với các test khác (ví dụ test trước đã thay đổi số dư), cộng với race condition khi chờ phản hồi bất đồng bộ"
+  },
+  {
+    "id": "practice2-028",
+    "deck": "practice2",
+    "number": 28,
+    "type": "single",
+    "stem": "Đoạn script kiểm thử có dòng `sleep(5000)` — dừng cứng 5 giây trước khi kiểm tra thông báo \"Đặt hàng thành công\", vì chờ API xử lý xong. Theo best practice trong slide, nên thay thế `sleep(5000)` bằng cách nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tăng lên `sleep(10000)` cho chắc chắn, vì API đôi khi chậm hơn 5 giây",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Dùng Explicit Wait / Auto-wait: chờ đến khi thỏa một điều kiện cụ thể (ví dụ phần tử thông báo hiển thị và có thể tương tác, hoặc response của API trả về) rồi mới tiếp tục",
+        "isCorrect": true,
+        "note": "(Chính xác. Chờ theo điều kiện thay vì chờ theo thời gian cố định.)"
+      },
+      {
+        "key": "c",
+        "text": "Xoá luôn dòng chờ vì test tự động chạy đủ nhanh",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Chia nhỏ thành nhiều `sleep(1000)` liên tiếp để dễ debug",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Hard sleep dừng cứng bất kể hệ thống đã sẵn sàng hay chưa: nếu API xong sớm thì lãng phí thời gian, nếu API chậm hơn 5 giây thì test vẫn Fail — vừa chậm vừa flaky. **Explicit Wait / Auto-wait** chờ đến khi một điều kiện cụ thể được thỏa mãn (element visible/clickable, network response hoàn tất) rồi mới bước tiếp: nhanh khi hệ thống nhanh, đủ kiên nhẫn khi hệ thống chậm. Đáp án a và d vẫn là hard sleep, chỉ đổi con số.",
+    "answerKey": "The correct answer is: Dùng Explicit Wait / Auto-wait: chờ đến khi thỏa một điều kiện cụ thể (ví dụ phần tử thông báo hiển thị và có thể tương tác, hoặc response của API trả về) rồi mới tiếp tục"
+  },
+  {
+    "id": "practice2-029",
+    "deck": "practice2",
+    "number": 29,
+    "type": "single",
+    "stem": "Team áp dụng Page Object Model với file `CheckoutPage.js` (chứa locators và các hàm thao tác như `nhapDiaChi()`, `bamDatHang()`) và file `checkout.spec.js` (chứa kịch bản test). Khẳng định nào sau đây là **đúng** về cách tổ chức code?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Nên viết các câu lệnh `expect` (assertion) ngay trong `CheckoutPage.js` để gom logic kiểm chứng một chỗ",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Mỗi file spec nên tự định nghĩa lại locator riêng để không phụ thuộc vào Page Object",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Page Object nên chứa cả code gọi API backend để test chạy nhanh hơn",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Các câu lệnh kiểm chứng kết quả (`expect`/assert) nên nằm ở file test (`checkout.spec.js`); Page Object chỉ chứa locator và hành động/thao tác, không chứa logic kiểm chứng",
+        "isCorrect": true,
+        "note": "(Chính xác. Tách \"thao tác\" khỏi \"kiểm chứng\".)"
+      }
+    ],
+    "explanation": "Nguyên tắc POM: Page Object đóng gói **cách tương tác** với trang (locator + hành động), còn file test (spec) giữ **logic kiểm chứng** (`expect`/assert). Nhờ đó khi UI thay đổi chỉ sửa một chỗ trong Page Object, và cùng một hành động có thể được kiểm chứng theo nhiều cách ở các test khác nhau. Đáp án a sai vì nhét assertion vào Page Object làm nó phình to và khó tái sử dụng; đáp án b phá vỡ đúng lợi ích của POM.",
+    "answerKey": "The correct answer is: Các câu lệnh kiểm chứng kết quả (`expect`/assert) nên nằm ở file test (`checkout.spec.js`); Page Object chỉ chứa locator và hành động/thao tác, không chứa logic kiểm chứng"
+  },
+  {
+    "id": "practice2-030",
+    "deck": "practice2",
+    "number": 30,
+    "type": "single",
+    "stem": "Chức năng đăng nhập cần kiểm thử với 50 cặp tài khoản/mật khẩu khác nhau (đúng, sai mật khẩu, tài khoản bị khóa...). Thay vì viết 50 script riêng, tester viết **một** script duy nhất đọc dữ liệu từ file CSV và chạy lặp lại 50 lần. Kỹ thuật này được gọi là gì và mục đích chính của nó là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Data-Driven Testing: tách dữ liệu kiểm thử ra khỏi script để cùng một script chạy được với nhiều bộ dữ liệu, dễ bảo trì và mở rộng",
+        "isCorrect": true,
+        "note": "(Chính xác. Thêm case mới = thêm dòng dữ liệu, không sửa code.)"
+      },
+      {
+        "key": "b",
+        "text": "Keyword-Driven Testing: tách từ khóa hành động ra khỏi script",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Exploratory Testing: khám phá tự do không cần kịch bản",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Mutation Testing: chèn lỗi vào code để đánh giá chất lượng test",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "**Data-Driven Testing** tách dữ liệu kiểm thử (file CSV/JSON/bảng) ra khỏi logic script: một script duy nhất chạy lặp với nhiều bộ dữ liệu. Lợi ích: muốn thêm trường hợp kiểm thử mới chỉ cần thêm dòng dữ liệu, không phải sửa code — dễ bảo trì và mở rộng. Đáp án b (Keyword-Driven) tách các *hành động/từ khóa* chứ không phải dữ liệu; đáp án d (Mutation Testing) là kỹ thuật đánh giá chất lượng bộ test bằng cách chèn lỗi giả vào code.",
+    "answerKey": "The correct answer is: Data-Driven Testing: tách dữ liệu kiểm thử ra khỏi script để cùng một script chạy được với nhiều bộ dữ liệu, dễ bảo trì và mở rộng"
+  },
+  {
+    "id": "practice2-031",
+    "deck": "practice2",
+    "number": 31,
+    "type": "single",
+    "stem": "Một tester đã đăng nhập thành công và có token hợp lệ, sau đó gọi API `DELETE /api/admin/users/123` (chỉ dành cho tài khoản Admin) bằng tài khoản thường. Server nên trả về mã trạng thái nào, và vì sao?",
+    "options": [
+      {
+        "key": "a",
+        "text": "401 Unauthorized – vì tài khoản thường không được phép xoá người dùng",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "403 Forbidden – vì request đã được xác thực (có token hợp lệ) nhưng bị từ chối do thiếu quyền truy cập",
+        "isCorrect": true,
+        "note": "(Chính xác. 401 = chưa xác thực; 403 = đã xác thực nhưng bị cấm.)"
+      },
+      {
+        "key": "c",
+        "text": "404 Not Found – vì tài khoản thường không \"thấy\" được API của Admin",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "200 OK – vì token hợp lệ nên mọi request đều được chấp nhận",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "**401 Unauthorized** nghĩa là *chưa xác thực* (thiếu token, token hết hạn/không hợp lệ) — server không biết bạn là ai. **403 Forbidden** nghĩa là server *đã biết bạn là ai* (token hợp lệ) nhưng bạn *không có quyền* thực hiện hành động đó. Tình huống này: đã đăng nhập, token hợp lệ, nhưng vai trò \"user thường\" bị cấm gọi API Admin → 403.",
+    "answerKey": "The correct answer is: 403 Forbidden – vì request đã được xác thực (có token hợp lệ) nhưng bị từ chối do thiếu quyền truy cập"
+  },
+  {
+    "id": "practice2-032",
+    "deck": "practice2",
+    "number": 32,
+    "type": "multiple",
+    "stem": "Chọn **TẤT CẢ** các cặp \"tình huống – mã trạng thái HTTP\" là **đúng**.",
+    "options": [
+      {
+        "key": "a",
+        "text": "POST tạo tài nguyên mới thành công → server trả 201",
+        "isCorrect": true,
+        "note": "(Đúng – 201 Created dành cho tạo mới thành công.)"
+      },
+      {
+        "key": "b",
+        "text": "Đăng nhập thành công bắt buộc phải trả 201",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Client gửi dữ liệu sai định dạng (ví dụ JSON không hợp lệ) → server trả 400",
+        "isCorrect": true,
+        "note": "(Đúng – 400 Bad Request: lỗi do phía client.)"
+      },
+      {
+        "key": "d",
+        "text": "Lỗi nội bộ phía server (null pointer trong code backend) → server trả 400",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "e",
+        "text": "Truy vấn một tài nguyên không tồn tại → server trả 404",
+        "isCorrect": true,
+        "note": "(Đúng – 404 Not Found.)"
+      }
+    ],
+    "explanation": "Mẹo nhớ: **2xx** \"chào mừng\" (200 OK; **201 Created** cho POST tạo mới — đáp án a); **4xx** \"lỗi tại bạn\" (**400** Bad Request khi client gửi dữ liệu sai — đáp án c; 401/403 xác thực-phân quyền; **404** Not Found khi tài nguyên không tồn tại — đáp án e); **5xx** \"lỗi tại tôi\" (500 Internal Server Error cho lỗi code backend). Đáp án b sai vì đăng nhập thành công thường trả 200 (201 chỉ dành cho *tạo mới* tài nguyên); đáp án d sai vì lỗi nội bộ server phải trả 500 chứ không phải 400.",
+    "answerKey": "The correct answers are: POST tạo tài nguyên mới thành công → server trả 201, Client gửi dữ liệu sai định dạng (ví dụ JSON không hợp lệ) → server trả 400, Truy vấn một tài nguyên không tồn tại → server trả 404"
+  },
+  {
+    "id": "practice2-033",
+    "deck": "practice2",
+    "number": 33,
+    "type": "single",
+    "stem": "Form đăng ký trên giao diện web đã có validation đầy đủ: nhập email sai định dạng thì nút \"Đăng ký\" bị chặn ngay. Vì sao tester vẫn cần kiểm thử API đăng ký một cách riêng biệt?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Vì kiểm thử API chạy nhanh hơn kiểm thử giao diện nên tiết kiệm thời gian",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Vì kiểm thử API không cần môi trường staging",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Vì validation ở UI chỉ chặn ở tầng trình bày; kẻ tấn công có thể gọi thẳng API, bỏ qua UI và gửi dữ liệu không hợp lệ — nên server/API bắt buộc phải tự validate",
+        "isCorrect": true,
+        "note": "(Chính xác. Không bao giờ tin tưởng dữ liệu từ client.)"
+      },
+      {
+        "key": "d",
+        "text": "Vì kiểm thử API giúp giao diện hiển thị đẹp hơn",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Validation ở giao diện chỉ là lớp bảo vệ ở **tầng trình bày** — nó hoàn toàn có thể bị bỏ qua bằng cách gọi trực tiếp API (qua Postman, curl, hoặc script). Nếu server tin tưởng mù quáng dữ liệu gửi lên, kẻ tấn công sẽ chèn dữ liệu bẩn vào hệ thống. Vì vậy logic kiểm tra dữ liệu **bắt buộc phải tồn tại ở phía server**, và kiểm thử API riêng là cách duy nhất để xác minh lớp bảo vệ này.",
+    "answerKey": "The correct answer is: Vì validation ở UI chỉ chặn ở tầng trình bày; kẻ tấn công có thể gọi thẳng API, bỏ qua UI và gửi dữ liệu không hợp lệ — nên server/API bắt buộc phải tự validate"
+  },
+  {
+    "id": "practice2-034",
+    "deck": "practice2",
+    "number": 34,
+    "type": "single",
+    "stem": "Team muốn áp dụng Shift-Right: sau khi tính năng \"gợi ý sản phẩm mới\" đã qua kiểm thử trên staging, họ phát hành nó cho **5% người dùng thật**, theo dõi log, metric hiệu năng và phản hồi trong 2 ngày rồi mới mở rộng cho 100%. Cách làm này được gọi là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Big Bang Release – phát hành đồng loạt cho tất cả người dùng cùng lúc",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Kiểm thử hộp đen (Black-box Testing)",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Shift-Left – dời kiểm thử sang giai đoạn sớm hơn",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Canary Release – phát hành thử cho một nhóm nhỏ người dùng thật và giám sát trong môi trường production trước khi mở rộng",
+        "isCorrect": true,
+        "note": "(Chính xác. Đây là thực hành Shift-Right điển hình.)"
+      }
+    ],
+    "explanation": "**Canary Release** là phát hành tính năng mới cho một tỉ lệ nhỏ người dùng thật, giám sát log/metric/phản hồi trong môi trường production thực tế, rồi mới dần mở rộng — nếu có sự cố, mức ảnh hưởng được giới hạn ở nhóm nhỏ. Đây là thực hành **Shift-Right**: kiểm thử/giám sát *sau khi* phát hành, trong môi trường thật. Ngược lại, kiểm thử trên staging trước khi release thuộc về giai đoạn pre-release (gần với Shift-Left). Đáp án a (Big Bang) là phát hành 100% một lúc — rủi ro cao nhất.",
+    "answerKey": "The correct answer is: Canary Release – phát hành thử cho một nhóm nhỏ người dùng thật và giám sát trong môi trường production trước khi mở rộng"
+  },
+  {
+    "id": "practice2-035",
+    "deck": "practice2",
+    "number": 35,
+    "type": "single",
+    "stem": "Trong pipeline CI/CD, ở bước chạy Unit Test có 3 test case bị Fail. Theo nguyên tắc **Fail Fast**, pipeline nên xử lý thế nào?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Dừng pipeline ngay, không build/deploy tiếp; developer sửa lỗi càng sớm càng rẻ",
+        "isCorrect": true,
+        "note": "(Chính xác. Phát hiện sớm – dừng sớm – sửa rẻ.)"
+      },
+      {
+        "key": "b",
+        "text": "Vẫn deploy lên production rồi sửa lỗi sau, vì đã lỡ chạy pipeline",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Tự động bỏ qua các test bị Fail vì \"ở môi trường CI test hay Fail oan\"",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Chờ đến cuối tuần mới xem lại kết quả test cho đỡ gián đoạn công việc",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "**Fail Fast** nghĩa là khi phát hiện lỗi ở giai đoạn sớm (Unit Test Fail), pipeline **dừng ngay lập tức** và báo động — không tốn tài nguyên chạy tiếp các bước build, integration test, deploy cho một bản vốn đã lỗi. Sửa lỗi càng sớm chi phí càng rẻ (lỗi lọt ra production đắt gấp nhiều lần). Đáp án b và c đều phá vỡ mục đích của CI: deploy code lỗi và phớt lờ test Fail sẽ biến pipeline thành \"máy phát hành lỗi tự động\".",
+    "answerKey": "The correct answer is: Dừng pipeline ngay, không build/deploy tiếp; developer sửa lỗi càng sớm càng rẻ"
+  },
+  {
+    "id": "practice2-036",
+    "deck": "practice2",
+    "number": 36,
+    "type": "single",
+    "stem": "Team cần kiểm thử tự động cho chatbot hỗ trợ khách hàng (dùng LLM): với câu hỏi *\"Chính sách đổi trả của shop là gì?\"*, chatbot có thể trả lời bằng nhiều cách diễn đạt khác nhau nhưng vẫn đúng ý. Cách kiểm chứng nào sau đây là **phù hợp nhất**?",
+    "options": [
+      {
+        "key": "a",
+        "text": "So sánh chuỗi tuyệt đối: câu trả lời phải khớp từng ký tự với đáp án mẫu",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Kiểm tra ý chính/từ khóa bắt buộc và đánh giá ngữ nghĩa (semantic): câu trả lời phải chứa các thông tin cốt lõi (ví dụ \"30 ngày\", \"còn nguyên tem mác\"), cho phép biến thiên văn phong",
+        "isCorrect": true,
+        "note": "(Chính xác. LLM không mang tính đơn định nên không assert chuỗi tuyệt đối.)"
+      },
+      {
+        "key": "c",
+        "text": "Chỉ kiểm tra chatbot có trả lời trong 1 giây hay không, nội dung không quan trọng",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Không thể kiểm thử tự động chatbot LLM, bắt buộc phải kiểm thủ công 100%",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "LLM có tính **không đơn định**: cùng một câu hỏi có thể cho nhiều cách diễn đạt khác nhau đều đúng. Vì vậy không thể assert so sánh chuỗi tuyệt đối (đáp án a sẽ gây Fail oan liên tục). Cách đúng là kiểm tra **ngữ nghĩa**: câu trả lời có chứa các ý chính/từ khóa bắt buộc không, có mâu thuẫn với chính sách không — có thể dùng bộ kiểm tra từ khóa, LLM-as-judge, hoặc embedding similarity với ngưỡng chấp nhận được.",
+    "answerKey": "The correct answer is: Kiểm tra ý chính/từ khóa bắt buộc và đánh giá ngữ nghĩa (semantic): câu trả lời phải chứa các thông tin cốt lõi (ví dụ \"30 ngày\", \"còn nguyên tem mác\"), cho phép biến thiên văn phong"
+  },
+  {
+    "id": "practice2-037",
+    "deck": "practice2",
+    "number": 37,
+    "type": "multiple",
+    "stem": "Chọn **BA** ứng dụng **hợp lý** của GenAI trong công việc kiểm thử phần mềm.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tự động sinh test case từ user story và tài liệu yêu cầu",
+        "isCorrect": true,
+        "note": "(Đúng – AI hỗ trợ soạn thảo nhanh từ test basis.)"
+      },
+      {
+        "key": "b",
+        "text": "Gợi ý dữ liệu biên và các trường hợp biên mà tester dễ bỏ sót",
+        "isCorrect": true,
+        "note": "(Đúng – AI giúp tăng độ bao phủ các case \"khó nghĩ ra\".)"
+      },
+      {
+        "key": "c",
+        "text": "Tự quyết định release phần mềm thay cho con người mà không cần review",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Tóm tắt, phân loại log lỗi và hỗ trợ soạn thảo báo cáo defect",
+        "isCorrect": true,
+        "note": "(Đúng – AI xử lý khối lượng log lớn rất hiệu quả.)"
+      },
+      {
+        "key": "e",
+        "text": "Đảm bảo phần mềm không còn lỗi 100% sau khi áp dụng AI",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "GenAI là **trợ lý đắc lực** của tester: sinh test case nháp từ yêu cầu (a), gợi ý các trường hợp biên dễ bị bỏ sót (b), tóm tắt/phân loại hàng nghìn dòng log lỗi và phác thảo defect report (d). Nhưng AI **không thể thay thế phán quyết của con người**: quyết định release luôn cần người review và chịu trách nhiệm (c sai), và không công cụ nào — kể cả AI — đảm bảo phần mềm hết lỗi 100% (e sai, đây là ngộ nhận nguy hiểm).",
+    "answerKey": "The correct answers are: Tự động sinh test case từ user story và tài liệu yêu cầu, Gợi ý dữ liệu biên và các trường hợp biên mà tester dễ bỏ sót, Tóm tắt, phân loại log lỗi và hỗ trợ soạn thảo báo cáo defect"
+  },
+  {
+    "id": "practice2-038",
+    "deck": "practice2",
+    "number": 38,
+    "type": "single",
+    "stem": "Tester dùng GenAI để sinh test case cho chức năng \"đăng nhập bằng vân tay\". AI trả về một bộ test case rất chi tiết — nhưng trong đó có nhiều case kiểm tra chức năng \"đăng nhập bằng nhận diện khuôn mặt\", một tính năng **hoàn toàn không tồn tại** trong đặc tả. Hiện tượng này được gọi là gì và tester phải làm gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Overfitting – cứ dùng nguyên bộ test case vì AI luôn đúng",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Data leakage – xoá toàn bộ test case và không bao giờ dùng AI nữa",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Hallucination (ảo giác) – AI bịa ra test case dựa trên yêu cầu không tồn tại; tester phải rà soát, đối chiếu từng test case với test basis (đặc tả) trước khi sử dụng",
+        "isCorrect": true,
+        "note": "(Chính xác. AI bịa rất tự tin nên con người phải kiểm chứng.)"
+      },
+      {
+        "key": "d",
+        "text": "Prompt injection – hacker đã tấn công vào hệ thống AI",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "**Hallucination** là hiện tượng GenAI \"bịa\" ra nội dung nghe rất thuyết phục nhưng không có thật — ở đây là test case cho tính năng không tồn tại trong đặc tả. Nguy hiểm ở chỗ AI bịa rất tự tin, khiến người thiếu cảnh giác tin theo. Vì vậy mọi output của AI đều phải được **rà soát và đối chiếu với test basis** (đặc tả/yêu cầu gốc) trước khi đưa vào sử dụng; AI là trợ lý soạn thảo, không phải nguồn chân lý.",
+    "answerKey": "The correct answer is: Hallucination (ảo giác) – AI bịa ra test case dựa trên yêu cầu không tồn tại; tester phải rà soát, đối chiếu từng test case với test basis (đặc tả) trước khi sử dụng"
+  },
+  {
+    "id": "practice2-039",
+    "deck": "practice2",
+    "number": 39,
+    "type": "single",
+    "stem": "Một team phát triển ứng dụng web hiện đại quyết định phân bổ ngân sách kiểm thử theo mô hình Testing Trophy của Kent C. Dodds. Điểm khác biệt cốt lõi của Testing Trophy so với Test Pyramid truyền thống là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Tầng UI/E2E chiếm tỉ trọng lớn nhất vì gần người dùng nhất",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "b",
+        "text": "Chỉ cần kiểm thử tĩnh (static), không cần các tầng còn lại",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Tầng Unit Test bị loại bỏ hoàn toàn vì đã có TypeScript",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Tầng Integration chiếm tỉ trọng lớn nhất (thay vì Unit như tháp truyền thống), vì integration test cho độ tin cậy cao với chi phí hợp lý cho ứng dụng web hiện đại",
+        "isCorrect": true,
+        "note": "(Chính xác. Trọng tâm đầu tư dịch chuyển từ Unit sang Integration.)"
+      }
+    ],
+    "explanation": "Test Pyramid truyền thống đặt **Unit Test** làm tầng lớn nhất (đáy tháp). **Testing Trophy** (Kent C. Dodds) điều chỉnh cho phát triển web hiện đại: tầng **Static** (ESLint, TypeScript) ở đáy gần như miễn phí, tầng **Integration** là lớn nhất — trọng tâm đầu tư — vì nó kiểm chứng các module phối hợp với nhau, cho độ tin cậy cao với chi phí hợp lý hơn E2E. Unit và E2E vẫn cần nhưng ở mức vừa phải. Đáp án a mô tả Ice-cream cone (anti-pattern), không phải Trophy.",
+    "answerKey": "The correct answer is: Tầng Integration chiếm tỉ trọng lớn nhất (thay vì Unit như tháp truyền thống), vì integration test cho độ tin cậy cao với chi phí hợp lý cho ứng dụng web hiện đại"
+  },
+  {
+    "id": "practice2-040",
+    "deck": "practice2",
+    "number": 40,
+    "type": "single",
+    "stem": "Đặc tả tính điểm thưởng cuối năm của một hệ thống có ba dấu hiệu kiểm thử rõ rệt: (i) tổng điểm tích lũy từ 0–100 với các ngưỡng xếp hạng (Bronze < 50, Silver 50–79, Gold ≥ 80); (ii) mức thưởng cuối cùng phụ thuộc vào **tổ hợp của 3 điều kiện**: là thành viên VIP, thanh toán đúng hạn, không có khiếu nại trong năm; (iii) team đã có sẵn đoạn code tính toán và muốn đo mức độ bao phủ của bộ test lên code đó. Tổ hợp kỹ thuật kiểm thử **phù hợp nhất** cho cả ba dấu hiệu là gì?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Phân vùng tương đương + Phân tích giá trị biên cho các khoảng điểm (i); Bảng quyết định cho tổ hợp 3 điều kiện (ii); đo bao phủ lệnh/nhánh cho đoạn code (iii)",
+        "isCorrect": true,
+        "note": "(Chính xác. Mỗi dấu hiệu gọi đúng kỹ thuật đặc trưng của nó.)"
+      },
+      {
+        "key": "b",
+        "text": "Chỉ dùng Bảng quyết định cho toàn bộ đặc tả vì nó bao quát được mọi thứ",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "c",
+        "text": "Chỉ dùng Phân tích giá trị biên cho toàn bộ đặc tả vì có các ngưỡng điểm",
+        "isCorrect": false,
+        "note": null
+      },
+      {
+        "key": "d",
+        "text": "Không cần kỹ thuật nào, chỉ cần kiểm thử khám phá tự do là đủ",
+        "isCorrect": false,
+        "note": null
+      }
+    ],
+    "explanation": "Mỗi dấu hiệu trong đặc tả \"gọi tên\" một kỹ thuật: (i) **khoảng giá trị với ngưỡng** → Phân vùng tương đương + Phân tích giá trị biên (kiểm tra 49, 50, 79, 80...); (ii) **tổ hợp điều kiện logic** quyết định kết quả → **Bảng quyết định** (2³ = 8 tổ hợp VIP/đúng hạn/khiếu nại); (iii) **code sẵn có cần đo bao phủ** → đo **bao phủ lệnh/nhánh** (statement/branch coverage). Đáp án b sai vì bảng quyết định không hiệu quả cho khoảng giá trị liên tục; đáp án c sai vì BVA không xử lý được tổ hợp điều kiện.",
+    "answerKey": "The correct answer is: Phân vùng tương đương + Phân tích giá trị biên cho các khoảng điểm (i); Bảng quyết định cho tổ hợp 3 điều kiện (ii); đo bao phủ lệnh/nhánh cho đoạn code (iii)"
+  }
+]

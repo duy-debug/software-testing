@@ -1,4 +1,4 @@
-import type { Option, Question, QuestionType } from '../types/quiz';
+import type { Option, Question, QuestionType, DeckId } from '../types/quiz';
 
 export interface ParseResult {
   questions: Question[];
@@ -17,7 +17,7 @@ export function normalizeWhitespace(str: string): string {
  */
 function parseQuestionBlock(
   rawBlock: string,
-  deck: 'review' | 'exam1' | 'exam2',
+  deck: DeckId,
   expectedNumber?: number
 ): { question?: Question; errors: string[] } {
   const errors: string[] = [];
@@ -214,7 +214,11 @@ export function parseReviewMarkdown(markdownContent: string): ParseResult {
 /**
  * Parse File B: 80 câu 2 đề (Phần 1: đề thi, Phần 2: đáp án & giải thích)
  */
-export function parseExamsMarkdown(markdownContent: string): {
+export function parseExamsMarkdown(
+  markdownContent: string,
+  deck1: DeckId = 'exam1',
+  deck2: DeckId = 'exam2'
+): {
   exam1: ParseResult;
   exam2: ParseResult;
 } {
@@ -256,7 +260,7 @@ export function parseExamsMarkdown(markdownContent: string): {
   const exam1Questions = mergeAndValidateExam(
     part1De1Blocks,
     part2De1Blocks,
-    'exam1',
+    deck1,
     exam1Errors
   );
 
@@ -264,7 +268,7 @@ export function parseExamsMarkdown(markdownContent: string): {
   const exam2Questions = mergeAndValidateExam(
     part1De2Blocks,
     part2De2Blocks,
-    'exam2',
+    deck2,
     exam2Errors
   );
 
@@ -349,7 +353,7 @@ function extractAnswerBlocks(lines: string[], deNum: number): Map<number, string
 function mergeAndValidateExam(
   part1Blocks: Map<number, string>,
   part2Blocks: Map<number, string>,
-  deck: 'exam1' | 'exam2',
+  deck: DeckId,
   errors: string[]
 ): Question[] {
   const questions: Question[] = [];

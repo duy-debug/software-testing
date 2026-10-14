@@ -3,6 +3,7 @@ import type {
   Question,
   QuizMode,
   QuizSessionState,
+  DeckId,
 } from '../types/quiz';
 import { scoreSession } from '../lib/scoring';
 
@@ -32,7 +33,7 @@ export interface UseQuizSessionReturn {
 }
 
 export function useQuizSession(
-  deckId: 'review' | 'exam1' | 'exam2' | 'slides',
+  deckId: DeckId,
   mode: QuizMode,
   questions: Question[]
 ): UseQuizSessionReturn {

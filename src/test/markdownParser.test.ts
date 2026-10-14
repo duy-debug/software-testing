@@ -11,14 +11,26 @@ import {
 const rootDir = process.cwd();
 const fileAPath = path.join(rootDir, 'docs', 'gk_quiz (2).md');
 const fileBPath = path.join(rootDir, 'docs', '80_cau_trac_nghiem_sot357.md');
+const fileCPath = path.join(rootDir, 'docs', '80_cau_trac_nghiem_sot357_bo_moi_tu_gk.md');
 
 const contentA = fs.readFileSync(fileAPath, 'utf-8');
 const contentB = fs.readFileSync(fileBPath, 'utf-8');
+const contentC = fs.readFileSync(fileCPath, 'utf-8');
 
 describe('Markdown Parser & Data Validation (Skill 04 & 11)', () => {
   const reviewResult = parseReviewMarkdown(contentA);
   const slidesResult = parseSlidesMarkdown(contentA);
   const examsResult = parseExamsMarkdown(contentB);
+  const practiceResult = parseExamsMarkdown(contentC, 'practice1', 'practice2');
+
+  const allQuestions = [
+    ...reviewResult.questions,
+    ...slidesResult.questions,
+    ...examsResult.exam1.questions,
+    ...examsResult.exam2.questions,
+    ...practiceResult.exam1.questions,
+    ...practiceResult.exam2.questions,
+  ];
 
   describe('Nhóm 1 — Số lượng và cấu trúc', () => {
     it('TC-P01: Parse File A đúng 40 questions, deck = "review", id review-001..review-040', () => {
@@ -63,25 +75,33 @@ describe('Markdown Parser & Data Validation (Skill 04 & 11)', () => {
       });
     });
 
-    it('TC-P04: Tổng toàn bộ 144 questions, không trùng id', () => {
-      const allQuestions = [
-        ...reviewResult.questions,
-        ...slidesResult.questions,
-        ...examsResult.exam1.questions,
-        ...examsResult.exam2.questions,
-      ];
-      expect(allQuestions).toHaveLength(144);
-      const idSet = new Set(allQuestions.map((q) => q.id));
-      expect(idSet.size).toBe(144);
+    it('TC-P03b: Parse File C — Đề Thực Hành 1 đúng 40 questions, deck = "practice1", id practice1-001..practice1-040', () => {
+      expect(practiceResult.exam1.errors).toHaveLength(0);
+      expect(practiceResult.exam1.questions).toHaveLength(40);
+      practiceResult.exam1.questions.forEach((q, idx) => {
+        expect(q.deck).toBe('practice1');
+        expect(q.number).toBe(idx + 1);
+        expect(q.id).toBe(`practice1-${String(idx + 1).padStart(3, '0')}`);
+      });
     });
 
-    it('TC-P05: Mỗi câu hỏi có ít nhất 1 option isCorrect = true (144/144 đạt)', () => {
-      const allQuestions = [
-        ...reviewResult.questions,
-        ...slidesResult.questions,
-        ...examsResult.exam1.questions,
-        ...examsResult.exam2.questions,
-      ];
+    it('TC-P03c: Parse File C — Đề Thực Hành 2 đúng 40 questions, deck = "practice2", id practice2-001..practice2-040', () => {
+      expect(practiceResult.exam2.errors).toHaveLength(0);
+      expect(practiceResult.exam2.questions).toHaveLength(40);
+      practiceResult.exam2.questions.forEach((q, idx) => {
+        expect(q.deck).toBe('practice2');
+        expect(q.number).toBe(idx + 1);
+        expect(q.id).toBe(`practice2-${String(idx + 1).padStart(3, '0')}`);
+      });
+    });
+
+    it('TC-P04: Tổng toàn bộ 224 questions, không trùng id', () => {
+      expect(allQuestions).toHaveLength(224);
+      const idSet = new Set(allQuestions.map((q) => q.id));
+      expect(idSet.size).toBe(224);
+    });
+
+    it('TC-P05: Mỗi câu hỏi có ít nhất 1 option isCorrect = true (224/224 đạt)', () => {
       for (const q of allQuestions) {
         const correctOpts = q.options.filter((o) => o.isCorrect);
         expect(correctOpts.length).toBeGreaterThanOrEqual(1);
@@ -89,12 +109,6 @@ describe('Markdown Parser & Data Validation (Skill 04 & 11)', () => {
     });
 
     it('TC-P06 & TC-P07: type = "multiple" có > 1 đáp án đúng, "single" có đúng 1 đáp án đúng', () => {
-      const allQuestions = [
-        ...reviewResult.questions,
-        ...slidesResult.questions,
-        ...examsResult.exam1.questions,
-        ...examsResult.exam2.questions,
-      ];
       for (const q of allQuestions) {
         const correctOpts = q.options.filter((o) => o.isCorrect);
         if (q.type === 'multiple') {
@@ -107,13 +121,7 @@ describe('Markdown Parser & Data Validation (Skill 04 & 11)', () => {
   });
 
   describe('Nhóm 2 — Cross-check đáp án (ground truth)', () => {
-    it('TC-P08: 144/144 câu khớp ground truth (answerKey)', () => {
-      const allQuestions = [
-        ...reviewResult.questions,
-        ...slidesResult.questions,
-        ...examsResult.exam1.questions,
-        ...examsResult.exam2.questions,
-      ];
+    it('TC-P08: 224/224 câu khớp ground truth (answerKey)', () => {
       for (const q of allQuestions) {
         const valErrors = validateQuestion(q);
         expect(valErrors).toEqual([]);
@@ -121,12 +129,6 @@ describe('Markdown Parser & Data Validation (Skill 04 & 11)', () => {
     });
 
     it('TC-P09: note của option đúng nằm trong *(...)*; option sai note = null', () => {
-      const allQuestions = [
-        ...reviewResult.questions,
-        ...slidesResult.questions,
-        ...examsResult.exam1.questions,
-        ...examsResult.exam2.questions,
-      ];
       for (const q of allQuestions) {
         for (const opt of q.options) {
           if (!opt.isCorrect) {
@@ -137,12 +139,6 @@ describe('Markdown Parser & Data Validation (Skill 04 & 11)', () => {
     });
 
     it('TC-P10: explanation không chứa dòng "Chính xác!" và không chứa dòng ground-truth', () => {
-      const allQuestions = [
-        ...reviewResult.questions,
-        ...slidesResult.questions,
-        ...examsResult.exam1.questions,
-        ...examsResult.exam2.questions,
-      ];
       for (const q of allQuestions) {
         expect(q.explanation).not.toMatch(/^Chính xác!?$/m);
         expect(q.explanation).not.toMatch(/^The correct answers? (?:is|are):/m);

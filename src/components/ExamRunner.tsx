@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import type { Question } from '../types/quiz';
+import type { Question, DeckId } from '../types/quiz';
 import { useQuizSession } from '../hooks/useQuizSession';
 import { useTimer } from '../hooks/useTimer';
 import { QuestionCard } from './QuestionCard';
@@ -21,7 +21,7 @@ import {
 } from 'lucide-react';
 
 export interface ExamRunnerProps {
-  deckId: 'exam1' | 'exam2';
+  deckId: DeckId;
   title: string;
   questions: Question[];
   durationSec?: number; // Mặc định 40 phút = 2400 giây (đã chốt #2)
